@@ -1,0 +1,191 @@
+.ul-discount {
+    position: relative;
+    overflow: hidden;
+
+    &-second-title {
+        font-weight: 500;
+        font-size: clamp(13px, 0.84vw, 16px);
+        margin-bottom: clamp(3px, 0.32vw, 6px);
+        display: block;
+    }
+
+    &-countdown {
+        margin-top: clamp(11px, 1.10vw, 21px);
+        border-top: 1px solid var(--ul-gray2);
+        padding-top: clamp(15px, 1.31vw, 25px);
+
+        &-title {
+            font-weight: 700;
+            font-size: clamp(18px, 1.26vw, 24px);
+            margin-bottom: clamp(10px, 0.68vw, 13px);
+        }
+    }
+
+    &-img {
+        width: max-content;
+        margin-left: auto;
+        position: relative;
+        max-width: 100%;
+
+        @include sm {
+            margin: auto;
+        }
+    }
+
+    .main-img {
+        border-radius: clamp(15px, 1.05vw, 20px);
+        aspect-ratio: 640/519;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &-product-img {
+        position: absolute;
+        bottom: 0;
+        left: clamp(60px, 8.41vw, 160px);
+        max-width: clamp(231px, 33.58vw, 639px);
+    }
+
+    .discount-sticker {
+        position: absolute;
+        right: clamp(13px, 2.79vw, 53px);
+        top: clamp(60px, 6.31vw, 120px);
+        max-width: clamp(137px, 10.98vw, 209px);
+    }
+
+    &-vector {
+        position: absolute;
+        right: 0;
+        top: clamp(176px, 14.50vw, 276px);
+
+        @include lg {
+            display: none;
+        }
+    }
+}
+
+.ul-countdown {
+    display: flex;
+    gap: clamp(10px, 1.05vw, 20px);
+    margin-bottom: clamp(25px, 2.63vw, 50px);
+    flex-wrap: wrap;
+
+
+    &-item {
+        background-color: var(--ul-secondary);
+        color: var(--white);
+        border-radius: 5px;
+        text-align: center;
+
+        .number {
+            font-weight: 600;
+            font-size: clamp(26px, 1.73vw, 33px);
+            display: block;
+            padding: clamp(2px, 0.26vw, 5px) clamp(15px, 1.31vw, 25px);
+        }
+
+        .label {
+            display: block;
+            font-size: clamp(11px, 0.74vw, 14px);
+            text-transform: uppercase;
+            padding: clamp(5px, 0.42vw, 8px) clamp(15px, 1.31vw, 25px);
+            border-top: 1px solid rgba(230, 247, 252, 0.2);
+        }
+    }
+}
+
+
+// index-2, Menu 2 page discount styles
+.ul-discount-2 {
+    background: url(../img/discount-2-bg.png) var(--ul-c4) no-repeat center center/cover;
+
+    &-wrapper {
+        background: url(../img/cta-bg.jpg) no-repeat center center/cover;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &-img {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        width: max-content;
+        max-width: 100%;
+        margin: auto;
+        padding: 0 clamp(15px, 1.58vw, 30px);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--ul-primary);
+            border-radius: 300px 300px 20px 20px;
+            z-index: -1;
+            height: 83%;
+            box-shadow: 0 0 0 10px rgba(235, 0, 41, 0.3);
+        }
+
+        img {
+            max-width: clamp(220px, 17.87vw, 340px);
+        }
+    }
+
+    &-vectors {
+        >* {
+            position: absolute;
+            z-index: -1;
+        }
+
+        .vector-1 {
+            top: clamp(21px, 2.15vw, 41px);
+            left: clamp(16px, 1.68vw, 32px);
+            max-width: clamp(71px, 5.31vw, 101px);
+        }
+
+        .vector-2 {
+            right: 0;
+            top: 0;
+            width: clamp(119px, 9.93vw, 189px);
+        }
+
+        .vector-3 {
+            bottom: 0;
+            right: 0;
+            max-width: clamp(160px, 11.14vw, 212px);
+        }
+    }
+
+    &-txt {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        margin-right: clamp(75px, 6.04vw, 115px);
+        padding: clamp(20px, 2.36vw, 45px) clamp(15px, 3.94vw, 75px);
+        text-align: center;
+
+        .ul-section-sub-title {
+            color: var(--ul-c5);
+            margin-bottom: clamp(12px, 1.16vw, 22px);
+        }
+
+        .ul-discount-countdown-title {
+            color: var(--white);
+            margin-bottom: clamp(17px, 1.79vw, 34px);
+        }
+
+        @include md {
+            margin: 0 20px;
+        }
+
+    }
+
+    .ul-discount-countdown {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .ul-countdown {
+        justify-content: center;
+    }
+}

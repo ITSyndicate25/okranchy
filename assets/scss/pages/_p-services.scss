@@ -1,0 +1,42 @@
+.ul-services {
+    background-color: rgba(255, 0, 44, 0.04);
+}
+
+.ul-service {
+    background: var(--white);
+    border-radius: clamp(10px, 1.05vw, 20px);
+    padding: clamp(15px, 1.58vw, 30px);
+
+    &:hover {
+        .ul-service-icon {
+            i {
+                transform: rotateY(360deg);
+            }
+        }
+    }
+
+    &-icon {
+        margin-bottom: 2px;
+
+        i {
+            font-size: clamp(35px, 2.10vw, 40px);
+            color: var(--ul-primary);
+            transition: 0.8s ease;
+
+        }
+    }
+
+    &-title {
+        font-size: clamp(20px, 1.26vw, 24px);
+        font-weight: 600;
+        margin-bottom: 3px;
+        display: block;
+    }
+
+    &-descr {
+        margin-bottom: 0;
+        font-size: clamp(13px, 0.84vw, 16px);
+        color: var(--ul-gray);
+        font-weight: 300;
+    }
+}

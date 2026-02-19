@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okranchy - Product Details</title>
+
+    <!-- libraries CSS -->
+    <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
+    <link rel="stylesheet" href="assets/vendor/animate-wow/animate.min.css">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Make logo smaller to fit header and footer */
+        .logo-container .logo {
+            max-height: 80px;
+            width: auto;
+        }
+        .ul-sidebar-header-logo .logo {
+            max-height: 100px;
+            width: auto;
+        }
+        .ul-footer-about img {
+            max-height: 120px;
+            width: auto;
+        }
+
+        .signature {
+            max-width: 80px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- SIDEBAR SECTION START -->
+    <div class="ul-sidebar">
+        <div class="ul-sidebar-header">
+            <div class="ul-sidebar-header-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo">
+                </a>
+            </div>
+            <button class="ul-sidebar-closer"><i class="flaticon-close"></i></button>
+        </div>
+
+        <div class="ul-sidebar-header-nav-wrapper d-block d-lg-none"></div>
+
+        <div class="ul-sidebar-footer">
+            <span class="ul-sidebar-footer-title">Follow us</span>
+            <div class="ul-sidebar-footer-social">
+                <a href="#"><i class="flaticon-facebook"></i></a>
+                <a href="#"><i class="flaticon-twitter"></i></a>
+                <a href="#"><i class="flaticon-instagram"></i></a>
+                <a href="#"><i class="flaticon-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- SIDEBAR SECTION END -->
+
+    <!-- SEARCH MODAL SECTION START -->
+    <div class="ul-search-form-wrapper flex-grow-1 flex-shrink-0">
+        <button class="ul-search-closer"><i class="flaticon-close"></i></button>
+        <form action="#" class="ul-search-form">
+            <div class="ul-search-form-right">
+                <input type="search" name="search" id="ul-search" placeholder="Search Okranchy Products...">
+                <button type="submit"><span class="icon"><i class="flaticon-search"></i></span></button>
+            </div>
+        </form>
+    </div>
+    <!-- SEARCH MODAL SECTION END -->
+
+    <!-- HEADER SECTION START -->
+    <header class="ul-header">
+        <div class="header-top-bg-wrapper">
+            <div class="ul-header-top">
+                <div class="ul-header-container">
+                    <div class="ul-header-top-left">
+                        <div class="ul-header-contact-infos">
+                            <span class="ul-header-contact-info"><i class="flaticon-location-pin colored"></i> Pamantasan ng Lungsod ng Valenzuela, Valenzuela City</span>
+                        </div>
+                    </div>
+
+                    <div class="ul-header-top-right">
+                        <div class="ul-header-auth-options">
+                            <i class="flaticon-user"></i>
+                            <a href="#">Login</a>
+                            <span>/</span>
+                            <a href="#">Register</a>
+                        </div>
+
+                        <div class="ul-header-socials">
+                            <span class="socials-title">Follow us: </span>
+                            <div class="links">
+                                <a href="#"><i class="flaticon-facebook"></i></a>
+                                <a href="#"><i class="flaticon-twitter"></i></a>
+                                <a href="#"><i class="flaticon-linkedin-big-logo"></i></a>
+                                <a href="#"><i class="flaticon-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom-bg-wrapper to-be-sticky">
+            <div class="ul-header-bottom">
+                <div class="ul-header-bottom-wrapper ul-header-container">
+                    <div class="logo-container">
+                        <a href="index.html" class="d-inline-block"><img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo"></a>
+                    </div>
+
+                    <!-- header nav -->
+                    <div class="ul-header-nav-wrapper">
+                        <div class="to-go-to-sidebar-in-mobile">
+                            <nav class="ul-header-nav">
+                                <a href="index.html">Home</a>
+                                <a href="about.html">About</a>
+                                <div class="has-sub-menu">
+                                    <a role="button">Shop</a>
+                                    <div class="ul-header-submenu">
+                                        <ul>
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="shop-details.html">Product Details</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="has-sub-menu">
+                                    <a role="button">Pages</a>
+                                    <div class="ul-header-submenu">
+                                        <ul>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="testimonials.html">Testimonials</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="contact.html">Contact</a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- actions -->
+                    <div class="ul-header-actions">
+                        <button class="ul-header-search-opener"><i class="flaticon-search"></i></button>
+                        <button><i class="flaticon-grocery-store"></i></button>
+                        <a href="shop.html" class="ul-btn d-sm-inline-flex d-none">Order Now <i class="flaticon-right"></i></a>
+                        <button class="ul-header-sidebar-opener d-lg-none d-inline-flex"><i class="flaticon-menu"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER SECTION END -->
+
+
+    <main>
+        <!-- BREADCRUMB SECTION START -->
+        <div class="ul-breadcrumb">
+            <div class="wow animate__fadeInUp">
+                <h2 class="ul-breadcrumb-title">Product Details</h2>
+                <div class="ul-breadcrumb-nav">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="shop.html">Shop</a>
+                    <span class="separator">/</span>
+                    <span class="current-page">Product Details</span>
+                </div>
+            </div>
+        </div>
+        <!-- BREADCRUMB SECTION END -->
+
+
+        <!-- PRODUCT DETAILS SECTION -->
+        <section class="ul-shop-details ul-section-spacing">
+            <div class="ul-container">
+                <div class="row row-cols-md-2 row-cols-1 ul-bs-row align-items-start">
+                    <!-- img -->
+                    <div class="col">
+                        <div class="ul-shop-details-img">
+                            <img src="assets/img/shop-details.png" alt="Okranchy Original Okra Chips">
+                        </div>
+                    </div>
+
+                    <!-- txt -->
+                    <div class="col">
+                        <div class="ul-shop-details-txt">
+                            <div class="ul-shop-details-txt-header d-flex align-items-start justify-content-between">
+                                <div class="left">
+                                    <!-- product title -->
+                                    <h3 class="ul-shop-details-title">Okranchy Original — Medium (100g)</h3>
+                                    <!-- product rating -->
+                                    <div class="ul-shop-details-rating">
+                                        <span class="rating">
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                        </span>
+                                        <span class="review-number">(2 Customer Reviews)</span>
+                                    </div>
+                                </div>
+
+                                <!-- price -->
+                                <div class="right">
+                                    <span class="ul-shop-details-price">₱60</span>
+                                </div>
+                            </div>
+
+
+                            <!-- product description -->
+                            <p class="ul-shop-details-descr">Our signature Original flavor — lightly salted and perfectly crispy okra chips made from 100% fresh, locally-sourced okra. No artificial preservatives, no MSG. Just pure, crunchy, guilt-free goodness in every bite. A healthier snack alternative that the whole family will love.</p>
+
+
+                            <!-- product quantity -->
+                            <div class="ul-shop-details-option ul-shop-details-quantity">
+                                <span class="title">Quantity</span>
+                                <form action="#" class="ul-product-quantity-wrapper">
+                                    <input type="number" name="product-quantity" id="ul-shop-details-quantity" class="ul-product-quantity" value="1" min="1" readonly="">
+                                    <div class="btns">
+                                        <button type="button" class="quantityIncreaseButton"><i class="flaticon-plus"></i></button>
+                                        <button type="button" class="quantityDecreaseButton"><i class="flaticon-minus-1"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- product actions -->
+                            <div class="ul-shop-details-actions">
+                                <div class="left">
+                                    <button class="add-to-cart">Add to Cart <span class="icon"><i class="flaticon-cart"></i></span></button>
+                                    <button class="add-to-wishlist"><span class="icon"><i class="flaticon-heart"></i></span> Add to Wishlist</button>
+                                </div>
+                                <div class="ul-shop-details-share">
+                                    <span class="share-title">Share with Friends</span>
+                                    <div class="share-options">
+                                        <button><i class="flaticon-facebook"></i></button>
+                                        <button><i class="flaticon-twitter"></i></button>
+                                        <button><i class="flaticon-linkedin-big-logo"></i></button>
+                                        <a href="#"><i class="flaticon-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ul-shop-details-bottom">
+                    <!-- description -->
+                    <div class="ul-shop-details-long-descr-wrapper">
+                        <h3 class="ul-shop-details-inner-title">Product Description</h3>
+                        <p>Okranchy Original is our flagship flavor — the one that started it all. Each chip begins with fresh okra hand-selected from local farms around Valenzuela City and nearby provinces. The okra is carefully sliced, lightly seasoned with natural sea salt, and then cooked to achieve that signature satisfying crunch that sets Okranchy apart from ordinary vegetable chips.</p>
+                        <p>What makes Okranchy different? We believe that healthier snacking shouldn't mean sacrificing taste. Our okra chips contain zero artificial preservatives, zero MSG, and zero trans fat. They're naturally rich in dietary fiber, vitamins A and C, and antioxidants — making them a smart choice for students, professionals, health-conscious families, and anyone who loves a good crunch. Available in Small (50g), Medium (100g), and Large (200g) packs, Okranchy Original is perfect for on-the-go snacking, baon, merienda, or sharing with your barkada. Developed by <strong>Nextgsight</strong>, a student entrepreneurship group from <strong>Pamantasan ng Lungsod ng Valenzuela (PLV)</strong>, every bag of Okranchy represents quality, innovation, and Filipino pride.</p>
+                    </div>
+
+                    <!-- reviews -->
+                    <div class="ul-shop-details-reviews">
+                        <h3 class="ul-shop-details-inner-title">02 Reviews</h3>
+
+                        <!-- single review -->
+                        <div class="ul-shop-details-review">
+                            <!-- reviewer image -->
+                            <div class="ul-shop-details-review-reviewer-img">
+                                <img src="assets/img/reviewer-1.png" alt="Reviewer Image">
+                            </div>
+
+                            <div class="ul-shop-details-review-txt">
+                                <div class="header">
+                                    <div class="left">
+                                        <h4 class="reviewer-name">Maria Santos</h4>
+                                        <h5 class="review-date">January 15, 2026 at 3:22 pm</h5>
+                                    </div>
+
+                                    <div class="right">
+                                        <div class="rating">
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>I was honestly surprised by how good these okra chips are! I bought the Medium bag to try and finished it in one sitting. The crunch is so satisfying and the salt level is just right — not too much, not too little. I love that it's made from real okra and doesn't have any weird aftertaste. Already ordered three more bags for my kids' baon. This is definitely our new go-to merienda snack. Great job, Nextgsight team!</p>
+                            </div>
+                        </div>
+
+                        <!-- single review -->
+                        <div class="ul-shop-details-review">
+                            <!-- reviewer image -->
+                            <div class="ul-shop-details-review-reviewer-img">
+                                <img src="assets/img/reviewer-img-2.png" alt="Reviewer Image">
+                            </div>
+
+                            <div class="ul-shop-details-review-txt">
+                                <div class="header">
+                                    <div class="left">
+                                        <h4 class="reviewer-name">John Reyes</h4>
+                                        <h5 class="review-date">February 2, 2026 at 10:45 am</h5>
+                                    </div>
+
+                                    <div class="right">
+                                        <div class="rating">
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                            <i class="flaticon-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>As a fellow PLV student, I'm so proud to support Okranchy! Bought the Original Medium pack during their campus selling event and I was blown away. It's crunchy, flavorful, and way healthier than the junk food I usually buy. I've been recommending it to everyone in our block. The packaging looks clean and professional too. I can't wait to try the Spicy and Cheese flavors next. Keep it up, Nextgsight — you guys are making PLV proud!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- review form -->
+                    <div class="ul-shop-details-review-form-wrapper">
+                        <h3 class="ul-shop-details-inner-title">Write A Review</h3>
+                        <span class="note">Your email address will not be published. Required fields are marked *</span>
+
+                        <form class="ul-shop-details-review-form">
+                            <div class="form-group rating-field-wrapper">
+                                <span class="title">Rate this product? *</span>
+                                <div class="rating-field">
+                                    <button type="button"><i class="flaticon-star"></i></button>
+                                    <button type="button"><i class="flaticon-star"></i></button>
+                                    <button type="button"><i class="flaticon-star"></i></button>
+                                    <button type="button"><i class="flaticon-star"></i></button>
+                                    <button type="button"><i class="flaticon-star"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="row row-cols-2 row-cols-xxs-1 ul-bs-row">
+                                <div class="form-group">
+                                    <input type="text" name="review-name" id="review-name" placeholder="Your Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="review-email" id="review-email" placeholder="Your Email">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <textarea name="review-message" id="review-message" placeholder="Tell us what you think about Okranchy..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit">Post Review</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PRODUCT DETAILS SECTION END -->
+    </main>
+
+    <!-- FOOTER SECTION START -->
+    <footer class="ul-footer">
+        <div class="ul-footer-top">
+            <div class="ul-container">
+                <div class="ul-footer-top-wrapper wow animate__fadeInUp">
+                    <div class="ul-footer-about">
+                        <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
+                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Nextgsight, a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
+                        <div class="ul-footer-socials">
+                            <a href="#"><i class="flaticon-facebook"></i></a>
+                            <a href="#"><i class="flaticon-twitter"></i></a>
+                            <a href="#"><i class="flaticon-linkedin-big-logo"></i></a>
+                            <a href="#"><i class="flaticon-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget">
+                        <h3 class="ul-footer-widget-title">Quick Links</h3>
+                        <div class="ul-footer-widget-links">
+                            <a href="about.html">About Us</a>
+                            <a href="shop.html">Our Products</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="faq.html">FAQ's</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget">
+                        <h3 class="ul-footer-widget-title">Our Flavors</h3>
+                        <div class="ul-footer-widget-links">
+                            <a href="shop.html">Original</a>
+                            <a href="shop.html">Spicy</a>
+                            <a href="shop.html">Cheese</a>
+                            <a href="shop.html">BBQ</a>
+                            <a href="shop.html">Assorted Pack</a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget ul-nwsltr-widget">
+                        <h3 class="ul-footer-widget-title">Stay Connected</h3>
+                        <div class="ul-footer-widget-links">
+                            <span>Order Inquiries: <span class="colored">Mon – Sat</span></span>
+                            <span>Pickup Available at: <span class="colored">PLV Campus</span></span>
+                        </div>
+                        <form action="#" class="ul-nwsltr-form">
+                            <div class="top">
+                                <input type="email" name="email" id="nwsltr-email" placeholder="Your Email Address" class="ul-nwsltr-input">
+                                <button type="submit"><i class="flaticon-arrow"></i></button>
+                            </div>
+                            <div class="agreement">
+                                <label for="nwsltr-agreement" class="ul-checkbox-wrapper">
+                                    <input type="checkbox" name="agreement" id="nwsltr-agreement" hidden>
+                                    <span class="ul-checkbox"><i class="flaticon-checked"></i></span>
+                                    <span class="ul-checkbox-txt">I agree with the <a href="#">Privacy Policy</a></span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="ul-footer-bottom">
+            <div class="ul-container">
+                <div class="ul-footer-bottom-wrapper">
+                    <p class="copyright-txt">&copy;
+                        <script>document.write(new Date().getFullYear())</script> Okranchy by Nextgsight | Pamantasan ng Lungsod ng Valenzuela. All rights reserved.
+                    </p>
+                    <div class="ul-footer-bottom-nav"><a href="#">Made for Ema By Kim</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+    <!-- libraries JS -->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
+    <script src="assets/vendor/animate-wow/wow.min.js"></script>
+    <script src="assets/vendor/splittype/index.min.js"></script>
+    <script src="assets/vendor/mixitup/mixitup.min.js"></script>
+    <script src="assets/vendor/fslightbox/fslightbox.js"></script>
+
+    <!-- custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

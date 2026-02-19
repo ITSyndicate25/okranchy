@@ -1,0 +1,52 @@
+.ul-video {
+    border: 10px solid var(--white);
+    box-shadow: 0px 4px 40px rgba(235, 0, 41, 0.1);
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    margin-top: calc(0% - clamp(60px, 8.20vw, 156px));
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background: rgba(39, 2, 2, 0.5);
+    }
+
+    img {
+        border-radius: 14px;
+    }
+}
+
+.ul-video-btn {
+    width: clamp(160px, 11.14vw, 212px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(18px, 1.47vw, 28px);
+    color: var(--white);
+
+    &:hover {
+        color: var(--ul-primary);
+    }
+
+    @include sm {
+        width: clamp(90px, 8.14vw, 160px);
+    }
+
+    img,
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    img {
+        pointer-events: none;
+    }
+}

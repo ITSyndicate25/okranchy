@@ -1,0 +1,264 @@
+.ul-cart {
+    &-table {
+        width: 100%;
+
+        thead {
+            font-weight: 700;
+            font-size: clamp(17px, 1.05vw, 20px);
+            padding-bottom: 17px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 0;
+            padding-right: clamp(30px, 4.73vw, 90px);
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        th {
+            padding-bottom: clamp(12px, 1.05vw, 20px);
+            font-size: clamp(17px, 1.05vw, 20px);
+            font-weight: 700;
+
+            &:last-child {
+                text-align: end;
+            }
+        }
+
+        td {
+            padding-top: clamp(18px, 1.47vw, 28px);
+            padding-bottom: clamp(18px, 1.47vw, 28px);
+        }
+
+        tr {
+            border-bottom: 1px solid #EAF3F8;
+        }
+
+        .ul-shop-details-quantity form {
+            width: max-content;
+        }
+    }
+
+    &-product {
+        width: auto;
+        min-width: 210px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: clamp(15px, 1.58vw, 30px);
+
+
+        &-img {
+            width: clamp(60px, 3.68vw, 70px);
+            aspect-ratio: 1/1;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                // max-height: 100%;
+                height: 100%;
+            }
+        }
+
+        &-title {
+            font-weight: 700;
+            font-size: clamp(17px, 1.05vw, 20px);
+            color: var(--black);
+            text-align: left;
+
+            &:hover {
+                color: var(--ul-primary);
+            }
+        }
+    }
+
+    &-item {
+
+        &-subtotal,
+        &-price {
+            font-weight: 500;
+            font-size: clamp(13px, 0.84vw, 16px);
+        }
+
+        &-subtotal {
+            text-align: center;
+            display: block;
+        }
+
+        &-remove {
+            text-align: end;
+
+            button {
+                // width: clamp(19px, 1.16vw, 22px);
+                // border: 1px solid #E5E5E5;
+                // border-radius: 50%;
+                padding: 0;
+                aspect-ratio: 1/1;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+                font-size: 20px;
+
+                &:hover {
+                    color: var(--ul-primary);
+                }
+            }
+        }
+    }
+
+    &-actions {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 25px;
+        align-items: flex-end;
+        gap: 10px;
+    }
+
+    &-coupon-code-form-wrapper {
+        .title {
+            display: block;
+            font-weight: 600;
+            font-size: clamp(17px, 1.05vw, 20px);
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+    }
+
+    &-coupon-code-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(10px, 0.79vw, 15px);
+
+        input {
+            border: #F6F3FE 1px solid;
+            height: clamp(45px, 3.15vw, 60px);
+            border-radius: 10px;
+            padding: 0 clamp(10px, 1.05vw, 20px);
+            width: clamp(215px, 14.08vw, 268px);
+            font-size: clamp(13px, 0.84vw, 16px);
+        }
+    }
+
+    &-expense-overview {
+        max-width: clamp(288px, 16.71vw, 318px);
+        margin-left: auto;
+        margin-top: clamp(25px, 2.89vw, 55px);
+
+        @include sm {
+            max-width: 100%;
+        }
+
+        &-title {
+            font-weight: 700;
+            font-size: clamp(25px, 1.58vw, 30px);
+            margin-bottom: 0;
+        }
+
+        .number,
+        .inner-title {
+            font-weight: 500;
+            font-size: clamp(17px, 1.05vw, 20px);
+            color: var(--ul-primary);
+        }
+
+        .inner-title {
+            color: var(--black);
+        }
+
+        .single-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: clamp(20px, 1.47vw, 28px);
+        }
+
+        .middle {
+            border: solid #EAF3F8;
+            border-width: 1px 0;
+            padding: clamp(20px, 1.58vw, 30px) 0;
+            margin: clamp(20px, 1.58vw, 30px) 0;
+
+            &>*:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-checkout-direct-btn {
+        width: 100%;
+    }
+}
+
+.ul-product-quantity {
+    form {
+        display: inline-flex;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        overflow: hidden;
+
+        input {
+            border: none;
+            border-right: 1px solid #e6e6e6;
+            max-width: clamp(61px, 3.36vw, 64px);
+            text-align: center;
+            font-weight: 700;
+            font-size: clamp(13px, 0.84vw, 16px);
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: clamp(11px, 0.74vw, 14px);
+                padding: 6px 12px;
+
+                &:hover {
+                    background-color: var(--ul-primary);
+                    color: var(--white);
+                }
+
+                &:first-child {
+                    border-bottom: 1px solid #e6e6e6;
+                }
+            }
+        }
+    }
+}
+
+.ul-cart-coupon-code-form button,
+.ul-cart-update-cart-btn,
+.ul-cart-checkout-direct-btn {
+    height: clamp(45px, 3.15vw, 60px);
+    background-color: var(--ul-primary);
+    font-weight: 600;
+    font-size: clamp(13px, 0.84vw, 16px);
+    color: var(--white);
+    padding: 0 clamp(15px, 1.58vw, 30px);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+
+    &:hover {
+        background-color: var(--black);
+    }
+}

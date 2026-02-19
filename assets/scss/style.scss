@@ -1,0 +1,77 @@
+/*!--------------------
+Template Name: Restics - Food & Restaurant HTML Template
+Author: tempticspro
+Version: 1.0
+
+CSS INDEX
+=================== 
+01. CUSTOM PROPERTIES
+02. GLOBAL
+03. Components
+04. Sidebar
+05. Header
+06. Hero
+07. About
+08. Foods
+09. Video
+10. Discount
+11. Menus
+12. Specialities
+13. Booking
+14. Testimonial
+15. CTA
+16. Blog
+17. Ad
+18. Footer
+
+--- INNER PAGES
+19. About Page
+20. Shop Details Page
+21. Cart Page
+22. Checkout Page
+23. Reservation Page
+24. Services Page
+25. Gallery Page
+26. Testimonial Page
+27. FAQ Page
+28. Blog Page
+29. Blog Details Page
+30. Contact Page
+
+*/
+
+@import "main/breakpoints";
+@import "main/variables";
+@import "main/global";
+@import "main/components";
+
+// sections
+@import "sections/sidebar";
+@import "sections/header";
+@import "sections/hero";
+@import "sections/about";
+@import "sections/foods";
+@import "sections/video";
+@import "sections/discount";
+@import "sections/menus";
+@import "sections/specialities";
+@import "sections/booking";
+@import "sections/testimonial";
+@import "sections/cta";
+@import "sections/blog";
+@import "sections/ad";
+@import "sections/footer";
+
+// inner pages
+@import "pages/about";
+@import "pages/shop-details";
+@import "pages/cart";
+@import "pages/checkout";
+@import "pages/reservation";
+@import "pages/p-services";
+@import "pages/p-gallery";
+@import "pages/p-testimonial";
+@import "pages/p-faq";
+@import "pages/p-blog";
+@import "pages/blog-details";
+@import "pages/contact";

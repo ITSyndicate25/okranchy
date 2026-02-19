@@ -1,0 +1,173 @@
+.ul-checkout {
+    &-title {
+        font-size: clamp(21px, 1.26vw, 24px);
+        font-weight: 600;
+        margin-bottom: clamp(17px, 1.68vw, 32px);
+    }
+
+    &-form {
+        label {
+            font-weight: 500;
+            font-size: clamp(13px, 0.84vw, 16px);
+            display: inline-block;
+            margin-bottom: clamp(7px, 0.89vw, 17px);
+        }
+
+        .ss-main,
+        input,
+        textarea {
+            height: clamp(45px, 3.15vw, 60px);
+            border-radius: 5px;
+            padding: 0 clamp(12px, 1.05vw, 20px);
+            width: 100%;
+            background-color: #FEF4F6;
+            border: 1px solid #FEF4F6;
+            font-size: clamp(13px, 0.84vw, 16px);
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+        textarea {
+            padding: clamp(12px, 1.05vw, 20px);
+            height: 177px;
+            border-radius: 10px;
+            vertical-align: top;
+        }
+
+        .ss-content,
+        .ss-content.ss-open-below {
+            border-radius: 5px;
+        }
+
+        .ss-content .ss-list .ss-option.ss-highlighted,
+        .ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+            background: #FEF4F6;
+            color: var(--black);
+        }
+
+        &-btn {
+            background-color: #EB0029;
+            height: clamp(45px, 2.89vw, 55px);
+            color: var(--white);
+            font-weight: 600;
+            font-size: clamp(13px, 0.84vw, 16px);
+            padding: 0 clamp(18px, 1.31vw, 25px);
+            border-radius: 999px;
+
+            &:hover {
+                background-color: var(--black);
+            }
+        }
+    }
+
+    &-payment-methods {
+        background-color: #FEF4F6;
+        padding: clamp(15px, 1.58vw, 30px);
+        border-radius: 10px;
+        margin-top: clamp(15px, 1.58vw, 30px);
+
+        label {
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(10px, 0.79vw, 15px);
+            margin-bottom: clamp(25px, 2.63vw, 50px);
+
+            input[type="radio"] {
+                &:checked {
+                    ~.ul-radio-wrapper {
+                        border-color: #EB0029;
+
+                        &::before {
+                            background-color: #EB0029;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-payment-method {
+        .title {
+            font-weight: 600;
+            font-size: clamp(13px, 0.84vw, 16px);
+            display: inline-block;
+            margin-bottom: clamp(5px, 0.42vw, 8px);
+        }
+
+        .descr {
+            font-size: clamp(13px, 0.84vw, 16px);
+            color: #5C6574;
+            // margin-bottom: 0;
+            display: inline-block;
+            font-weight: 400;
+        }
+    }
+
+    &-bill-summary {
+        margin-top: clamp(45px, 3.42vw, 65px);
+
+        &-title {
+            font-weight: 700;
+            font-size: clamp(20px, 1.26vw, 24px);
+            margin-bottom: clamp(17px, 1.79vw, 34px);
+        }
+
+        &-header {
+            border: solid rgb(0, 0, 0, 0.2);
+            border-width: 1px 0;
+            font-weight: 700;
+            font-size: clamp(13px, 0.84vw, 16px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: clamp(17px, 1.84vw, 35px) 0;
+            font-size: clamp(17px, 1.05vw, 20px);
+        }
+
+        &-body {
+            padding: clamp(7px, 0.79vw, 15px) 0;
+
+            .single-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: 600;
+                color: #5C6574;
+                font-size: clamp(13px, 0.84vw, 16px);
+                padding: clamp(7px, 0.79vw, 15px) 0;
+            }
+        }
+
+        &-footer {
+            color: var(--ul-primary);
+            font-size: clamp(17px, 1.05vw, 20px);
+            font-weight: 600;
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.ul-radio-wrapper {
+    position: relative;
+    width: 20px;
+    aspect-ratio: 1/1;
+    border: 1px solid #E5E5E5;
+    border-radius: 999px;
+    flex-shrink: 0;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 6px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: #5C6574;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -1,0 +1,61 @@
+.ul-specialities {
+    &-list {
+        margin-top: clamp(12px, 1.05vw, 20px);
+        border-top: 1px solid var(--ul-gray2);
+        padding-top: clamp(15px, 1.58vw, 30px);
+        margin-bottom: clamp(30px, 3.15vw, 60px);
+    }
+
+    &-img {
+        position: relative;
+        z-index: 1;
+        width: max-content;
+        max-width: 100%;
+
+        .bg-shape {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            max-width: none;
+            left: auto;
+            top: -20px;
+            max-width: clamp(310px, 35vw, 666px);
+            // clip-path: polygon(100% 37.43%, 100% 37.43%, 98.781% 41.671%, 95.411% 47.87%, 90.323% 55.462%, 83.949% 63.879%, 76.719% 72.556%, 69.066% 80.925%, 61.421% 88.421%, 54.217% 94.476%, 47.885% 98.525%, 42.857% 100%, 42.857% 100%, 35.906% 99.346%, 29.311% 97.451%, 23.162% 94.419%, 17.546% 90.353%, 12.553% 85.355%, 8.269% 79.529%, 4.784% 72.978%, 2.185% 65.804%, 0.561% 58.11%, 0% 50%, 0% 50%, 0.561% 41.89%, 2.185% 34.196%, 4.784% 27.022%, 8.269% 20.471%, 12.553% 14.645%, 17.546% 9.647%, 23.162% 5.581%, 29.311% 2.549%, 35.906% 0.654%, 42.857% 0%, 42.857% 0%, 50.209% 0.495%, 57.889% 1.926%, 65.638% 4.213%, 73.197% 7.276%, 80.305% 11.034%, 86.702% 15.406%, 92.131% 20.312%, 96.329% 25.672%, 99.039% 31.404%, 100% 37.43%);
+        }
+
+        .main-img {
+            max-width: clamp(302px, 31.63vw, 602px);
+        }
+
+        .vector {
+            position: absolute;
+            top: 30px;
+            right: -60px;
+            z-index: -2;
+            max-width: clamp(126px, 8.20vw, 156px);
+
+            @include xs {
+                display: none;
+            }
+        }
+    }
+}
+
+.ul-speciality {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(7px, 0.53vw, 10px);
+    font-weight: 700;
+    color: var(--ul-black);
+    margin-bottom: clamp(6px, 0.63vw, 12px);
+    font-size: clamp(16px, 1.05vw, 20px);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    i {
+        color: var(--ul-primary);
+        padding-top: 4px;
+    }
+}

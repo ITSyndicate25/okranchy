@@ -1,0 +1,203 @@
+.ul-app-ad-bg-wrapper {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        bottom: -2px;
+        background: linear-gradient(to bottom, transparent 50%, var(--ul-black) 50%);
+    }
+}
+
+.ul-app-ad {
+    margin: 0 auto;
+    margin-top: clamp(60px, 6.31vw, 120px);
+    max-width: clamp(992px, 74.62vw, 1420px);
+    position: relative;
+    z-index: 2;
+
+    @include lg {
+        margin-left: clamp(15px, 0.79vw, 15px);
+        margin-right: clamp(15px, 0.79vw, 15px);
+    }
+
+    &-content {
+        background: var(--white);
+        box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.2);
+        border-radius: clamp(20px, 2.63vw, 50px) 0px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: url(../img/ad-vector.svg) no-repeat right center;
+            opacity: 70%;
+            pointer-events: none;
+        }
+    }
+
+    &-txt {
+        // padding-top: clamp(0px, 1.58vw, 30px);
+        padding: clamp(30px, 4.47vw, 85px) clamp(15px, 4.20vw, 80px);
+
+        @include md {
+            text-align: center;
+        }
+    }
+
+    .ul-section-sub-title {
+        color: var(--ul-primary);
+    }
+
+    &-btns {
+        margin-top: clamp(20px, 2.10vw, 40px);
+        display: flex;
+        gap: clamp(14px, 1.05vw, 20px);
+        flex-wrap: wrap;
+
+        @include md {
+            justify-content: center;
+        }
+
+        button {
+            border: 1px solid var(--ul-primary);
+            border-radius: 999px;
+            color: var(--ul-primary);
+            padding: clamp(1px, 0.21vw, 4px) clamp(20px, 1.26vw, 24px) clamp(5px, 0.42vw, 8px);
+            display: flex;
+            align-items: center;
+            text-align: left;
+            gap: clamp(7px, 0.53vw, 10px);
+
+            i {
+                font-size: clamp(21px, 1.26vw, 24px);
+                padding-top: 6px;
+            }
+
+            .sub-title {
+                font-size: clamp(9px, 0.63vw, 12px);
+                font-size: clamp(12px, 0.79vw, 15px);
+                font-weight: 500;
+                line-height: 0.7;
+            }
+
+            .title {
+                display: block;
+                font-size: clamp(15px, 0.95vw, 18px);
+                font-weight: 600;
+                line-height: 1.2;
+            }
+
+            &:hover {
+                background-color: var(--ul-primary);
+                border-color: var(--ul-primary);
+                color: var(--white);
+            }
+        }
+    }
+
+    &-imgs {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        // overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            aspect-ratio: 1/1;
+            z-index: -1;
+            border-radius: 999px;
+            width: 1078.78px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--ul-c5);
+            pointer-events: none;
+
+            @include md {
+                left: 50%;
+                top: 0;
+                transform: translateY(0) translateX(-50%);
+            }
+        }
+
+        .vector {
+            position: absolute;
+            right: -27px;
+            top: -27px;
+        }
+    }
+
+    &-img {
+        position: relative;
+
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            @include xxs {
+                align-items: flex-start;
+            }
+        }
+
+        &:not(:first-child) {
+            margin-left: -35px;
+        }
+    }
+
+    &-discount-tag {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &-ss-1 {
+        max-width: clamp(105px, 9.20vw, 175px);
+        aspect-ratio: 175/277;
+    }
+
+    &-ss-2 {
+        max-width: clamp(151px, 12.66vw, 241px);
+        aspect-ratio: 241/381;
+        padding-top: 30px;
+    }
+
+    &-vectors {
+        >* {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .vector-1 {
+            top: clamp(15px, 0.95vw, 18px);
+            right: 50%;
+            max-width: clamp(119px, 6.41vw, 122px);
+        }
+
+        .vector-2 {
+            max-width: clamp(160px, 8.57vw, 163px);
+            bottom: 0;
+            left: 52%;
+            transform: translateX(-50%);
+        }
+
+        .vector-3 {
+            top: 0;
+            right: 0;
+            max-width: clamp(70px, 7.25vw, 138px);
+        }
+    }
+}

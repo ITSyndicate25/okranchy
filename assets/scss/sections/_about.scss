@@ -1,0 +1,187 @@
+.ul-about {
+    position: relative;
+
+    &-imgs {
+        position: relative;
+        z-index: 1;
+        padding-top: clamp(15px, 1.58vw, 30px);
+
+        img {
+            border-radius: 10px;
+        }
+
+        .vector-img {
+            position: absolute;
+            background-color: var(--ul-primary);
+            z-index: -1;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+
+            img {
+                width: clamp(190px, 19.44vw, 370px);
+                aspect-ratio: 370/487;
+                mix-blend-mode: multiply;
+            }
+        }
+
+        >img {
+            margin-left: clamp(20px, 2.10vw, 40px);
+            display: block;
+            aspect-ratio: 475/487;
+            width: clamp(270px, 24.96vw, 475px);
+            object-fit: cover;
+
+            @include sm {
+                width: 93%;
+            }
+        }
+    }
+
+    .ul-section-title {
+        margin-bottom: clamp(5px, 0.68vw, 13px);
+    }
+
+    &-list {
+        display: flex;
+        border: 1px solid var(--ul-gray2);
+        border-width: 1px 0;
+        padding: clamp(15px, 1.58vw, 30px) 0;
+        margin: clamp(20px, 1.84vw, 35px) 0;
+
+        @include xxs {
+            flex-direction: column;
+        }
+
+        &-item {
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(15px, 1.05vw, 20px);
+            padding-right: clamp(32px, 1.84vw, 35px);
+            margin-right: clamp(32px, 1.84vw, 35px);
+            position: relative;
+
+            @include xxs {
+                padding-right: 0;
+                margin-right: 0;
+                padding-bottom: clamp(15px, 1.05vw, 20px);
+                margin-bottom: clamp(15px, 1.05vw, 20px);
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 1px;
+                height: clamp(50px, 3.15vw, 60px);
+                background-color: var(--ul-gray2);
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                @include xxs {
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    top: auto;
+                }
+            }
+
+            &:last-child {
+                padding-right: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            .icon {
+                flex-shrink: 0;
+                color: var(--ul-secondary);
+                font-size: clamp(42px, 2.63vw, 50px);
+                line-height: 1;
+            }
+
+            &-title {
+                font-size: clamp(17px, 1.05vw, 20px);
+                font-weight: 700;
+                margin-bottom: clamp(6px, 0.47vw, 9px);
+            }
+
+            &-descr {
+                font-size: clamp(11px, 0.74vw, 14px);
+                color: var(--ul-gray);
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-author {
+        display: flex;
+        align-items: center;
+        gap: clamp(15px, 2.36vw, 45px);
+
+        .left {
+            display: flex;
+            gap: clamp(12px, 1.05vw, 20px);
+        }
+
+        &-img {
+            width: clamp(52px, 3.26vw, 62px);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--ul-secondary);
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-title {
+            font-size: clamp(11px, 0.74vw, 14px);
+            color: var(--ul-gray);
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+
+        &-name {
+            color: var(--ul-black);
+            font-weight: 700;
+            font-size: clamp(17px, 1.05vw, 20px);
+            margin-bottom: 0;
+        }
+    }
+
+    &-vectors {
+        >* {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .vector-1 {
+            left: clamp(5px, 0.89vw, 17px);
+            max-width: clamp(189px, 12.56vw, 239px);
+            bottom: clamp(188px, 13.03vw, 248px);
+
+            @include sm {
+                display: none;
+            }
+        }
+
+        .vector-2 {
+            right: 0;
+            top: clamp(118px, 9.88vw, 188px);
+            max-width: clamp(75px, 11.82vw, 225px);
+
+            @include lg {
+                display: none;
+            }
+        }
+    }
+}

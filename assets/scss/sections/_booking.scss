@@ -1,0 +1,180 @@
+.ul-booking {
+    background-image: url(../img/booking-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    // height: 979px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 43.47%, rgba(235, 0, 41, 0.2) 85%);
+        z-index: -1;
+    }
+
+    &-form-wrapper {
+        background: rgba(255, 255, 255, 0.1);
+        border: 3px solid var(--white);
+        border-radius: clamp(20px, 2.10vw, 40px);
+        padding: clamp(20px, 3.15vw, 60px);
+
+        .ul-section-sub-title {
+            color: var(--ul-primary);
+        }
+
+        .ul-section-title {
+            color: var(--white);
+            margin-bottom: clamp(20px, 2.36vw, 45px);
+        }
+    }
+
+    &-form {
+        .row {
+            --bs-gutter-x: clamp(8px, 0.79vw, 15px);
+            --bs-gutter-y: clamp(8px, 0.79vw, 15px);
+        }
+
+        label {
+            color: var(--white);
+            font-size: clamp(13px, 0.84vw, 16px);
+            display: block;
+            margin-bottom: clamp(7px, 0.53vw, 10px);
+        }
+
+        input,
+        .ss-main,
+        textarea {
+            background-color: #F3F4F7;
+            border: none;
+            height: clamp(45px, 2.94vw, 56px);
+            border-radius: 10px;
+            font-size: clamp(11px, 0.74vw, 14px);
+            width: 100%;
+            padding: 0 clamp(12px, 1.05vw, 20px);
+        }
+
+        textarea {
+            padding-top: clamp(12px, 1.05vw, 20px);
+            height: 147px;
+            vertical-align: top;
+
+            &:focus,
+            &:focus-visible,
+            &:focus-within {
+                outline: none;
+            }
+        }
+
+        .ul-btn {
+            margin-top: clamp(10px, 0.79vw, 15px);
+        }
+    }
+}
+
+.ul-booking-2 {
+    background: url(../img/booking-2-bg.jpg) no-repeat center top/cover;
+
+    &-wrapper {
+        background-color: var(--ul-black);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &-form {
+        &-wrapper {
+            background: var(--white) url(../img/booking-2-form-bg.svg) no-repeat center center/contain;
+            height: 100%;
+            padding: clamp(25px, 3.15vw, 60px);
+        }
+
+        &-heading {
+            text-align: center;
+        }
+    }
+
+    &-form {
+
+        input,
+        textarea,
+        select,
+        .ss-main {
+            background-color: transparent !important;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid rgba(92, 101, 116, 0.25);
+            padding: clamp(10px, 0.68vw, 13px) clamp(12px, 1.05vw, 20px);
+            font-size: clamp(13px, 0.84vw, 16px);
+            border-radius: 0;
+            vertical-align: top;
+
+            &:focus,
+            &:focus-visible,
+            &:focus-within {
+                outline: none;
+                border-color: var(--ul-primary);
+            }
+        }
+
+        .ul-btn {
+            width: 100%;
+            margin-top: clamp(10px, 0.79vw, 15px);
+        }
+    }
+
+    &-opening-time {
+        text-align: center;
+
+        .heading {
+            padding: clamp(30px, 3.15vw, 60px) clamp(12px, 1.05vw, 20px);
+        }
+
+        .ul-section-title {
+            color: var(--white);
+        }
+
+        &-table {
+            color: var(--white);
+            border: 1px solid rgb(237, 237, 237, 0.5);
+            border-width: 1px 0;
+            width: 100%;
+
+            td,
+            th {
+                border: 1px solid rgb(237, 237, 237, 0.5);
+                border-left: 0;
+
+                &:last-child {
+                    border-right: 0px;
+                }
+            }
+
+            th {
+                font-size: clamp(13px, 0.84vw, 16px);
+                font-weight: 700;
+                padding: clamp(8px, 0.79vw, 15px) 10px;
+            }
+
+            td {
+                font-size: clamp(20px, 1.26vw, 24px);
+                font-weight: 700;
+                padding: clamp(5px, 0.53vw, 10px);
+            }
+        }
+
+        &-call {
+            color: var(--white);
+            margin: clamp(15px, 1.58vw, 30px) 0;
+
+            &:hover {
+                color: var(--ul-primary);
+            }
+        }
+    }
+
+    &-vector {
+        max-width: clamp(73px, 4.36vw, 83px);
+    }
+}

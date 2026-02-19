@@ -1,0 +1,187 @@
+.ul-inner-contact-container {
+    max-width: clamp(1050px, 73.57vw, 1400px);
+    margin: auto;
+
+    @include lg {
+        max-width: calc(100% - 30px);
+    }
+}
+
+.ul-contact-info {
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    padding: clamp(15px, 1.58vw, 30px);
+    border-radius: 16px;
+    text-align: center;
+    height: 100%;
+
+    .icon {
+        border: 1px solid rgba(255, 0, 0, 0.1);
+        border-radius: 8px;
+        width: clamp(55px, 3.68vw, 70px);
+        aspect-ratio: 1/1;
+        margin: auto;
+        padding: 5px;
+        color: var(--ttRed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(25px, 1.84vw, 35px);
+        margin-bottom: clamp(10px, 0.84vw, 16px);
+        background-color: rgba(235, 0, 41, 0.05);
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: clamp(18px, 1.26vw, 24px);
+        margin-bottom: clamp(7px, 0.53vw, 10px);
+
+        a {
+            color: var(--black);
+
+            &:hover {
+                color: var(--ttRed);
+            }
+        }
+    }
+
+    .descr {
+        margin-bottom: 0;
+        color: var(--ul-gray);
+        font-size: clamp(13px, 0.84vw, 16px);
+    }
+}
+
+.ul-inner-contact {
+    &-form-section {
+        background-color: rgba(255, 0, 0, 0.05);
+        padding-top: clamp(50px, 5.25vw, 100px);
+    }
+
+    &-from-left-title {
+        font-weight: 700;
+        font-size: clamp(25px, 2.1vw, 40px);
+        margin-bottom: clamp(33px, 3.05vw, 58px);
+    }
+
+    &-img {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: clamp(0px, 1.84vw, 35px);
+
+        img {
+            max-width: clamp(905px, 47.71vw, 908px);
+            aspect-ratio: 908/617;
+            object-fit: cover;
+            border-radius: 0 999px 999px 0;
+
+            @include md {
+                border-radius: 999px 999px 0 0;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &-form-title {
+        font-weight: 700;
+        font-size: clamp(24px, 1.58vw, 30px);
+        margin-bottom: clamp(17px, 1.68vw, 32px);
+    }
+
+    &-form {
+
+        input,
+        textarea,
+        .ss-main {
+            height: clamp(45px, 3.15vw, 60px);
+            border: 1px solid rgba(255, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            padding: 0 clamp(15px, 1.05vw, 20px);
+            font-size: clamp(13px, 0.84vw, 16px);
+
+            &:focus,
+            &:focus-visible,
+            &:focus-within {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        textarea {
+            padding: clamp(15px, 1.05vw, 20px);
+            height: 150px;
+            vertical-align: top;
+            margin-bottom: clamp(15px, 1.58vw, 30px);
+        }
+
+        .submit-btn {
+            height: clamp(45px, 3.15vw, 60px);
+            background-color: var(--ul-primary);
+            border-radius: 8px;
+            width: 100%;
+            color: var(--white);
+            font-weight: 600;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: var(--black);
+                color: var(--white);
+            }
+
+            i {
+                font-size: 12px;
+                padding-top: 3px;
+            }
+        }
+
+        .ss-list .ss-option {
+            font-size: clamp(13px, 0.84vw, 16px);
+            padding: clamp(5px, 0.42vw, 8px) clamp(15px, 0.95vw, 18px);
+
+            &:hover,
+            &:not(.ss-disabled).ss-selected {
+                background-color: var(--ul-primary);
+            }
+        }
+    }
+}
+
+.ul-checkout-agreement-wrapper {
+    margin-bottom: clamp(20px, 2.1vw, 40px);
+
+    label {
+        padding-left: 30px;
+        position: relative;
+        display: inline-block;
+        font-size: clamp(13px, 0.84vw, 16px);
+
+        .txt::before,
+        .txt::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: rgba(235, 0, 41, 0.1);
+            top: 0;
+            left: 0;
+        }
+
+        .txt::after {
+            width: 10px;
+            top: 5px;
+            left: 5px;
+            border: none;
+            background-color: var(--ul-primary);
+            opacity: 0;
+        }
+
+
+        input:checked~.txt::after {
+            opacity: 1;
+        }
+    }
+}

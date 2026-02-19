@@ -1,0 +1,198 @@
+.ul-foods-container {
+    max-width: clamp(1020px, 69.36vw, 1320px);
+    margin: auto;
+
+    @include lg {
+        max-width: calc(100% - 30px);
+    }
+}
+
+.ul-foods {
+    background: url(../img/foods-bg.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-bottom: clamp(120px, 14.71vw, 280px);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--ul-c4);
+        opacity: 96%;
+        z-index: -1;
+    }
+
+    &-slider {
+        --shadow-gap: 25px;
+        padding: var(--shadow-gap);
+        margin: calc(0% - var(--shadow-gap));
+
+        &-wrapper {
+            padding: 0 clamp(15px, 3.94vw, 75px);
+        }
+
+        &-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: clamp(30px, 3.15vw, 60px);
+
+            .swiper-pagination-bullet {
+                border: 1px solid transparent;
+                background-color: transparent;
+                width: clamp(25px, 1.58vw, 30px);
+                height: clamp(25px, 1.58vw, 30px);
+                opacity: 1;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-color: var(--ul-primary);
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &-active {
+                    border-color: var(--ul-primary);
+                }
+            }
+
+            .swiper-pagination-bullet-active-next-next,
+            .swiper-pagination-bullet-active-next {
+                transform: scale(1) !important;
+            }
+        }
+    }
+}
+
+.ul-food {
+    --image-space: clamp(50px, 5.25vw, 100px);
+    margin-top: var(--image-space);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, #FFFFFF 100%);
+    background-color: var(--white);
+    text-align: center;
+    border-radius: 0 clamp(20px, 2.63vw, 50px);
+    padding: clamp(15px, 1.58vw, 30px) clamp(17px, 1.05vw, 20px);
+    padding-top: 0;
+    box-shadow: 0px 6px 25px transparent;
+    transition: 0.4s ease;
+    position: relative;
+
+    &:hover {
+        box-shadow: 0px 6px 25px rgba(52, 55, 170, 0.15);
+
+        .ul-food-add-to-cart-btn {
+            background-color: var(--ul-secondary);
+
+            &:hover {
+                background-color: var(--ul-primary);
+            }
+        }
+    }
+
+    &-img {
+        width: max-content;
+        margin: auto;
+        // margin-bottom: clamp(13px, 0.84vw, 16px);
+        margin-bottom: clamp(16px, 1.68vw, 32px);
+
+        img {
+            display: inline-block;
+            margin-top: calc(0px - var(--image-space));
+            width: clamp(120px, 9.46vw, 180px);
+            aspect-ratio: 1/1;
+            border-radius: 999px;
+            // border: 1px dashed var(--ul-primary);
+            // padding: clamp(4px, 0.37vw, 7px);
+        }
+    }
+
+    &-title {
+        display: inline-block;
+        font-size: clamp(17px, 1.05vw, 20px);
+        font-weight: 600;
+        // margin-bottom: clamp(3px, 0.32vw, 6px);
+        margin-bottom: clamp(8px, 0.79vw, 15px);
+
+        &:hover {
+            color: var(--ul-primary);
+        }
+    }
+
+    &-sub-title {
+        color: var(--ul-gray);
+        font-size: clamp(13px, 0.84vw, 16px);
+        // margin-bottom: 2px;
+        margin-bottom: clamp(15px, 1.58vw, 30px);
+    }
+
+    &-bottom {
+        font-size: clamp(12px, 0.74vw, 14px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 70%;
+    }
+
+    &-price {
+        color: var(--ul-black);
+        font-size: clamp(12px, 0.74vw, 14px);
+        font-weight: 700;
+    }
+
+    &-rating {
+        color: #FA8507;
+        display: flex;
+        gap: 5px;
+    }
+
+    &-add-to-cart-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: var(--black);
+        color: var(--white);
+        border-top-left-radius: clamp(12px, 1.05vw, 20px);
+        padding: clamp(8px, 0.84vw, 16px) clamp(15px, 1.31vw, 25px);
+        line-height: 0.7;
+        font-size: clamp(13px, 0.84vw, 16px);
+    }
+
+
+}
+
+// inner food shop page
+.ul-shop-container {
+    max-width: clamp(980px, 69.36vw, 1320px);
+    margin: auto;
+
+    @include lg {
+        max-width: calc(100% - 30px);
+    }
+
+    .row-cols-xxs-1 {
+        @include xxs {
+            >* {
+                width: 85%;
+                margin-inline: auto;
+            }
+        }
+    }
+}
+
+.ul-foods-shop {
+    .ul-food {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+        &:hover {
+            border-color: transparent;
+        }
+    }
+}

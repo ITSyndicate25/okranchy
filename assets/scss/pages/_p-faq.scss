@@ -1,0 +1,32 @@
+.ul-inner-faq {
+    .ul-section-title {
+        margin-bottom: clamp(27px, 2.73vw, 52px);
+    }
+
+
+    &-imgs {
+        position: relative;
+        text-align: right;
+
+        @include md {
+            text-align: center;
+        }
+
+        img {
+            border-radius: 20px;
+            max-width: clamp(220px, 16.29vw, 310px);
+            aspect-ratio: 310/360;
+            object-fit: cover;
+
+            &:last-child {
+                position: absolute;
+                border: 5px solid var(--white);
+                border-radius: 10px 150px 10px 50px;
+                bottom: calc(0% - clamp(37px, 3.52vw, 67px));
+                right: clamp(67px, 5.10vw, 97px);
+                max-width: clamp(240px, 18.92vw, 360px);
+                aspect-ratio: 360/255;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+.ul-inner-sub-banners-container {
+    max-width: clamp(0px, 93.01vw, 1770px);
+    margin: auto;
+}
+
+.ul-inner-sub-banner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    background: url(../img/inner-sub-banner-bg.png) no-repeat center center/cover;
+    background-color: var(--ul-primary);
+    border-radius: 10px;
+
+    @include sm {
+        justify-content: space-between;
+    }
+
+    @include xxs {
+        flex-direction: column;
+
+        >* {
+            width: 100%;
+        }
+    }
+
+    &-txt {
+        padding: clamp(15px, 1.58vw, 30px);
+    }
+
+    &-sub-title {
+        font-weight: 700;
+        font-size: clamp(11px, 0.74vw, 14px);
+        text-transform: uppercase;
+    }
+
+    &-title {
+        font-size: clamp(20px, 1.26vw, 24px);
+        font-weight: 800;
+    }
+
+    &-descr {
+        font-size: clamp(11px, 0.74vw, 14px);
+        font-weight: 700;
+    }
+
+    &-btn {
+        display: inline-flex;
+        align-items: center;
+        color: var(--white);
+        text-transform: uppercase;
+        background-color: var(--ul-c5);
+        padding: 0 clamp(13px, 0.84vw, 16px);
+        gap: clamp(7px, 0.53vw, 10px);
+        height: clamp(35px, 2.10vw, 40px);
+        font-size: clamp(11px, 0.74vw, 14px);
+        border-radius: 6px;
+
+        i {
+            font-size: clamp(9px, 0.63vw, 12px);
+        }
+
+        &:hover {
+            background-color: var(--white);
+        }
+    }
+
+    &-img {
+        position: relative;
+        z-index: 1;
+
+        @include xxs {
+            text-align: end;
+        }
+
+        .main-img {
+            max-width: clamp(185px, 14.98vw, 285px);
+        }
+
+        .vector-1,
+        .vector-2 {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+        }
+
+        .vector-1 {
+            left: 0;
+            max-width: clamp(39px, 3.63vw, 69px);
+        }
+
+        .vector-2 {
+            right: 0;
+            top: clamp(15px, 1.58vw, 30px);
+            max-width: clamp(61px, 5.31vw, 101px);
+        }
+    }
+
+    &-vector {
+        position: absolute;
+        max-width: clamp(32px, 3.26vw, 62px);
+        left: 0;
+        bottom: 0;
+    }
+
+    &--2 {
+        background-image: url(../img/cta-bg.jpg);
+    }
+
+    &--3 {
+        background-color: var(--ul-c5);
+
+        .ul-inner-sub-banner-btn {
+            background-color: var(--ul-primary);
+
+            &:hover {
+                background-color: var(--white);
+            }
+        }
+    }
+}

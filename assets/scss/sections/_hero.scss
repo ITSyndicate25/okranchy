@@ -1,0 +1,172 @@
+.ul-banner {
+    position: relative;
+    background-color: var(--ul-c3);
+    // padding: clamp(60px, 5.47vw, 104px) 0;
+    padding: clamp(120px, 10.40vw, 198px) 0 clamp(52px, 4.83vw, 92px);
+    overflow: hidden;
+
+    &-txt {
+        padding-left: clamp(15px, 7.88vw, 150px);
+
+
+        @include sm {
+            padding: 0 15px;
+        }
+    }
+
+    &-sub-title {
+        font-family: var(--font-vibes);
+        font-size: clamp(20px, 2.10vw, 40px);
+        font-weight: 400;
+        line-height: 100%;
+        color: var(--ul-primary);
+        display: inline-block;
+        margin-bottom: clamp(10px, 0.84vw, 16px);
+    }
+
+    &-title {
+        font-size: clamp(33px, 4.62vw, 88px);
+        font-weight: 900;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        margin-bottom: clamp(12px, 1.05vw, 20px);
+
+        img {
+            border-radius: 999px;
+            margin-bottom: clamp(0px, 0.53vw, 10px);
+            max-width: clamp(110px, 12.87vw, 245px);
+            aspect-ratio: 242/68;
+            object-fit: cover;
+            border-radius: 999px;
+        }
+    }
+
+    &-descr {
+        font-size: clamp(13px, 0.84vw, 16px);
+        color: var(--ul-black);
+        margin-bottom: clamp(20px, 2.10vw, 40px);
+    }
+
+    &-img {
+        background-color: var(--ul-primary);
+        border-radius: 999px 0 0 999px;
+        padding: clamp(15px, 1.58vw, 30px);
+        position: relative;
+
+        @include sm {
+            margin-left: 15px;
+        }
+
+        img {
+            width: clamp(240px, 33.68vw, 641px);
+            aspect-ratio: 641/609;
+        }
+
+        &-slider-dots.swiper-pagination-bullets.swiper-pagination-horizontal {
+            position: absolute;
+            bottom: auto;
+            left: auto;
+            right: clamp(15px, 1.58vw, 30px);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: clamp(7px, 0.53vw, 10px);
+            width: auto;
+
+            .swiper-pagination-bullet {
+                background-color: transparent;
+                width: auto;
+                height: auto;
+                margin: 0;
+                color: var(--ul-black);
+                font-size: clamp(13px, 0.84vw, 16px);
+                font-weight: 600;
+                writing-mode: vertical-lr;
+                transform: scale(-1);
+                opacity: 1;
+
+                &-active {
+                    color: var(--white);
+                    font-size: clamp(18px, 1.26vw, 24px);
+                }
+            }
+        }
+    }
+
+    &-vectors {
+        >* {
+            position: absolute;
+        }
+
+        .vector-1 {
+            top: clamp(50px, 3.42vw, 65px);
+            left: 0;
+            max-width: clamp(72px, 5.83vw, 111px);
+        }
+
+        .vector-2 {
+            left: 0;
+            bottom: clamp(5px, 1.47vw, 28px);
+            max-width: clamp(80px, 8.20vw, 156px);
+
+            @include sm {
+                left: auto;
+                right: 0;
+                transform: scale(-1);
+                opacity: 0;
+            }
+        }
+
+        .vector-3 {
+            right: 0;
+            top: clamp(16px, 1.00vw, 19px);
+            max-width: clamp(106px, 9.93vw, 189px);
+        }
+    }
+
+    .bottom {
+        position: absolute;
+        z-index: 1;
+        bottom: clamp(20px, 2.10vw, 40px);
+        left: 0;
+        width: 100%;
+        max-width: 1920px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(15px, 7.88vw, 150px);
+        gap: clamp(10px, 1.05vw, 20px);
+    }
+
+    &-txt-slider {
+        &-pagination.swiper-pagination-progressbar {
+            position: relative;
+            background-color: #EB00291A;
+            height: 1px;
+
+            .swiper-pagination-progressbar-fill {
+                background-color: var(--ul-primary);
+            }
+        }
+
+        &-nav {
+            flex-shrink: 0;
+            display: flex;
+            font-size: clamp(17px, 1.05vw, 20px);
+            gap: clamp(10px, 0.79vw, 15px);
+
+            button {
+                height: auto;
+                padding: 0;
+                display: inline-flex;
+                color: var(--ul-black);
+
+                &:hover {
+                    color: var(--ul-primary);
+                }
+            }
+        }
+    }
+}

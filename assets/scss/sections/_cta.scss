@@ -1,0 +1,205 @@
+.ul-cta-wrapper {
+    position: relative;
+    z-index: 2;
+    background-color: var(--ul-c3);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ul-cta {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(25px, 2.63vw, 50px);
+
+    @include sm {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    &-txt {
+        padding: clamp(15px, 1.58vw, 30px) clamp(15px, 5.57vw, 106px);
+
+        @include sm {
+            padding: clamp(40px, 3.15vw, 60px) clamp(15px, 5.57vw, 106px);
+            text-align: center;
+        }
+
+        .ul-btn {
+            margin-top: clamp(20px, 2.10vw, 40px);
+        }
+    }
+
+    &-imgs {
+        position: relative;
+
+        .main-img {
+            max-width: clamp(300px, 25.43vw, 484px);
+            aspect-ratio: 484/424;
+            object-fit: cover;
+            border-radius: 999px 0 0 999px;
+
+            @include sm {
+                border-radius: 999px 999px 0 0;
+            }
+        }
+
+        .sm-img {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            transform: translateX(-50%);
+            max-width: clamp(142px, 9.04vw, 172px);
+
+            @include md {
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            @include sm {
+                transform: translateX(60px);
+                top: 0;
+                right: 0;
+                left: auto;
+            }
+
+            @include xxs {
+                display: none;
+            }
+        }
+    }
+
+    &-vectors {
+        >* {
+            position: absolute;
+        }
+
+        .vector-1 {
+            bottom: clamp(16px, 1.68vw, 32px);
+            left: clamp(16px, 1.68vw, 32px);
+        }
+
+        .vector-2 {
+            top: clamp(35px, 2.00vw, 38px);
+            right: clamp(465px, 24.59vw, 468px);
+        }
+
+        .vector-3 {
+            bottom: clamp(20px, 2.15vw, 41px);
+            right: 50%;
+        }
+    }
+}
+
+
+.ul-inner-cta {
+    background: url(../img/cta-bg.jpg) no-repeat center center/cover;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    &-container {
+        max-width: clamp(0px, 77.25vw, 1470px);
+        margin: auto;
+    }
+
+    &-txt {
+        color: var(--white);
+        padding: 50px 0;
+
+        @include sm {
+            padding-bottom: 15px;
+        }
+
+        .ul-section-sub-title {
+            color: var(--ul-primary);
+            margin-bottom: clamp(8px, 0.95vw, 18px);
+        }
+
+        .ul-section-title {
+            color: var(--white);
+            margin-bottom: clamp(8px, 0.84vw, 16px);
+        }
+    }
+
+    &-descr {
+        color: var(--ul-c5);
+        font-weight: 700;
+        font-size: clamp(18px, 1.26vw, 24px);
+        display: block;
+        margin-bottom: clamp(20px, 2.10vw, 40px);
+    }
+
+    &-img {
+        position: relative;
+        text-align: end;
+        z-index: 1;
+        width: max-content;
+        max-width: 100%;
+        margin-left: auto;
+
+        @include sm {
+            margin: auto;
+            margin-bottom: 50px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: var(--ul-c5);
+            background: #FC791A;
+            filter: blur(150px);
+            right: clamp(22px, 2.21vw, 42px);
+            z-index: -1;
+        }
+
+        .main-img {
+            max-width: clamp(240px, 47.98vw, 913px);
+        }
+
+        .discount-tag {
+            top: clamp(-7px, 1.94vw, 37px);
+            left: 0;
+            position: absolute;
+            max-width: clamp(70px, 9.62vw, 183px);
+        }
+
+        .img-vector {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 100%;
+        }
+    }
+
+    &-vectors {
+        >* {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .vector-1 {
+            top: 0;
+            left: 0;
+            max-width: clamp(69px, 6.94vw, 132px);
+        }
+
+        .vector-2 {
+            bottom: 5px;
+            left: 0;
+            max-width: clamp(60px, 6.04vw, 115px);
+        }
+
+        .vector-3 {
+            bottom: clamp(-15px, 0.95vw, 18px);
+            right: clamp(-15px, 0.95vw, 18px);
+            max-width: clamp(117px, 10.88vw, 207px);
+        }
+    }
+}

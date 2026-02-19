@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okranchy - Checkout</title>
+
+    <!-- libraries CSS -->
+    <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/slim-select/slimselect.css">
+    <link rel="stylesheet" href="assets/vendor/animate-wow/animate.min.css">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Make logo smaller to fit header and footer */
+        .logo-container .logo {
+            max-height: 80px;
+            width: auto;
+        }
+        .ul-sidebar-header-logo .logo {
+            max-height: 100px;
+            width: auto;
+        }
+        .ul-footer-about img {
+            max-height: 120px;
+            width: auto;
+        }
+
+        .signature {
+            max-width: 80px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="ul-sidebar">
+        <div class="ul-sidebar-header">
+            <div class="ul-sidebar-header-logo">
+                <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo"></a>
+            </div>
+            <button class="ul-sidebar-closer"><i class="flaticon-close"></i></button>
+        </div>
+        <div class="ul-sidebar-header-nav-wrapper d-block d-lg-none"></div>
+        <div class="ul-sidebar-footer">
+            <span class="ul-sidebar-footer-title">Follow us</span>
+            <div class="ul-sidebar-footer-social">
+                <a href="#"><i class="flaticon-facebook"></i></a>
+                <a href="#"><i class="flaticon-twitter"></i></a>
+                <a href="#"><i class="flaticon-instagram"></i></a>
+                <a href="#"><i class="flaticon-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div class="ul-search-form-wrapper flex-grow-1 flex-shrink-0">
+        <button class="ul-search-closer"><i class="flaticon-close"></i></button>
+        <form action="#" class="ul-search-form">
+            <div class="ul-search-form-right">
+                <input type="search" name="search" id="ul-search" placeholder="Search Okranchy Products...">
+                <button type="submit"><span class="icon"><i class="flaticon-search"></i></span></button>
+            </div>
+        </form>
+    </div>
+
+    <!-- HEADER -->
+    <header class="ul-header">
+        <div class="header-top-bg-wrapper">
+            <div class="ul-header-top">
+                <div class="ul-header-container">
+                    <div class="ul-header-top-left">
+                        <div class="ul-header-contact-infos">
+                            <span class="ul-header-contact-info"><i class="flaticon-location-pin colored"></i> Pamantasan ng Lungsod ng Valenzuela, Valenzuela City</span>
+                        </div>
+                    </div>
+                    <div class="ul-header-top-right">
+                        <div class="ul-header-auth-options">
+                            <i class="flaticon-user"></i>
+                            <a href="#">Login</a><span>/</span><a href="#">Register</a>
+                        </div>
+                        <div class="ul-header-socials">
+                            <span class="socials-title">Follow us: </span>
+                            <div class="links">
+                                <a href="#"><i class="flaticon-facebook"></i></a>
+                                <a href="#"><i class="flaticon-twitter"></i></a>
+                                <a href="#"><i class="flaticon-linkedin-big-logo"></i></a>
+                                <a href="#"><i class="flaticon-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom-bg-wrapper to-be-sticky">
+            <div class="ul-header-bottom">
+                <div class="ul-header-bottom-wrapper ul-header-container">
+                    <div class="logo-container">
+                        <a href="index.html" class="d-inline-block"><img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo"></a>
+                    </div>
+                    <div class="ul-header-nav-wrapper">
+                        <div class="to-go-to-sidebar-in-mobile">
+                            <nav class="ul-header-nav">
+                                <a href="index.html">Home</a>
+                                <a href="about.html">About</a>
+                                <div class="has-sub-menu">
+                                    <a role="button">Shop</a>
+                                    <div class="ul-header-submenu">
+                                        <ul>
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="shop-details.html">Product Details</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="has-sub-menu">
+                                    <a role="button">Pages</a>
+                                    <div class="ul-header-submenu">
+                                        <ul>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="testimonials.html">Testimonials</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="contact.html">Contact</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="ul-header-actions">
+                        <button class="ul-header-search-opener"><i class="flaticon-search"></i></button>
+                        <button><i class="flaticon-grocery-store"></i></button>
+                        <a href="shop.html" class="ul-btn d-sm-inline-flex d-none">Order Now <i class="flaticon-right"></i></a>
+                        <button class="ul-header-sidebar-opener d-lg-none d-inline-flex"><i class="flaticon-menu"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BREADCRUMB -->
+        <div class="ul-breadcrumb">
+            <div class="wow animate__fadeInUp">
+                <h2 class="ul-breadcrumb-title">Checkout</h2>
+                <div class="ul-breadcrumb-nav">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current-page">Checkout</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHECKOUT SECTION -->
+        <div class="ul-container ul-section-spacing">
+            <h3 class="ul-checkout-title">Delivery Details</h3>
+            <form action="#" class="ul-checkout-form">
+                <div class="row ul-bs-row row-cols-2 row-cols-xxs-1">
+                    <!-- left side -->
+                    <div class="col">
+                        <div class="row row-cols-lg-2 row-cols-1 ul-bs-row">
+                            <div class="form-group">
+                                <label for="firstname">First Name*</label>
+                                <input type="text" name="firstname" id="firstname" placeholder="Enter Your First Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name*</label>
+                                <input type="text" name="lastname" id="lastname" placeholder="Enter Your Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyname">Company / Organization (Optional)</label>
+                                <input type="text" name="companyname" id="companyname" placeholder="Enter Company or Organization Name">
+                            </div>
+                            <div class="form-group ul-checkout-country-wrapper">
+                                <label for="ul-checkout-country">Province / Region*</label>
+                                <select name="country" id="ul-checkout-country">
+                                    <option data-placeholder="true">Select Province / Region</option>
+                                    <option value="metro-manila">Metro Manila</option>
+                                    <option value="bulacan">Bulacan</option>
+                                    <option value="rizal">Rizal</option>
+                                    <option value="cavite">Cavite</option>
+                                    <option value="laguna">Laguna</option>
+                                    <option value="pampanga">Pampanga</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="address1">Street Address*</label>
+                                <input type="text" name="address1" id="address1" placeholder="House No., Street, Barangay">
+                            </div>
+                            <div class="form-group">
+                                <label for="address2">Address Line 2</label>
+                                <input type="text" name="address2" id="address2" placeholder="Building, Floor, Unit (Optional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City / Municipality*</label>
+                                <input type="text" name="city" id="city" placeholder="e.g. Valenzuela City">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">Barangay*</label>
+                                <input type="text" name="state" id="state" placeholder="Enter Your Barangay">
+                            </div>
+                            <div class="form-group">
+                                <label for="zipcode">ZIP Code*</label>
+                                <input type="text" name="zipcode" id="zipcode" placeholder="e.g. 1440">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone*</label>
+                                <input type="text" name="phone" id="phone" placeholder="e.g. 09XX-XXX-XXXX">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="email">Email Address*</label>
+                                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- right side -->
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ul-checkout-different-address-field">Delivery Notes / Special Instructions</label>
+                            <textarea name="different-address" id="ul-checkout-different-address-field" placeholder="Any landmark, gate code, or delivery instructions..."></textarea>
+                        </div>
+
+                        <div class="ul-checkout-payment-methods">
+                            <div class="form-group">
+                                <label for="payment-option-1">
+                                    <input type="radio" name="payment-methods" id="payment-option-1" hidden="" checked="">
+                                    <span class="ul-radio-wrapper"></span>
+                                    <span class="ul-checkout-payment-method">
+                                        <span class="title">Cash on Delivery (COD)</span>
+                                        <span class="descr">Pay with cash when your Okranchy order is delivered to your doorstep. Available within Metro Manila and nearby provinces.</span>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="payment-option-2">
+                                    <input type="radio" name="payment-methods" id="payment-option-2" hidden="">
+                                    <span class="ul-radio-wrapper"></span>
+                                    <span class="ul-checkout-payment-method">
+                                        <span class="title">GCash / Bank Transfer</span>
+                                        <span class="descr">Send payment via GCash or bank transfer. Order confirmation will be sent to your email after verification.</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <button type="submit" class="ul-checkout-form-btn">Place Your Order</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- bill summary -->
+            <div class="row ul-bs-row row-cols-2 row-cols-xxs-1">
+                <div class="ul-checkout-bill-summary">
+                    <h4 class="ul-checkout-bill-summary-title">Your Order</h4>
+                    <div>
+                        <div class="ul-checkout-bill-summary-header">
+                            <span class="left">Product</span>
+                            <span class="right">Sub Total</span>
+                        </div>
+                        <div class="ul-checkout-bill-summary-body">
+                            <div class="single-row"><span class="left">Original — Small (50g)</span><span class="right">₱35.00</span></div>
+                            <div class="single-row"><span class="left">Subtotal</span><span class="right">₱35.00</span></div>
+                            <div class="single-row"><span class="left">Shipping</span><span class="right">₱50.00</span></div>
+                        </div>
+                        <div class="ul-checkout-bill-summary-footer ul-checkout-bill-summary-header">
+                            <span class="left">Total</span>
+                            <span class="right">₱85.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION START -->
+    <footer class="ul-footer">
+        <div class="ul-footer-top">
+            <div class="ul-container">
+                <div class="ul-footer-top-wrapper wow animate__fadeInUp">
+                    <div class="ul-footer-about">
+                        <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
+                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Nextgsight, a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
+                        <div class="ul-footer-socials">
+                            <a href="#"><i class="flaticon-facebook"></i></a>
+                            <a href="#"><i class="flaticon-twitter"></i></a>
+                            <a href="#"><i class="flaticon-linkedin-big-logo"></i></a>
+                            <a href="#"><i class="flaticon-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget">
+                        <h3 class="ul-footer-widget-title">Quick Links</h3>
+                        <div class="ul-footer-widget-links">
+                            <a href="about.html">About Us</a>
+                            <a href="shop.html">Our Products</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="faq.html">FAQ's</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget">
+                        <h3 class="ul-footer-widget-title">Our Flavors</h3>
+                        <div class="ul-footer-widget-links">
+                            <a href="shop.html">Original</a>
+                            <a href="shop.html">Spicy</a>
+                            <a href="shop.html">Cheese</a>
+                            <a href="shop.html">BBQ</a>
+                            <a href="shop.html">Assorted Pack</a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget ul-nwsltr-widget">
+                        <h3 class="ul-footer-widget-title">Stay Connected</h3>
+                        <div class="ul-footer-widget-links">
+                            <span>Order Inquiries: <span class="colored">Mon – Sat</span></span>
+                            <span>Pickup Available at: <span class="colored">PLV Campus</span></span>
+                        </div>
+                        <form action="#" class="ul-nwsltr-form">
+                            <div class="top">
+                                <input type="email" name="email" id="nwsltr-email" placeholder="Your Email Address" class="ul-nwsltr-input">
+                                <button type="submit"><i class="flaticon-arrow"></i></button>
+                            </div>
+                            <div class="agreement">
+                                <label for="nwsltr-agreement" class="ul-checkbox-wrapper">
+                                    <input type="checkbox" name="agreement" id="nwsltr-agreement" hidden>
+                                    <span class="ul-checkbox"><i class="flaticon-checked"></i></span>
+                                    <span class="ul-checkbox-txt">I agree with the <a href="#">Privacy Policy</a></span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="ul-footer-bottom">
+            <div class="ul-container">
+                <div class="ul-footer-bottom-wrapper">
+                    <p class="copyright-txt">&copy;
+                        <script>document.write(new Date().getFullYear())</script> Okranchy by Nextgsight | Pamantasan ng Lungsod ng Valenzuela. All rights reserved.
+                    </p>
+                    <div class="ul-footer-bottom-nav"><a href="#">Made for Ema By Kim</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+    <!-- libraries JS -->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
+    <script src="assets/vendor/animate-wow/wow.min.js"></script>
+    <script src="assets/vendor/splittype/index.min.js"></script>
+    <script src="assets/vendor/mixitup/mixitup.min.js"></script>
+    <script src="assets/vendor/fslightbox/fslightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
