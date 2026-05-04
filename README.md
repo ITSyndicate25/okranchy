@@ -21,7 +21,7 @@
 
 ## 🌿 Overview
 
-Okranchy is a static e-commerce website for a line of crunchy, oven-baked okra chips. Born from a college feasibility study, the project simulates a real online storefront — complete with product browsing, cart management, checkout flow, customer testimonials, and user authentication pages.
+Okranchy is an e-commerce website for a line of crunchy, oven-baked okra chips. Born from a college feasibility study, the project simulates a real online storefront — complete with product browsing, cart management, checkout flow, customer testimonials, and user authentication pages.
 
 The site is intentionally **framework-free**, built with vanilla HTML, CSS (with SCSS source files), and ES6+ JavaScript to demonstrate foundational web development skills.
 
@@ -162,7 +162,6 @@ okranchy/
 - [Facebook](https://www.facebook.com/Okranchy)
 - [Instagram](https://www.instagram.com/Okranchy)
 - [TikTok](https://www.tiktok.com/@Okranchy)
-- [LinkedIn](https://www.linkedin.com/company/okranchy)
 
 ---
 
