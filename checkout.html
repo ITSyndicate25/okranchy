@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okranchy - Checkout</title>
+    <link rel="icon" type="image/png" href="assets/img/okranchy.png">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -23,10 +24,114 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
     <style>
-        .logo-container .logo { max-height: 80px; width: auto; }
+        .logo-container .logo { max-height: 100px; width: auto; }
         .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
         .ul-footer-about img { max-height: 120px; width: auto; }
         .signature { max-width: 80px; height: auto; }
+
+        /* Cart Modal styles */
+        .okr-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .okr-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .okr-modal-box {
+            background: var(--trop-white);
+            border-radius: 24px;
+            padding: 36px 32px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transform: scale(0.9);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        .okr-modal-overlay.active .okr-modal-box {
+            transform: scale(1);
+        }
+        .okr-modal-box .icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--trop-green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--trop-green);
+            font-size: 1.5rem;
+        }
+        .okr-modal-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--trop-text);
+            margin: 0 0 8px;
+        }
+        .okr-modal-box p {
+            font-size: 0.9rem;
+            color: var(--trop-text-light);
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        .okr-modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .okr-modal-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .okr-modal-actions .primary {
+            background: linear-gradient(135deg, #2d8a4e 0%, #1a6b3c 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(26,107,60,0.25);
+        }
+        .okr-modal-actions .primary:hover { transform: translateY(-2px); }
+        .okr-modal-actions .secondary {
+            border: 1.5px solid rgba(26,107,60,0.12);
+            color: var(--trop-text);
+        }
+        .okr-modal-actions .secondary:hover { border-color: var(--trop-green); }
+        .okr-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--trop-text-light);
+            cursor: pointer;
+        }
+        .okr-form-error {
+            font-size: 0.78rem;
+            color: #d32f2f;
+            margin-top: 4px;
+            display: none;
+        }
+        .okr-form-error.visible { display: block; }
     </style>
 </head>
 
@@ -173,7 +278,7 @@
                     <h2 class="trop-section-title">Delivery Details</h2>
                 </div>
 
-                <form>
+                <form id="checkoutForm">
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
 
                         <!-- LEFT - Billing / Shipping -->
@@ -184,47 +289,56 @@
                                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">First Name*</label>
-                                        <input type="text" placeholder="Enter First Name" class="trop-input">
+                                        <input type="text" id="chkFirstName" placeholder="Enter First Name" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkFirstName">First name is required</div>
                                     </div>
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Last Name*</label>
-                                        <input type="text" placeholder="Enter Last Name" class="trop-input">
+                                        <input type="text" id="chkLastName" placeholder="Enter Last Name" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkLastName">Last name is required</div>
                                     </div>
                                     <div style="grid-column:1/-1;">
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Company / Organization</label>
-                                        <input type="text" placeholder="Company or Organization Name" class="trop-input">
+                                        <input type="text" id="chkCompany" placeholder="Company or Organization Name" class="trop-input">
                                     </div>
                                     <div style="grid-column:1/-1;">
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Province / Region*</label>
-                                        <select class="trop-select"><option>Select Province / Region</option><option>Metro Manila</option><option>Bulacan</option><option>Rizal</option><option>Cavite</option><option>Laguna</option><option>Pampanga</option></select>
+                                        <select id="chkProvince" class="trop-select"><option value="">Select Province / Region</option><option>Metro Manila</option><option>Bulacan</option><option>Rizal</option><option>Cavite</option><option>Laguna</option><option>Pampanga</option></select>
+                                        <div class="okr-form-error" data-for="chkProvince">Province is required</div>
                                     </div>
                                     <div style="grid-column:1/-1;">
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Street Address*</label>
-                                        <input type="text" placeholder="House No., Street, Barangay" class="trop-input">
+                                        <input type="text" id="chkStreet" placeholder="House No., Street, Barangay" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkStreet">Street address is required</div>
                                     </div>
                                     <div style="grid-column:1/-1;">
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Address Line 2</label>
-                                        <input type="text" placeholder="Building, Floor, Unit (Optional)" class="trop-input">
+                                        <input type="text" id="chkAddr2" placeholder="Building, Floor, Unit (Optional)" class="trop-input">
                                     </div>
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">City / Municipality*</label>
-                                        <input type="text" placeholder="e.g. Valenzuela City" class="trop-input">
+                                        <input type="text" id="chkCity" placeholder="e.g. Valenzuela City" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkCity">City is required</div>
                                     </div>
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Barangay*</label>
-                                        <input type="text" placeholder="Enter Your Barangay" class="trop-input">
+                                        <input type="text" id="chkBarangay" placeholder="Enter Your Barangay" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkBarangay">Barangay is required</div>
                                     </div>
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">ZIP Code*</label>
-                                        <input type="text" placeholder="e.g. 1440" class="trop-input">
+                                        <input type="text" id="chkZip" placeholder="e.g. 1440" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkZip">ZIP code is required</div>
                                     </div>
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Phone*</label>
-                                        <input type="text" placeholder="e.g. 09XX-XXX-XXXX" class="trop-input">
+                                        <input type="text" id="chkPhone" placeholder="e.g. 09XX-XXX-XXXX" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkPhone">Phone number is required</div>
                                     </div>
                                     <div style="grid-column:1/-1;">
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Email Address*</label>
-                                        <input type="email" placeholder="Enter Your Email" class="trop-input">
+                                        <input type="email" id="chkEmail" placeholder="Enter Your Email" class="trop-input" required>
+                                        <div class="okr-form-error" data-for="chkEmail">Valid email is required</div>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +347,7 @@
                             <div class="trop-form-card">
                                 <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Delivery Notes</h4>
                                 <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:8px;">Special Instructions</label>
-                                <textarea class="trop-textarea" placeholder="Any landmark, gate code, or delivery instructions..."></textarea>
+                                <textarea id="chkNotes" class="trop-textarea" placeholder="Any landmark, gate code, or delivery instructions..."></textarea>
                             </div>
                         </div>
 
@@ -244,16 +358,16 @@
                             <div class="trop-form-card">
                                 <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Payment Method</h4>
                                 <label style="display:flex;align-items:start;gap:12px;cursor:pointer;padding:14px 0;border-bottom:1px solid rgba(26,107,60,0.06);">
-                                    <input type="radio" name="payment" checked hidden>
-                                    <span style="width:20px;height:20px;border-radius:50%;border:2px solid var(--trop-green);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--trop-green);display:block;"></span></span>
+                                    <input type="radio" name="payment" value="cod" checked hidden>
+                                    <span class="pay-circle" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--trop-green);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--trop-green);display:block;"></span></span>
                                     <div><span style="font-weight:600;font-size:0.9rem;color:var(--trop-text);display:block;">Cash on Delivery (COD)</span><span style="font-size:0.8rem;color:var(--trop-text-light);">Pay with cash when your Okranchy order arrives.</span></div>
                                 </label>
                                 <label style="display:flex;align-items:start;gap:12px;cursor:pointer;padding:14px 0;">
-                                    <input type="radio" name="payment" hidden>
-                                    <span style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(26,107,60,0.1);flex-shrink:0;margin-top:2px;"></span>
+                                    <input type="radio" name="payment" value="gcash" hidden>
+                                    <span class="pay-circle" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(26,107,60,0.1);flex-shrink:0;margin-top:2px;"></span>
                                     <div><span style="font-weight:600;font-size:0.9rem;color:var(--trop-text);display:block;">GCash / Bank Transfer</span><span style="font-size:0.8rem;color:var(--trop-text-light);">Send payment via GCash or bank transfer.</span></div>
                                 </label>
-                                <button type="submit" class="trop-btn" style="width:100%;justify-content:center;margin-top:20px;">Place Your Order</button>
+                                <button type="submit" class="trop-btn" style="width:100%;justify-content:center;margin-top:20px;" id="placeOrderBtn">Place Your Order</button>
                             </div>
 
                             <!-- Order Summary -->
@@ -263,12 +377,13 @@
                                     <span style="font-weight:600;color:var(--trop-text);">Product</span>
                                     <span style="font-weight:600;color:var(--trop-text);">Subtotal</span>
                                 </div>
-                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span>Original — Small (50g)</span><span>₱35.00</span></div>
-                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span style="color:var(--trop-text-light);">Subtotal</span><span>₱35.00</span></div>
-                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span style="color:var(--trop-text-light);">Shipping</span><span>₱50.00</span></div>
+                                <div id="checkoutOrderItems"></div>
+                                <div id="checkoutEmptyMsg" style="display:none;font-size:0.85rem;color:var(--trop-text-light);padding:16px 0;text-align:center;">Your cart is empty. <a href="shop.html" style="color:var(--trop-green);">Shop now</a></div>
+                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span style="color:var(--trop-text-light);">Subtotal</span><span id="checkoutSubtotal">₱0.00</span></div>
+                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span style="color:var(--trop-text-light);">Shipping</span><span id="checkoutShipping">₱50.00</span></div>
                                 <div style="display:flex;justify-content:space-between;font-size:1rem;font-weight:700;padding-top:12px;margin-top:8px;border-top:1px solid rgba(26,107,60,0.08);">
                                     <span>Total</span>
-                                    <span style="color:var(--trop-green-dark);">₱85.00</span>
+                                    <span id="checkoutTotal" style="color:var(--trop-green-dark);">₱0.00</span>
                                 </div>
                             </div>
 
@@ -278,6 +393,20 @@
             </div>
         </section>
     </main>
+
+    <!-- Order Confirmed Modal -->
+    <div class="okr-modal-overlay" id="orderConfirmModal">
+        <div class="okr-modal-box">
+            <button class="okr-modal-close" aria-label="Close">&times;</button>
+            <div class="icon"><i class="flaticon-checked"></i></div>
+            <h3>Order Placed Successfully!</h3>
+            <p>Thank you for your Okranchy order! You will receive a confirmation at your email address. We'll deliver your crunchy goodness soon!</p>
+            <div class="okr-modal-actions">
+                <a href="index.html" class="primary">Back to Home <i class="flaticon-right"></i></a>
+                <a href="shop.html" class="secondary">Order Again</a>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER SECTION START -->
     <footer class="ul-footer">
@@ -366,6 +495,176 @@
     <script src="assets/vendor/mixitup/mixitup.min.js"></script>
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+
+    <!-- Page-specific: Checkout logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var SHIPPING_FEE = 50;
+            var modal = document.getElementById('orderConfirmModal');
+
+            function formatPrice(p) {
+                return '\u20B1' + parseFloat(p).toFixed(2);
+            }
+
+            function renderOrderSummary() {
+                var items = OkrCart.getItems();
+                var container = document.getElementById('checkoutOrderItems');
+                var emptyMsg = document.getElementById('checkoutEmptyMsg');
+                var placeBtn = document.getElementById('placeOrderBtn');
+
+                if (items.length === 0) {
+                    container.innerHTML = '';
+                    emptyMsg.style.display = 'block';
+                    if (placeBtn) placeBtn.disabled = true;
+                    document.getElementById('checkoutSubtotal').textContent = formatPrice(0);
+                    document.getElementById('checkoutShipping').textContent = formatPrice(0);
+                    document.getElementById('checkoutTotal').textContent = formatPrice(0);
+                    return;
+                }
+
+                emptyMsg.style.display = 'none';
+                if (placeBtn) placeBtn.disabled = false;
+
+                var html = '';
+                for (var i = 0; i < items.length; i++) {
+                    var it = items[i];
+                    var itemTotal = (parseFloat(it.price) || 0) * (it.quantity || 1);
+                    html += '<div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;border-bottom:1px solid rgba(26,107,60,0.04);">' +
+                        '<span>' + it.name + ' x' + it.quantity + '</span>' +
+                        '<span>' + formatPrice(itemTotal) + '</span>' +
+                    '</div>';
+                }
+                container.innerHTML = html;
+
+                var subtotal = OkrCart.getSubtotal();
+                document.getElementById('checkoutSubtotal').textContent = formatPrice(subtotal);
+                document.getElementById('checkoutShipping').textContent = formatPrice(SHIPPING_FEE);
+                document.getElementById('checkoutTotal').textContent = formatPrice(subtotal + SHIPPING_FEE);
+            }
+
+            renderOrderSummary();
+
+            // Payment radio toggle
+            var paymentRadios = document.querySelectorAll('input[name="payment"]');
+            paymentRadios.forEach(function(r) {
+                r.addEventListener('change', function() {
+                    paymentRadios.forEach(function(r2) {
+                        var circle = r2.parentElement.querySelector('.pay-circle');
+                        if (!circle) return;
+                        if (r2.checked) {
+                            circle.style.borderColor = 'var(--trop-green)';
+                            circle.innerHTML = '<span style="width:10px;height:10px;border-radius:50%;background:var(--trop-green);display:block;"></span>';
+                        } else {
+                            circle.style.borderColor = 'rgba(26,107,60,0.1)';
+                            circle.innerHTML = '';
+                        }
+                    });
+                });
+            });
+
+            // Place Order
+            var form = document.getElementById('checkoutForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var items = OkrCart.getItems();
+                if (items.length === 0) {
+                    alert('Your cart is empty. Please add items before placing an order.');
+                    return;
+                }
+
+                // Clear previous errors
+                document.querySelectorAll('.okr-form-error').forEach(function(el) {
+                    el.classList.remove('visible');
+                });
+
+                // Validate required fields
+                var requiredFields = ['chkFirstName', 'chkLastName', 'chkProvince', 'chkStreet', 'chkCity', 'chkBarangay', 'chkZip', 'chkPhone', 'chkEmail'];
+                var valid = true;
+                for (var i = 0; i < requiredFields.length; i++) {
+                    var field = document.getElementById(requiredFields[i]);
+                    if (!field || !field.value.trim()) {
+                        var error = document.querySelector('.okr-form-error[data-for="' + requiredFields[i] + '"]');
+                        if (error) error.classList.add('visible');
+                        valid = false;
+                    }
+                }
+
+                // Validate email format
+                var emailField = document.getElementById('chkEmail');
+                if (emailField && emailField.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
+                    var emailError = document.querySelector('.okr-form-error[data-for="chkEmail"]');
+                    if (emailError) {
+                        emailError.textContent = 'Please enter a valid email address';
+                        emailError.classList.add('visible');
+                    }
+                    valid = false;
+                }
+
+                if (!valid) {
+                    // Scroll to first error
+                    var firstError = document.querySelector('.okr-form-error.visible');
+                    if (firstError) firstError.closest('.trop-form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                // Build order data
+                var orderData = {
+                    items: items,
+                    subtotal: OkrCart.getSubtotal(),
+                    shipping: SHIPPING_FEE,
+                    total: OkrCart.getSubtotal() + SHIPPING_FEE,
+                    billing: {
+                        firstName: document.getElementById('chkFirstName').value.trim(),
+                        lastName: document.getElementById('chkLastName').value.trim(),
+                        company: document.getElementById('chkCompany').value.trim(),
+                        province: document.getElementById('chkProvince').value,
+                        street: document.getElementById('chkStreet').value.trim(),
+                        addr2: document.getElementById('chkAddr2').value.trim(),
+                        city: document.getElementById('chkCity').value.trim(),
+                        barangay: document.getElementById('chkBarangay').value.trim(),
+                        zip: document.getElementById('chkZip').value.trim(),
+                        phone: document.getElementById('chkPhone').value.trim(),
+                        email: emailField.value.trim()
+                    },
+                    notes: document.getElementById('chkNotes').value.trim(),
+                    payment: document.querySelector('input[name="payment"]:checked').value,
+                    date: new Date().toISOString(),
+                    orderId: 'OKR-' + Date.now().toString(36).toUpperCase()
+                };
+
+                // Save order to localStorage history
+                var orders = [];
+                try {
+                    orders = JSON.parse(localStorage.getItem('okranchy_orders')) || [];
+                } catch(e) {}
+                orders.push(orderData);
+                localStorage.setItem('okranchy_orders', JSON.stringify(orders));
+
+                // Clear cart
+                OkrCart.clearCart();
+
+                // Show modal
+                if (modal) modal.classList.add('active');
+            });
+
+            // Close modal handlers
+            var modalClose = document.querySelector('.okr-modal-close');
+            if (modalClose) {
+                modalClose.addEventListener('click', function() {
+                    modal.classList.remove('active');
+                    window.location.href = 'index.html';
+                });
+            }
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('okr-modal-overlay')) {
+                    e.target.classList.remove('active');
+                    window.location.href = 'index.html';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

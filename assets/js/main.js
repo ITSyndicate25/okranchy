@@ -25,10 +25,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         updateMenuPosition();
 
-        window.addEventListener("resize", () => {
-            updateMenuPosition();
-        });
-
         ulSidebarOpener.addEventListener("click", () => {
             ulSidebar.classList.add("active");
         });
@@ -38,15 +34,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
 
-        // menu dropdown/submenu in mobile
-        const ulHeaderNavMobile = document.querySelector(".ul-header-nav");
-        const ulHeaderNavMobileItems = ulHeaderNavMobile.querySelectorAll(".has-sub-menu");
-        ulHeaderNavMobileItems.forEach((item) => {
-            if (window.innerWidth < 992) {
-                item.addEventListener("click", () => {
-                    item.classList.toggle("active");
-                });
-            }
+        // menu dropdown/submenu in mobile — uses event delegation so works after nav moves to sidebar
+        function attachMobileDropdownListeners() {
+            const ulHeaderNav = document.querySelector(".ul-header-nav");
+            if (!ulHeaderNav) return;
+            const items = ulHeaderNav.querySelectorAll(".has-sub-menu");
+            items.forEach(function(item) {
+                if (!item._mobileDropdownAttached) {
+                    item._mobileDropdownAttached = true;
+                    item.addEventListener("click", function(e) {
+                        if (window.innerWidth < 992) {
+                            e.stopPropagation();
+                            this.classList.toggle("active");
+                        }
+                    });
+                }
+            });
+        }
+
+        // initial attach
+        attachMobileDropdownListeners();
+
+        // unified resize handler — update menu position AND reattach dropdowns
+        window.addEventListener("resize", () => {
+            updateMenuPosition();
+            attachMobileDropdownListeners();
         });
     }
 
@@ -767,44 +779,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
     }
 
-    // testimonial slider
-    const testimonialReviewerSlider = new Swiper(".ul-testimonial-reviewer-slider", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: true,
-        navigation: {
-            prevEl: ".ul-testimonial-reviewer-slider-nav .prev",
-            nextEl: ".ul-testimonial-reviewer-slider-nav .next",
-        },
-    });
-    const testimonialSlider = new Swiper(".ul-testimonial-slider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: true,
-        navigation: {
-            prevEl: ".ul-testimonial-slider-nav .prev",
-            nextEl: ".ul-testimonial-slider-nav .next",
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-            },
-            768: {
-                spaceBetween: 20,
-            },
-            992: {
-                spaceBetween: 27,
-            },
-            1800: {
-                spaceBetween: 30
-            }
-        },
-        thumbs: {
-            swiper: testimonialReviewerSlider
+    // editorial testimonial — scroll-triggered fade-up animations
+    (function() {
+        var els = document.querySelectorAll('.okr-fade-up');
+        if (!els.length) return;
+
+        function maybeAnimate(entries, obs) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var delay = parseFloat(entry.target.getAttribute('data-delay')) || 0;
+                    setTimeout(function() {
+                        entry.target.classList.add('okr-visible');
+                    }, delay * 1000);
+                    obs.unobserve(entry.target);
+                }
+            });
         }
-    });
+
+        var io = new IntersectionObserver(maybeAnimate, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        els.forEach(function(el) { io.observe(el); });
+    })();
 
     // about page partners slider
     new Swiper(".ul-partners-slider", {

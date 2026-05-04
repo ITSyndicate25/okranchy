@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okranchy - Shop</title>
+    <link rel="icon" type="image/png" href="assets/img/okranchy.png">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -25,7 +26,7 @@
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
-            max-height: 80px;
+            max-height: 100px;
             width: auto;
         }
         .ul-sidebar-header-logo .logo {
@@ -869,6 +870,32 @@
     <script src="assets/vendor/mixitup/mixitup.min.js"></script>
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+
+    <!-- Page-specific: Flavor filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var filterBtns = document.querySelectorAll('.trop-filter-btn');
+            var productCards = document.querySelectorAll('.trop-product-card');
+
+            filterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+
+                    var filter = btn.getAttribute('data-filter');
+                    productCards.forEach(function(card) {
+                        if (filter === 'all') {
+                            card.style.display = '';
+                        } else {
+                            var flavor = card.getAttribute('data-flavor');
+                            card.style.display = (flavor === filter) ? '' : 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

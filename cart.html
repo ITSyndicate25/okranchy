@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okranchy - Cart</title>
+    <link rel="icon" type="image/png" href="assets/img/okranchy.png">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -23,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
     <style>
-        .logo-container .logo { max-height: 80px; width: auto; }
+        .logo-container .logo { max-height: 100px; width: auto; }
         .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
         .ul-footer-about img { max-height: 120px; width: auto; }
         .signature { max-width: 80px; height: auto; }
@@ -158,59 +159,39 @@
                     <h2 class="trop-section-title">Shopping Cart</h2>
                 </div>
 
-                <!-- Cart Items (trop-cart-row layout) -->
-                <div style="background:var(--trop-cream-light);border-radius:24px;padding:24px;box-shadow:var(--trop-shadow);">
-                    <div class="trop-cart-row">
-                        <div style="width:80px;height:80px;border-radius:16px;background:linear-gradient(145deg,#f0ebe4,#e3dacf);display:flex;align-items:center;justify-content:center;padding:10px;flex-shrink:0;">
-                            <img src="assets/img/food-1.png" alt="Original Okranchy — Small (50g)" style="max-width:80%;max-height:80%;object-fit:contain;">
-                        </div>
-                        <div style="flex:1;min-width:0;">
-                            <a href="shop-details.html" class="trop-link" style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--trop-text);text-decoration:none;display:block;">Original — Small (50g)</a>
-                            <span style="font-size:0.85rem;color:var(--trop-text-light);"><strong>₱35.00</strong> each</span>
-                        </div>
-                        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                            <div style="display:inline-flex;align-items:center;border:1.5px solid rgba(26,107,60,0.12);border-radius:100px;overflow:hidden;background:var(--trop-white);">
-                                <button style="width:34px;height:34px;border:none;background:transparent;cursor:pointer;font-size:0.8rem;color:var(--trop-text);"><i class="flaticon-minus-1"></i></button>
-                                <input type="number" value="1" readonly style="width:40px;text-align:center;border:none;border-left:1.5px solid rgba(26,107,60,0.08);border-right:1.5px solid rgba(26,107,60,0.08);font-weight:600;font-size:0.85rem;height:34px;background:transparent;">
-                                <button style="width:34px;height:34px;border:none;background:transparent;cursor:pointer;font-size:0.8rem;color:var(--trop-text);"><i class="flaticon-plus"></i></button>
-                            </div>
-                            <span style="font-weight:700;color:var(--trop-green-dark);min-width:72px;text-align:right;font-size:1rem;">₱35.00</span>
-                            <button style="width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(26,107,60,0.1);background:transparent;cursor:pointer;color:var(--trop-text-light);font-size:0.75rem;transition:all 0.25s;"><i class="flaticon-close"></i></button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Cart Items Container (dynamically rendered) -->
+                <div id="okrCartItems" style="background:var(--trop-cream-light);border-radius:24px;padding:24px;box-shadow:var(--trop-shadow);display:none;"></div>
 
                 <!-- Cart Actions (Coupon + Update) -->
-                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:24px;">
-                    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                        <span class="trop-label" style="margin-bottom:0;white-space:nowrap;">Promo Code</span>
-                        <div style="display:flex;gap:8px;align-items:center;">
-                            <input type="text" class="trop-input" placeholder="Enter Code" style="min-width:160px;width:auto;border-radius:100px;">
-                            <button class="trop-btn" style="white-space:nowrap;">Apply</button>
+                <div id="okrCartActions" style="display:none;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:24px;">
+                        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                            <span class="trop-label" style="margin-bottom:0;white-space:nowrap;">Promo Code</span>
+                            <div style="display:flex;gap:8px;align-items:center;">
+                                <input type="text" class="trop-input" id="promoInput" placeholder="Enter Code" style="min-width:160px;width:auto;border-radius:100px;">
+                                <button class="trop-btn" id="promoApplyBtn" style="white-space:nowrap;">Apply</button>
+                            </div>
                         </div>
                     </div>
-                    <button class="trop-btn">
-                        <i class="flaticon-rotate" style="font-size:0.8rem;"></i> Update Cart
-                    </button>
                 </div>
 
-                <!-- Order Summary (trop-form-card) -->
-                <div style="max-width:420px;margin-left:auto;margin-top:40px;">
+                <!-- Order Summary (dynamically updated) -->
+                <div id="okrCartSummary" style="max-width:420px;margin-left:auto;margin-top:40px;display:none;">
                     <div class="trop-form-card">
                         <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--trop-text);margin:0 0 20px;padding-bottom:16px;border-bottom:2px solid rgba(26,107,60,0.08);display:flex;align-items:center;gap:8px;">
                             <span style="color:var(--trop-green-dark);">&#x1f34d;</span> Order Summary
                         </h3>
                         <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
-                            <span style="color:var(--trop-text-light);font-size:0.9rem;">Subtotal (1 item)</span>
-                            <span style="font-weight:600;color:var(--trop-text);">₱35.00</span>
+                            <span style="color:var(--trop-text-light);font-size:0.9rem;">Subtotal <span id="subtotalItemCount">(0 items)</span></span>
+                            <span id="subtotalAmount" style="font-weight:600;color:var(--trop-text);">₱0.00</span>
                         </div>
                         <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
                             <span style="color:var(--trop-text-light);font-size:0.9rem;">Shipping Fee</span>
-                            <span style="font-weight:600;color:var(--trop-text);">₱50.00</span>
+                            <span id="shippingAmount" style="font-weight:600;color:var(--trop-text);">₱50.00</span>
                         </div>
                         <div style="display:flex;justify-content:space-between;padding-top:16px;margin-top:12px;border-top:2px solid rgba(26,107,60,0.08);">
                             <span style="font-weight:700;font-size:1.1rem;color:var(--trop-text);">Total</span>
-                            <span style="font-weight:700;font-size:1.1rem;color:var(--trop-green-dark);">₱85.00</span>
+                            <span id="totalAmount" style="font-weight:700;font-size:1.1rem;color:var(--trop-green-dark);">₱0.00</span>
                         </div>
                         <a href="checkout.html" class="trop-btn" style="width:100%;justify-content:center;margin-top:24px;">
                             Proceed to Checkout <i class="flaticon-right"></i>
@@ -218,8 +199,8 @@
                     </div>
                 </div>
 
-                <!-- Empty Cart State (hidden by default) -->
-                <div class="trop-info-banner" style="display:none;" id="emptyCartState">
+                <!-- Empty Cart State -->
+                <div class="trop-info-banner" id="emptyCartState">
                     <span class="icon"><i class="flaticon-grocery-store"></i></span>
                     <h3>Your cart is empty</h3>
                     <p>Looks like you haven't added any Okranchy chips yet. Browse our flavors and start crunching!</p>
@@ -317,6 +298,110 @@
     <script src="assets/vendor/mixitup/mixitup.min.js"></script>
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+
+    <!-- Page-specific: Dynamic Cart -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var itemsContainer = document.getElementById('okrCartItems');
+            var actionsContainer = document.getElementById('okrCartActions');
+            var summaryContainer = document.getElementById('okrCartSummary');
+            var emptyState = document.getElementById('emptyCartState');
+
+            var SHIPPING_FEE = 50;
+
+            function formatPrice(p) {
+                return '\u20B1' + parseFloat(p).toFixed(2);
+            }
+
+            function renderCart() {
+                var items = OkrCart.getItems();
+                var hasItems = items.length > 0;
+
+                // Toggle visibility
+                itemsContainer.style.display = hasItems ? 'block' : 'none';
+                actionsContainer.style.display = hasItems ? 'block' : 'none';
+                summaryContainer.style.display = hasItems ? 'block' : 'none';
+                emptyState.style.display = hasItems ? 'none' : 'block';
+
+                if (!hasItems) return;
+
+                // Render items
+                var html = '';
+                for (var i = 0; i < items.length; i++) {
+                    var it = items[i];
+                    var imgSrc = it.image || 'assets/img/food-1.png';
+                    var itemTotal = (parseFloat(it.price) || 0) * (it.quantity || 1);
+                    html += '<div class="trop-cart-row" data-id="' + it.id + '">' +
+                        '<div style="width:80px;height:80px;border-radius:16px;background:linear-gradient(145deg,#f0ebe4,#e3dacf);display:flex;align-items:center;justify-content:center;padding:10px;flex-shrink:0;">' +
+                            '<img src="' + imgSrc + '" alt="' + it.name + '" style="max-width:80%;max-height:80%;object-fit:contain;">' +
+                        '</div>' +
+                        '<div style="flex:1;min-width:0;">' +
+                            '<span style="font-family:\'Playfair Display\',serif;font-size:1rem;font-weight:600;color:var(--trop-text);display:block;">' + it.name + '</span>' +
+                            '<span style="font-size:0.85rem;color:var(--trop-text-light);"><strong>' + formatPrice(it.price) + '</strong> each</span>' +
+                        '</div>' +
+                        '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">' +
+                            '<div style="display:inline-flex;align-items:center;border:1.5px solid rgba(26,107,60,0.12);border-radius:100px;overflow:hidden;background:var(--trop-white);">' +
+                                '<button class="qty-dec" style="width:34px;height:34px;border:none;background:transparent;cursor:pointer;font-size:0.8rem;color:var(--trop-text);"><i class="flaticon-minus-1"></i></button>' +
+                                '<input type="number" value="' + it.quantity + '" readonly style="width:40px;text-align:center;border:none;border-left:1.5px solid rgba(26,107,60,0.08);border-right:1.5px solid rgba(26,107,60,0.08);font-weight:600;font-size:0.85rem;height:34px;background:transparent;">' +
+                                '<button class="qty-inc" style="width:34px;height:34px;border:none;background:transparent;cursor:pointer;font-size:0.8rem;color:var(--trop-text);"><i class="flaticon-plus"></i></button>' +
+                            '</div>' +
+                            '<span class="item-total" style="font-weight:700;color:var(--trop-green-dark);min-width:72px;text-align:right;font-size:1rem;">' + formatPrice(itemTotal) + '</span>' +
+                            '<button class="remove-btn" style="width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(26,107,60,0.1);background:transparent;cursor:pointer;color:var(--trop-text-light);font-size:0.75rem;transition:all 0.25s;"><i class="flaticon-close"></i></button>' +
+                        '</div>' +
+                    '</div>';
+                }
+                itemsContainer.innerHTML = html;
+
+                // Bind quantity and remove events
+                var rows = itemsContainer.querySelectorAll('.trop-cart-row');
+                for (var j = 0; j < rows.length; j++) {
+                    (function(row) {
+                        var id = row.getAttribute('data-id');
+                        var decBtn = row.querySelector('.qty-dec');
+                        var incBtn = row.querySelector('.qty-inc');
+                        var qtyInput = row.querySelector('input');
+                        var removeBtn = row.querySelector('.remove-btn');
+
+                        decBtn.addEventListener('click', function() {
+                            var val = parseInt(qtyInput.value, 10);
+                            if (val > 1) {
+                                OkrCart.updateQuantity(id, val - 1);
+                                renderCart();
+                            }
+                        });
+                        incBtn.addEventListener('click', function() {
+                            var val = parseInt(qtyInput.value, 10);
+                            OkrCart.updateQuantity(id, val + 1);
+                            renderCart();
+                        });
+                        removeBtn.addEventListener('click', function() {
+                            OkrCart.removeItem(id);
+                            renderCart();
+                        });
+                    })(rows[j]);
+                }
+
+                // Update summary
+                var subtotal = OkrCart.getSubtotal();
+                var totalItems = 0;
+                for (var k = 0; k < items.length; k++) {
+                    totalItems += items[k].quantity || 1;
+                }
+                document.getElementById('subtotalItemCount').textContent = '(' + totalItems + ' item' + (totalItems !== 1 ? 's' : '') + ')';
+                document.getElementById('subtotalAmount').textContent = formatPrice(subtotal);
+                document.getElementById('shippingAmount').textContent = formatPrice(SHIPPING_FEE);
+                document.getElementById('totalAmount').textContent = formatPrice(subtotal + (subtotal > 0 ? SHIPPING_FEE : 0));
+
+                // Store cart data for checkout
+                try {
+                    sessionStorage.setItem('okr_shipping_fee', SHIPPING_FEE);
+                } catch(e) {}
+            }
+
+            renderCart();
+        });
+    </script>
 </body>
 
 </html>

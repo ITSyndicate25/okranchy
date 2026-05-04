@@ -312,3 +312,14 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
     content: "\f160";
 }
 
+/* About page value icons — map to existing glyphs in the font */
+.flaticon-organic:before {
+    content: "\f10e";
+}
+.flaticon-farmer:before {
+    content: "\f10d";
+}
+.flaticon-graduation:before {
+    content: "\f122";
+}
+

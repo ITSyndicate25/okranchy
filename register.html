@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account - Okranchy Okra Chips</title>
+    <link rel="icon" type="image/png" href="assets/img/okranchy.png">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -17,7 +18,7 @@
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
-            max-height: 80px;
+            max-height: 100px;
             width: auto;
         }
         .ul-sidebar-header-logo .logo {
@@ -158,97 +159,98 @@
     <!-- HEADER SECTION END -->
 
     <main>
-        <!-- AUTH SECTION START - Tropical/Organic -->
-        <div class="trop-auth-bg">
-            <div class="trop-form-card" style="max-width:480px;margin:auto;">
-                <div style="text-align:center;margin-bottom:24px;">
-                    <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo" style="max-height:80px;width:auto;margin-bottom:12px;"></a>
-                    <div class="trop-label" style="justify-content:center;">Join Us</div>
-                    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:var(--trop-green-dark);margin:4px 0 0;">Create Account</h2>
+        <!-- AUTH SECTION START — Organic Tropical Card -->
+        <section class="trop-auth-section">
+            <div class="trop-auth-leaf-1"></div>
+            <div class="trop-auth-leaf-2"></div>
+
+            <div class="trop-auth-card">
+                <!-- Brand header -->
+                <div class="trop-auth-brand">
+                    <div class="logo-wrap">
+                        <img src="assets/img/logo-3.png" alt="Okranchy Logo">
+                    </div>
+                    <h2>Join the Crunch!</h2>
+                    <p>Create your Okranchy account to enjoy easy ordering, exclusive deals, and fast checkout.</p>
+                    <div class="trop-auth-badges">
+                        <span>Easy Ordering</span>
+                        <span>Exclusive Deals</span>
+                        <span>Fast Checkout</span>
+                    </div>
                 </div>
 
-                <form id="register-form" class="ul-auth-form" novalidate>
-                    <div class="form-group">
-                        <label for="register-fullname" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Full Name</label>
-                        <input type="text" id="register-fullname" name="fullname" class="trop-input" placeholder="Enter your full name" required>
-                        <p class="ul-auth-error" id="fullname-error">Please enter your name</p>
-                    </div>
-
-                    <div class="form-group" style="margin-top:14px;">
-                        <label for="register-email" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Email Address</label>
-                        <input type="email" id="register-email" name="email" class="trop-input" placeholder="Enter your email" required>
-                        <p class="ul-auth-error" id="email-error">Please enter a valid email address</p>
-                    </div>
-
-                    <div class="form-group" style="margin-top:14px;">
-                        <label for="register-phone" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Phone Number</label>
-                        <input type="tel" id="register-phone" name="phone" class="trop-input" placeholder="Enter your phone number" required>
-                        <p class="ul-auth-error" id="phone-error">Please enter your phone number</p>
-                    </div>
-
-                    <div class="form-group" style="margin-top:14px;">
-                        <label for="register-password" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Password</label>
-                        <div style="position:relative;">
-                            <input type="password" id="register-password" name="password" class="trop-input" placeholder="Create a password" required style="padding-right:44px;">
-                            <button type="button" class="toggle-pw" data-target="register-password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--trop-tan);cursor:pointer;font-size:1.1rem;">
-                                <i class="flaticon-eye"></i>
-                            </button>
+                <!-- Form body -->
+                <div class="trop-auth-body">
+                    <form id="register-form" novalidate>
+                        <div class="trop-auth-group">
+                            <label for="register-fullname">Full Name</label>
+                            <input type="text" id="register-fullname" name="fullname" class="trop-input" placeholder="Enter your full name" required>
+                            <p class="trop-auth-error" id="fullname-error">Please enter your name</p>
                         </div>
-                        <p class="ul-auth-error" id="password-error">Please create a password (min 6 characters)</p>
-                    </div>
 
-                    <div class="form-group" style="margin-top:14px;">
-                        <label for="register-confirm-password" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Confirm Password</label>
-                        <div style="position:relative;">
-                            <input type="password" id="register-confirm-password" name="confirm-password" class="trop-input" placeholder="Confirm your password" required style="padding-right:44px;">
-                            <button type="button" class="toggle-pw" data-target="register-confirm-password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--trop-tan);cursor:pointer;font-size:1.1rem;">
-                                <i class="flaticon-eye"></i>
-                            </button>
+                        <div class="trop-auth-grid-2">
+                            <div class="trop-auth-group">
+                                <label for="register-email">Email *</label>
+                                <input type="email" id="register-email" name="email" class="trop-input" placeholder="Your email" required>
+                                <p class="trop-auth-error" id="email-error">Valid email required</p>
+                            </div>
+                            <div class="trop-auth-group">
+                                <label for="register-phone">Phone *</label>
+                                <input type="tel" id="register-phone" name="phone" class="trop-input" placeholder="Your phone" required>
+                                <p class="trop-auth-error" id="phone-error">Phone number required</p>
+                            </div>
                         </div>
-                        <p class="ul-auth-error" id="confirm-error">Passwords do not match</p>
-                    </div>
 
-                    <div class="form-group" style="margin-top:14px;">
-                        <label class="ul-checkbox-wrapper ul-auth-checkbox" style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text);">
-                            <input type="checkbox" id="agree-terms" name="agree-terms" required style="accent-color:var(--trop-green);margin-top:3px;">
-                            <span class="ul-checkbox-txt">I agree to the <a href="#" style="color:var(--trop-green);text-decoration:none;">Terms of Service</a> and <a href="#" style="color:var(--trop-green);text-decoration:none;">Privacy Policy</a></span>
-                        </label>
-                        <p class="ul-auth-error" id="terms-error">You must agree to the terms</p>
-                    </div>
+                        <div class="trop-auth-grid-2">
+                            <div class="trop-auth-group">
+                                <label for="register-password">Password</label>
+                                <div class="trop-input-wrap">
+                                    <input type="password" id="register-password" name="password" class="trop-input" placeholder="Create password" required>
+                                    <button type="button" class="trop-pw-toggle toggle-pw" data-target="register-password">
+                                        <i class="flaticon-eye"></i>
+                                    </button>
+                                </div>
+                                <p class="trop-auth-error" id="password-error">Minimum 6 characters</p>
+                            </div>
+                            <div class="trop-auth-group">
+                                <label for="register-confirm-password">Confirm</label>
+                                <div class="trop-input-wrap">
+                                    <input type="password" id="register-confirm-password" name="confirm-password" class="trop-input" placeholder="Confirm password" required>
+                                    <button type="button" class="trop-pw-toggle toggle-pw" data-target="register-confirm-password">
+                                        <i class="flaticon-eye"></i>
+                                    </button>
+                                </div>
+                                <p class="trop-auth-error" id="confirm-error">Passwords must match</p>
+                            </div>
+                        </div>
 
-                    <div class="form-group" style="margin-top:20px;">
-                        <button type="submit" class="trop-btn" style="width:100%;justify-content:center;">
+                        <div class="trop-auth-group">
+                            <label class="trop-checkbox-label" style="align-items: flex-start;">
+                                <input type="checkbox" id="agree-terms" name="agree-terms" required style="margin-top:3px;">
+                                <span>I agree to the <a href="#" class="trop-forgot-link">Terms of Service</a> and <a href="#" class="trop-forgot-link">Privacy Policy</a></span>
+                            </label>
+                            <p class="trop-auth-error" id="terms-error">You must agree to the terms</p>
+                        </div>
+
+                        <button type="submit" class="trop-auth-btn">
                             Create Account <i class="flaticon-right"></i>
                         </button>
+                    </form>
+
+                    <div class="trop-auth-divider"><span>or sign up with</span></div>
+
+                    <div class="trop-auth-social">
+                        <a href="#" title="Facebook"><i class="flaticon-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="flaticon-instagram"></i></a>
+                        <a href="#" title="TikTok"><i class="flaticon-tiktok"></i></a>
                     </div>
-                </form>
 
-                <hr class="trop-hr" style="margin:20px 0;">
-
-                <div style="text-align:center;margin-bottom:12px;">
-                    <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text-light, #6b6b6b);">or sign up with</span>
-                </div>
-
-                <div class="ul-auth-socials" style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">
-                    <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Facebook" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
-                        <i class="flaticon-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Instagram" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
-                        <i class="flaticon-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener" title="Sign up with TikTok" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
-                        <i class="flaticon-tiktok"></i>
-                    </a>
-                </div>
-
-                <div style="text-align:center;">
-                    <p style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text-light, #6b6b6b);margin:0;">
-                        Already have an account? 
-                        <a href="login.html" style="color:var(--trop-green);font-weight:600;text-decoration:none;">Sign In</a>
-                    </p>
+                    <div class="trop-auth-footer">
+                        <p>Already have an account? <a href="login.html">Sign In</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- AUTH SECTION END -->
     </main>
 
@@ -259,7 +261,7 @@
                 <div class="ul-footer-top-wrapper wow animate__fadeInUp">
                     <div class="ul-footer-about">
                         <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
-                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Ani Co. a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
+                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Ani Co., a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
                         <div class="ul-footer-socials">
                             <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-facebook"></i></a>
                             <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-instagram"></i></a>
@@ -316,9 +318,17 @@
 
     <!-- libraries JS -->
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
     <script src="assets/vendor/animate-wow/wow.min.js"></script>
+    <script src="assets/vendor/splittype/index.min.js"></script>
+    <script src="assets/vendor/mixitup/mixitup.min.js"></script>
+    <script src="assets/vendor/fslightbox/fslightbox.js"></script>
 
     <!-- custom JS -->
+    <script src="assets/js/main.js"></script>
     <script>
         // Preloader
         document.addEventListener("DOMContentLoaded", (event) => {

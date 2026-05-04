@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Okranchy Okra Chips</title>
+    <link rel="icon" type="image/png" href="assets/img/okranchy.png">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -17,7 +18,7 @@
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
-            max-height: 80px;
+            max-height: 100px;
             width: auto;
         }
         .ul-sidebar-header-logo .logo {
@@ -158,77 +159,73 @@
     <!-- HEADER SECTION END -->
 
     <main>
-        <!-- AUTH SECTION START - Tropical/Organic -->
-        <div class="trop-auth-bg">
-            <div class="trop-form-card" style="max-width:480px;margin:auto;">
-                <div style="text-align:center;margin-bottom:24px;">
-                    <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo" style="max-height:80px;width:auto;margin-bottom:12px;"></a>
-                    <div class="trop-label" style="justify-content:center;">Welcome Back</div>
-                    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:var(--trop-green-dark);margin:4px 0 0;">Sign In to Your Account</h2>
+        <!-- AUTH SECTION START — Organic Tropical Card -->
+        <section class="trop-auth-section">
+            <div class="trop-auth-leaf-1"></div>
+            <div class="trop-auth-leaf-2"></div>
+
+            <div class="trop-auth-card">
+                <!-- Brand header -->
+                <div class="trop-auth-brand">
+                    <div class="logo-wrap">
+                        <img src="assets/img/logo-3.png" alt="Okranchy Logo">
+                    </div>
+                    <h1>Welcome Back!</h1>
+                    <p>Sign in to your account to order your favorite Okranchy chips and track your deliveries.</p>
+                    <div class="trop-auth-badges">
+                        <span>Quick Order</span>
+                        <span>Track Delivery</span>
+                        <span>Save Favorites</span>
+                    </div>
                 </div>
 
-                <form id="login-form" class="ul-auth-form" novalidate>
-                    <div class="form-group">
-                        <label for="login-email" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Email Address</label>
-                        <input type="email" id="login-email" name="email" class="trop-input" placeholder="Enter your email" required>
-                        <p class="ul-auth-error" id="email-error">Please enter a valid email address</p>
-                    </div>
-
-                    <div class="form-group" style="margin-top:16px;">
-                        <label for="login-password" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Password</label>
-                        <div style="position:relative;">
-                            <input type="password" id="login-password" name="password" class="trop-input" placeholder="Enter your password" required style="padding-right:44px;">
-                            <button type="button" class="toggle-pw" data-target="login-password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--trop-tan);cursor:pointer;font-size:1.1rem;">
-                                <i class="flaticon-eye"></i>
-                            </button>
+                <!-- Form body -->
+                <div class="trop-auth-body">
+                    <form id="login-form" novalidate>
+                        <div class="trop-auth-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" name="email" class="trop-input" placeholder="Enter your email" required>
+                            <p class="trop-auth-error" id="email-error">Please enter a valid email address</p>
                         </div>
-                        <p class="ul-auth-error" id="password-error">Please enter your password</p>
-                    </div>
 
-                    <div class="form-group" style="margin-top:12px;">
-                        <label class="ul-checkbox-wrapper ul-auth-checkbox" style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text);">
-                            <input type="checkbox" id="remember-me" name="remember" style="accent-color:var(--trop-green);">
-                            <span class="ul-checkbox-txt">Remember me</span>
-                        </label>
-                    </div>
+                        <div class="trop-auth-group">
+                            <label for="login-password">Password</label>
+                            <div class="trop-input-wrap">
+                                <input type="password" id="login-password" name="password" class="trop-input" placeholder="Enter your password" required>
+                                <button type="button" class="trop-pw-toggle toggle-pw" data-target="login-password">
+                                    <i class="flaticon-eye"></i>
+                                </button>
+                            </div>
+                            <p class="trop-auth-error" id="password-error">Please enter your password</p>
+                        </div>
 
-                    <div class="form-group" style="margin-top:20px;">
-                        <button type="submit" class="trop-btn" style="width:100%;justify-content:center;">
+                        <div class="trop-auth-row">
+                            <label class="trop-checkbox-label">
+                                <input type="checkbox" id="remember-me" name="remember">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="trop-forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="trop-auth-btn">
                             Sign In <i class="flaticon-right"></i>
                         </button>
+                    </form>
+
+                    <div class="trop-auth-divider"><span>or continue with</span></div>
+
+                    <div class="trop-auth-social">
+                        <a href="#" title="Facebook"><i class="flaticon-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="flaticon-instagram"></i></a>
+                        <a href="#" title="TikTok"><i class="flaticon-tiktok"></i></a>
                     </div>
-                </form>
 
-                <div style="text-align:center;margin:8px 0 0;">
-                    <a href="#" style="color:var(--trop-green);font-family:'DM Sans',sans-serif;font-size:0.85rem;text-decoration:none;">Forgot password?</a>
-                </div>
-
-                <hr class="trop-hr" style="margin:20px 0;">
-
-                <div style="text-align:center;margin-bottom:12px;">
-                    <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text-light, #6b6b6b);">or continue with</span>
-                </div>
-
-                <div class="ul-auth-socials" style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">
-                    <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener" title="Sign in with Facebook" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
-                        <i class="flaticon-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener" title="Sign in with Instagram" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
-                        <i class="flaticon-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener" title="Sign in with TikTok" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
-                        <i class="flaticon-tiktok"></i>
-                    </a>
-                </div>
-
-                <div style="text-align:center;">
-                    <p style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text-light, #6b6b6b);margin:0;">
-                        Don't have an account? 
-                        <a href="register.html" style="color:var(--trop-green);font-weight:600;text-decoration:none;">Create Account</a>
-                    </p>
+                    <div class="trop-auth-footer">
+                        <p>Don't have an account? <a href="register.html">Create Account</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- AUTH SECTION END -->
     </main>
 
@@ -239,7 +236,7 @@
                 <div class="ul-footer-top-wrapper wow animate__fadeInUp">
                     <div class="ul-footer-about">
                         <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
-                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Ani Co. a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
+                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Ani Co., a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
                         <div class="ul-footer-socials">
                             <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-facebook"></i></a>
                             <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-instagram"></i></a>
@@ -296,9 +293,17 @@
 
     <!-- libraries JS -->
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/slim-select/slimselect.min.js"></script>
     <script src="assets/vendor/animate-wow/wow.min.js"></script>
+    <script src="assets/vendor/splittype/index.min.js"></script>
+    <script src="assets/vendor/mixitup/mixitup.min.js"></script>
+    <script src="assets/vendor/fslightbox/fslightbox.js"></script>
 
     <!-- custom JS -->
+    <script src="assets/js/main.js"></script>
     <script>
         // Preloader
         document.addEventListener("DOMContentLoaded", (event) => {

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okranchy - Product Details</title>
+    <link rel="icon" type="image/png" href="assets/img/okranchy.png">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -25,7 +26,7 @@
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
-            max-height: 80px;
+            max-height: 100px;
             width: auto;
         }
         .ul-sidebar-header-logo .logo {
@@ -560,6 +561,107 @@
             background: var(--trop-green);
             color: var(--trop-white);
         }
+
+        /* --- Cart Modal --- */
+        .okr-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .okr-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .okr-modal-box {
+            background: var(--trop-white);
+            border-radius: 24px;
+            padding: 36px 32px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transform: scale(0.9);
+            transition: transform 0.3s;
+        }
+        .okr-modal-overlay.active .okr-modal-box {
+            transform: scale(1);
+        }
+        .okr-modal-box .icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--trop-green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--trop-green);
+            font-size: 1.5rem;
+        }
+        .okr-modal-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--trop-text);
+            margin: 0 0 8px;
+        }
+        .okr-modal-box p {
+            font-size: 0.9rem;
+            color: var(--trop-text-light);
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        .okr-modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .okr-modal-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .okr-modal-actions .primary {
+            background: linear-gradient(135deg, #2d8a4e 0%, #1a6b3c 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(26,107,60,0.25);
+        }
+        .okr-modal-actions .primary:hover {
+            transform: translateY(-2px);
+        }
+        .okr-modal-actions .secondary {
+            border: 1.5px solid rgba(26,107,60,0.12);
+            color: var(--trop-text);
+        }
+        .okr-modal-actions .secondary:hover {
+            border-color: var(--trop-green);
+        }
+        .okr-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--trop-text-light);
+            cursor: pointer;
+        }
+        .okr-modal-box { position: relative; }
 
         /* --- Tropical Tabs --- */
         .trop-tabs-nav {
@@ -1173,6 +1275,20 @@
     </footer>
     <!-- FOOTER SECTION END -->
 
+    <!-- Cart Modal -->
+    <div class="okr-modal-overlay" id="cartModal">
+        <div class="okr-modal-box">
+            <button class="okr-modal-close" aria-label="Close">&times;</button>
+            <div class="icon"><i class="flaticon-checked"></i></div>
+            <h3>Added to Your Cart!</h3>
+            <p>Your Okranchy chips have been added to your cart. Ready to checkout or keep shopping?</p>
+            <div class="okr-modal-actions">
+                <a href="cart.html" class="primary">View Cart <i class="flaticon-right"></i></a>
+                <a href="shop.html" class="secondary">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
     <!-- libraries JS -->
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/splide/splide.min.js"></script>
@@ -1186,8 +1302,9 @@
 
     <!-- custom JS -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
 
-    <!-- Page-specific: Tabs + Quantity -->
+    <!-- Page-specific: Tabs + Quantity + Add to Cart -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Tabs
@@ -1228,6 +1345,71 @@
                     sizeBtns.forEach(function(b) { b.classList.remove('active'); });
                     btn.classList.add('active');
                 });
+            });
+
+            // Gallery thumbnail switching
+            const thumbs = document.querySelectorAll('.trop-gallery-thumb');
+            const mainImg = document.querySelector('.trop-gallery-main img');
+            thumbs.forEach(function(th) {
+                th.addEventListener('click', function() {
+                    thumbs.forEach(function(t) { t.classList.remove('active'); });
+                    th.classList.add('active');
+                    var src = th.querySelector('img').getAttribute('src');
+                    if (mainImg && src) mainImg.setAttribute('src', src);
+                });
+            });
+
+            // Add to Cart
+            const addBtn = document.querySelector('.trop-actions .trop-btn-primary');
+            if (addBtn) {
+                addBtn.addEventListener('click', function() {
+                    var activeSizeBtn = document.querySelector('.trop-size-btn.active');
+                    var sizeText = activeSizeBtn ? activeSizeBtn.textContent.trim() : '100g \u20B160';
+                    var sizeMatch = sizeText.match(/(\d+g)/);
+                    var size = sizeMatch ? sizeMatch[1] : '100g';
+                    var priceMatch = sizeText.match(/[\u20B1]\s*([0-9.]+)/);
+                    var price = priceMatch ? priceMatch[1] : '60';
+
+                    var flavorBadge = document.querySelector('.trop-gallery-badge');
+                    var flavor = flavorBadge ? flavorBadge.textContent.trim() : 'Original';
+                    var nameEl = document.querySelector('.trop-info-flavor');
+                    var name = nameEl ? nameEl.textContent.trim() : 'Salt & Vinegar';
+                    var mainImage = document.querySelector('.trop-gallery-main img');
+                    var image = mainImage ? mainImage.getAttribute('src') : 'assets/img/food-2.png';
+
+                    var product = {
+                        name: name + ' (' + size + ')',
+                        flavor: flavor,
+                        size: size,
+                        price: price,
+                        quantity: parseInt(qtyInput ? qtyInput.value : 1, 10),
+                        image: image
+                    };
+
+                    OkrCart.addItem(product);
+
+                    // Show modal
+                    var modal = document.getElementById('cartModal');
+                    if (modal) {
+                        modal.classList.add('active');
+                    }
+                });
+            }
+
+            // Close modal
+            var modalClose = document.querySelector('.okr-modal-close');
+            if (modalClose) {
+                modalClose.addEventListener('click', function() {
+                    document.querySelectorAll('.okr-modal-overlay').forEach(function(m) {
+                        m.classList.remove('active');
+                    });
+                });
+            }
+            // Close modal on overlay click
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('okr-modal-overlay')) {
+                    e.target.classList.remove('active');
+                }
             });
         });
     </script>
