@@ -17,25 +17,16 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-        /* Make logo smaller to fit header and footer */
-        .logo-container .logo {
-            max-height: 80px;
-            width: auto;
-        }
-        .ul-sidebar-header-logo .logo {
-            max-height: 100px;
-            width: auto;
-        }
-        .ul-footer-about img {
-            max-height: 120px;
-            width: auto;
-        }
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
-        .signature {
-            max-width: 80px;
-            height: auto;
-        }
+    <style>
+        .logo-container .logo { max-height: 80px; width: auto; }
+        .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
+        .ul-footer-about img { max-height: 120px; width: auto; }
+        .signature { max-width: 80px; height: auto; }
     </style>
 </head>
 
@@ -167,120 +158,102 @@
 
     <main>
         <!-- BREADCRUMB SECTION START -->
-        <div class="ul-breadcrumb">
-            <div class="wow animate__fadeInUp">
-                <h2 class="ul-breadcrumb-title">Contact Us</h2>
-                <div class="ul-breadcrumb-nav">
-                    <a href="index.html">Home</a>
-                    <span class="separator">/</span>
-                    <span class="current-page">Contact Us</span>
-                </div>
+        <div class="trop-breadcrumb">
+            <h1 class="trop-breadcrumb-title">Contact Us</h1>
+            <div class="trop-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span class="current">Contact Us</span>
             </div>
         </div>
         <!-- BREADCRUMB SECTION END -->
 
 
         <!-- CONTACT SECTION START -->
-        <section class="ul-section-spacing">
-            <div class="ul-inner-contact-container">
-                <div class="row g-lg-4 g-3 row-cols-lg-4 row-cols-md-3 row-cols-2 row-cols-xxs-1 justify-content-center">
-                    <!-- single contact info -->
-                    <div class="col">
-                        <div class="ul-contact-info">
-                            <div class="icon"><i class="flaticon-location"></i></div>
-                            <h3 class="title">Our Location</h3>
-                            <p class="descr">Pamantasan ng Lungsod ng Valenzuela, Valenzuela City, Philippines</p>
+        <section style="padding:80px 0;background:var(--trop-cream);">
+            <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+                <!-- Section Heading -->
+                <div style="text-align:center;margin-bottom:48px;">
+                    <span class="trop-label">Contact Us</span>
+                    <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--trop-green-dark);margin:12px 0 0;">Get in Touch</h2>
+                    <p style="color:var(--trop-text-light);margin-top:8px;font-size:1rem;max-width:520px;margin-left:auto;margin-right:auto;">We'd love to hear from you! Drop us a message or visit us at the campus.</p>
+                </div>
+
+                <div class="trop-grid-2" style="align-items:start;">
+                    <!-- Left: Contact Info Cards -->
+                    <div style="display:grid;gap:16px;">
+                        <div class="trop-contact-card">
+                            <span class="icon"><i class="flaticon-location-pin"></i></span>
+                            <div>
+                                <span class="trop-label" style="display:inline-block;margin-bottom:4px;">Our Location</span>
+                                <p style="margin:0;font-size:0.95rem;color:var(--trop-text);">Pamantasan ng Lungsod ng Valenzuela, Valenzuela City</p>
+                            </div>
+                        </div>
+                        <div class="trop-contact-card">
+                            <span class="icon"><i class="flaticon-mail"></i></span>
+                            <div>
+                                <span class="trop-label" style="display:inline-block;margin-bottom:4px;">Email Us</span>
+                                <p style="margin:0;font-size:0.95rem;"><a href="mailto:okranchy@plv.edu.ph" style="color:var(--trop-green);text-decoration:none;">okranchy@plv.edu.ph</a></p>
+                            </div>
+                        </div>
+                        <div class="trop-contact-card">
+                            <span class="icon"><i class="flaticon-phone-call"></i></span>
+                            <div>
+                                <span class="trop-label" style="display:inline-block;margin-bottom:4px;">Call Us</span>
+                                <p style="margin:0;font-size:0.95rem;"><a href="tel:09171234567" style="color:var(--trop-green);text-decoration:none;">0917-123-4567</a></p>
+                            </div>
+                        </div>
+                        <div class="trop-contact-card">
+                            <span class="icon"><i class="flaticon-clock"></i></span>
+                            <div>
+                                <span class="trop-label" style="display:inline-block;margin-bottom:4px;">Selling Hours</span>
+                                <p style="margin:0;font-size:0.95rem;color:var(--trop-text);">Mon – Fri: 9 AM – 6 PM<br>Sat: 9 AM – 4 PM</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- single contact info -->
-                    <div class="col">
-                        <div class="ul-contact-info">
-                            <div class="icon"><i class="flaticon-mail"></i></div>
-                            <h3 class="title"><a href="mailto:okranchy@plv.edu.ph">okranchy@plv.edu.ph</a></h3>
-                            <p class="descr">Email us for orders, inquiries, or partnership opportunities.</p>
-                        </div>
-                    </div>
-                    <!-- single contact info -->
-                    <div class="col">
-                        <div class="ul-contact-info">
-                            <div class="icon"><i class="flaticon-phone-call"></i></div>
-                            <h3 class="title"><a href="tel:09171234567">0917-123-4567</a></h3>
-                            <p class="descr">Call or text for quick order updates and delivery coordination.</p>
-                        </div>
-                    </div>
-                    <!-- single contact info -->
-                    <div class="col">
-                        <div class="ul-contact-info">
-                            <div class="icon"><i class="flaticon-clock"></i></div>
-                            <h3 class="title">Selling Hours</h3>
-                            <p class="descr">
-                                <span>Mon – Fri: 9 AM – 6 PM</span><br>
-                                <span>Sat: 9 AM – 4 PM</span>
-                            </p>
-                        </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="trop-form-card">
+                        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 24px;">Send Us a Message</h3>
+                        <form style="display:flex;flex-direction:column;gap:18px;">
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                                <input type="text" placeholder="Your Name" class="trop-input">
+                                <input type="email" placeholder="Email Address" class="trop-input">
+                                <input type="tel" placeholder="Phone Number" class="trop-input">
+                                <select class="trop-select">
+                                    <option>Subject</option>
+                                    <option>Product Inquiry</option>
+                                    <option>Order Status</option>
+                                    <option>Bulk Order</option>
+                                    <option>Partnership</option>
+                                    <option>Feedback</option>
+                                </select>
+                            </div>
+                            <textarea class="trop-textarea" placeholder="Your Message" style="min-height:130px;"></textarea>
+                            <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.85rem;color:var(--trop-text-light);">
+                                <input type="checkbox" checked hidden>
+                                <span style="width:18px;height:18px;border-radius:4px;border:2px solid var(--trop-green);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--trop-green);color:white;font-size:0.6rem;"><i class="flaticon-checked"></i></span>
+                                I agree to receive responses from the Okranchy team.
+                            </label>
+                            <button type="submit" class="trop-btn">Send Message <i class="flaticon-arrow-down-sign-to-navigate"></i></button>
+                        </form>
                     </div>
                 </div>
 
+                <!-- Divider -->
+                <hr class="trop-hr" style="margin:60px auto;">
 
-                <div class="ul-section-spacing pb-0">
-                    <div class="row gy-5 row-cols-lg-2 row-cols-1 align-items-center flex-column-reverse flex-lg-row">
-                        <!-- img -->
-                        <div class="col">
-                            <div>
-                                <div class="ul-inner-contact-img text-center">
-                                    <img src="assets/img/contact-img.jpg" alt="Okranchy Team at PLV">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- contact form -->
-                        <div class="col">
-                            <div class="ul-inner-contact-form-wrapper">
-                                <h3 class="ul-inner-contact-form-title">Get in Touch</h3>
-
-                                <form action="#" class="ul-inner-contact-form">
-                                    <div class="row g-lg-4 g-3 row-cols-sm-2">
-                                        <div>
-                                            <input type="text" name="ul-contact-name" id="ul-contact-name" placeholder="Your Name">
-                                        </div>
-                                        <div>
-                                            <input type="email" name="ul-contact-email" id="ul-contact-email" placeholder="Email Address">
-                                        </div>
-                                        <div>
-                                            <input type="tel" name="ul-contact-phone" id="ul-contact-phone" placeholder="Phone Number">
-                                        </div>
-                                        <div>
-                                            <div class="select-wrapper">
-                                                <select name="jo-contact-subject" id="jo-contact-subject">
-                                                    <option data-placeholder="true">Subject</option>
-                                                    <option value="1">Product Inquiry</option>
-                                                    <option value="2">Order Status</option>
-                                                    <option value="3">Bulk/Wholesale Order</option>
-                                                    <option value="4">Partnership Proposal</option>
-                                                    <option value="5">Feedback</option>
-                                                    <option value="6">Other</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-12">
-                                            <textarea name="ul-contact-message" id="ul-contact-message" placeholder="Your Message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="ul-checkout-agreement-wrapper">
-                                        <label for="ul-checkout-agreement">
-                                            <input type="checkbox" name="ul-checkout-agreement" id="ul-checkout-agreement" hidden="" checked="">
-                                            <span class="txt">I agree to receive responses from the Okranchy team at Ani Co..</span>
-                                        </label>
-                                    </div>
-
-                                    <button type="submit" class="submit-btn"> Send Message <i class="flaticon-arrow-down-sign-to-navigate"></i></button>
-                                </form>
-                            </div>
-                        </div>
+                <!-- Map Section -->
+                <div>
+                    <div style="text-align:center;margin-bottom:28px;">
+                        <span class="trop-label">Find Us</span>
+                        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--trop-green-dark);margin:8px 0 0;">Visit Our Location</h2>
+                    </div>
+                    <div style="border-radius:var(--trop-radius,24px);overflow:hidden;box-shadow:0 8px 32px rgba(26,107,60,0.08);border:1px solid rgba(26,107,60,0.04);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15430.443223559323!2d120.996208!3d14.736847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b10b2b6a2c2f%3A0x2a9a5c8e5c3b0b0!2sPamantasan%20ng%20Lungsod%20ng%20Valenzuela!5e0!3m2!1sen!2sph!4v1" width="100%" height="380" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
-
         </section>
         <!-- CONTACT SECTION END -->
     </main>

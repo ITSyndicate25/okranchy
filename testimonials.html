@@ -18,25 +18,16 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-        /* Make logo smaller to fit header and footer */
-        .logo-container .logo {
-            max-height: 80px;
-            width: auto;
-        }
-        .ul-sidebar-header-logo .logo {
-            max-height: 100px;
-            width: auto;
-        }
-        .ul-footer-about img {
-            max-height: 120px;
-            width: auto;
-        }
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
-        .signature {
-            max-width: 80px;
-            height: auto;
-        }
+    <style>
+        .logo-container .logo { max-height: 80px; width: auto; }
+        .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
+        .ul-footer-about img { max-height: 120px; width: auto; }
+        .signature { max-width: 80px; height: auto; }
     </style>
 </head>
 
@@ -168,138 +159,76 @@
 
     <main>
         <!-- BREADCRUMB SECTION START -->
-        <div class="ul-breadcrumb">
-            <div class="wow animate__fadeInUp">
-                <h2 class="ul-breadcrumb-title">Testimonials</h2>
-                <div class="ul-breadcrumb-nav">
-                    <a href="index.html">Home</a>
-                    <span class="separator">/</span>
-                    <span class="current-page">Testimonials</span>
-                </div>
+        <div class="trop-breadcrumb">
+            <h1 class="trop-breadcrumb-title">Testimonials</h1>
+            <div class="trop-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span class="current">Testimonials</span>
             </div>
         </div>
         <!-- BREADCRUMB SECTION END -->
 
 
-        <!-- TESTIMONIALS SECTION START -->
-        <section class="ul-section-spacing">
-            <div class="ul-container">
-                <div class="row row-cols-md-2 row-cols-1 ul-bs-row">
-                    <!-- SINGLE TESTIMONIAL -->
-                    <div class="col">
-                        <div class="ul-inner-testimony">
-                            <div class="ul-inner-testimony-img">
-                                <img src="assets/img/inner-reviewer-1.png" alt="Maria Santos">
-                            </div>
-
-                            <div class="ul-inner-testimony-content">
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
-                                <p class="ul-inner-testimony-text">I'm a health-conscious mom and finding snacks that my kids actually enjoy is a challenge. Okranchy changed everything! My children love the Original flavor, and I love that it's made from real vegetables without any junk. The packaging is perfect for their baon, and they always ask for more. Finally, a healthy snack that doesn't feel like a compromise!</p>
-
-                                <div class="ul-inner-testimony-bottom">
-                                    <div class="left">
-                                        <span class="ul-inner-testimony-name">Maria Santos</span>
-                                        <span class="ul-inner-testimony-role">Working Mom, Valenzuela City</span>
-                                    </div>
-                                    <div class="icon"><i class="flaticon-straight-quotes"></i></div>
-                                </div>
+        <section style="padding:80px 0;background:var(--trop-cream);">
+            <div class="trop-heading" style="max-width:1200px;margin:0 auto 48px;padding:0 24px;text-align:center;">
+                <span class="trop-label">Happy Customers</span>
+                <h2 class="trop-section-title">What People Say About Okranchy</h2>
+                <p style="font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--trop-text-light);margin-top:12px;">Real reviews from real people who love our crunchy okra chips.</p>
+            </div>
+            <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+                <div class="trop-grid-2">
+                    <div class="trop-testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <p>I'm a health-conscious mom and finding snacks that my kids actually enjoy is a challenge. Okranchy changed everything! My children love the Original flavor, and I love that it's made from real vegetables without any junk. Finally, a healthy snack that doesn't feel like a compromise!</p>
+                        <div style="color:var(--trop-gold);margin-bottom:14px;font-size:0.85rem;letter-spacing:2px;">★★★★★</div>
+                        <div class="reviewer">
+                            <img src="assets/img/inner-reviewer-1.png" alt="Maria Santos">
+                            <div>
+                                <h4 class="name">Maria Santos</h4>
+                                <span class="role">Working Mom, Valenzuela City</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- SINGLE TESTIMONIAL -->
-                    <div class="col">
-                        <div class="ul-inner-testimony">
-                            <div class="ul-inner-testimony-img">
-                                <img src="assets/img/inner-reviewer-2.png" alt="John Reyes">
-                            </div>
-
-                            <div class="ul-inner-testimony-content">
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
-                                <p class="ul-inner-testimony-text">As a fellow PLV student, I'm incredibly proud to support Okranchy! I bought my first bag during their campus selling event and I've been hooked ever since. The crunch is absolutely satisfying, and knowing it's made by my fellow students makes it even better. I've recommended it to everyone in our block. Ani Co. is really making us proud!</p>
-
-                                <div class="ul-inner-testimony-bottom">
-                                    <div class="left">
-                                        <span class="ul-inner-testimony-name">John Reyes</span>
-                                        <span class="ul-inner-testimony-role">BSBA Student, PLV</span>
-                                    </div>
-                                    <div class="icon"><i class="flaticon-straight-quotes"></i></div>
-                                </div>
+                    <div class="trop-testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <p>As a fellow PLV student, I'm incredibly proud to support Okranchy! I bought my first bag during their campus selling event and I've been hooked ever since. The crunch is absolutely satisfying, and knowing it's made by my fellow students makes it even better!</p>
+                        <div style="color:var(--trop-gold);margin-bottom:14px;font-size:0.85rem;letter-spacing:2px;">★★★★★</div>
+                        <div class="reviewer">
+                            <img src="assets/img/inner-reviewer-2.png" alt="John Reyes">
+                            <div>
+                                <h4 class="name">John Reyes</h4>
+                                <span class="role">BSBA Student, PLV</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- SINGLE TESTIMONIAL -->
-                    <div class="col">
-                        <div class="ul-inner-testimony">
-                            <div class="ul-inner-testimony-img">
-                                <img src="assets/img/inner-reviewer-1.png" alt="Angelica Cruz">
-                            </div>
-
-                            <div class="ul-inner-testimony-content">
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
-                                <p class="ul-inner-testimony-text">I discovered Okranchy at a weekend market in Quezon City and decided to try the Spicy flavor. Oh my goodness — it's the perfect heat level! Not too overwhelming, just enough kick to keep you reaching for more. I've since ordered online multiple times and the delivery is always prompt. The Large 200g bag is great for movie nights with my friends.</p>
-
-                                <div class="ul-inner-testimony-bottom">
-                                    <div class="left">
-                                        <span class="ul-inner-testimony-name">Angelica Cruz</span>
-                                        <span class="ul-inner-testimony-role">Food Blogger, Manila</span>
-                                    </div>
-                                    <div class="icon"><i class="flaticon-straight-quotes"></i></div>
-                                </div>
+                    <div class="trop-testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <p>I discovered Okranchy at a weekend market in Quezon City and tried the Spicy flavor. Oh my goodness — it's the perfect heat level! Not too overwhelming, just enough kick to keep you reaching for more. The Large bag is great for movie nights with my friends.</p>
+                        <div style="color:var(--trop-gold);margin-bottom:14px;font-size:0.85rem;letter-spacing:2px;">★★★★★</div>
+                        <div class="reviewer">
+                            <img src="assets/img/inner-reviewer-1.png" alt="Angelica Cruz">
+                            <div>
+                                <h4 class="name">Angelica Cruz</h4>
+                                <span class="role">Food Blogger, Manila</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- SINGLE TESTIMONIAL -->
-                    <div class="col">
-                        <div class="ul-inner-testimony">
-                            <div class="ul-inner-testimony-img">
-                                <img src="assets/img/inner-reviewer-2.png" alt="Miguel Tan">
-                            </div>
-
-                            <div class="ul-inner-testimony-content">
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
-                                <p class="ul-inner-testimony-text">I run a small convenience store in Caloocan and started stocking Okranchy after meeting the Ani Co. team. Sales have been amazing! Customers keep coming back for more, and several have asked me to reserve bags for them. The product practically sells itself. It's refreshing to see young entrepreneurs with such dedication to quality. Highly recommend for any reseller!</p>
-
-                                <div class="ul-inner-testimony-bottom">
-                                    <div class="left">
-                                        <span class="ul-inner-testimony-name">Miguel Tan</span>
-                                        <span class="ul-inner-testimony-role">Store Owner, Caloocan</span>
-                                    </div>
-                                    <div class="icon"><i class="flaticon-straight-quotes"></i></div>
-                                </div>
+                    <div class="trop-testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <p>I run a small convenience store in Caloocan and started stocking Okranchy after meeting the Ani Co. team. Sales have been amazing! Customers keep coming back for more. The product practically sells itself. It's refreshing to see young entrepreneurs with such dedication to quality.</p>
+                        <div style="color:var(--trop-gold);margin-bottom:14px;font-size:0.85rem;letter-spacing:2px;">★★★★★</div>
+                        <div class="reviewer">
+                            <img src="assets/img/inner-reviewer-2.png" alt="Miguel Tan">
+                            <div>
+                                <h4 class="name">Miguel Tan</h4>
+                                <span class="role">Store Owner, Caloocan</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- TESTIMONIALS SECTION END -->
     </main>
 
     <!-- FOOTER SECTION START -->

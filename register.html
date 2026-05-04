@@ -158,112 +158,97 @@
     <!-- HEADER SECTION END -->
 
     <main>
-        <!-- AUTH SECTION START -->
-        <section class="ul-auth-wrapper">
-            <div class="ul-auth-card wow animate__fadeInUp">
-                <div class="ul-auth-logo">
-                    <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
+        <!-- AUTH SECTION START - Tropical/Organic -->
+        <div class="trop-auth-bg">
+            <div class="trop-form-card" style="max-width:480px;margin:auto;">
+                <div style="text-align:center;margin-bottom:24px;">
+                    <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo" style="max-height:80px;width:auto;margin-bottom:12px;"></a>
+                    <div class="trop-label" style="justify-content:center;">Join Us</div>
+                    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:var(--trop-green-dark);margin:4px 0 0;">Create Account</h2>
                 </div>
 
-                <h2 class="ul-auth-title">Create Account</h2>
-                <p class="ul-auth-subtitle">Join the Okranchy family today!</p>
-
                 <form id="register-form" class="ul-auth-form" novalidate>
-                    <div class="row g-lg-3">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="register-fullname">Full Name</label>
-                                <div class="input-wrapper">
-                                    <input type="text" id="register-fullname" name="fullname" placeholder="Enter your full name" required>
-                                </div>
-                                <p class="ul-auth-error" id="fullname-error">Please enter your name</p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="register-email">Email Address</label>
-                                <div class="input-wrapper">
-                                    <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
-                                </div>
-                                <p class="ul-auth-error" id="email-error">Please enter a valid email address</p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="register-phone">Phone Number</label>
-                                <div class="input-wrapper">
-                                    <input type="tel" id="register-phone" name="phone" placeholder="Enter your phone number" required>
-                                </div>
-                                <p class="ul-auth-error" id="phone-error">Please enter your phone number</p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="register-password">Password</label>
-                                <div class="input-wrapper">
-                                    <input type="password" id="register-password" name="password" placeholder="Create a password" required>
-                                    <button type="button" class="toggle-pw" data-target="register-password">
-                                        <i class="flaticon-eye"></i>
-                                    </button>
-                                </div>
-                                <p class="ul-auth-error" id="password-error">Please create a password (min 6 characters)</p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="register-confirm-password">Confirm Password</label>
-                                <div class="input-wrapper">
-                                    <input type="password" id="register-confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-                                    <button type="button" class="toggle-pw" data-target="register-confirm-password">
-                                        <i class="flaticon-eye"></i>
-                                    </button>
-                                </div>
-                                <p class="ul-auth-error" id="confirm-error">Passwords do not match</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="register-fullname" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Full Name</label>
+                        <input type="text" id="register-fullname" name="fullname" class="trop-input" placeholder="Enter your full name" required>
+                        <p class="ul-auth-error" id="fullname-error">Please enter your name</p>
                     </div>
 
-                    <div class="form-group">
-                        <label class="ul-checkbox-wrapper ul-auth-checkbox">
-                            <input type="checkbox" id="agree-terms" name="agree-terms" required>
-                            <span class="ul-checkbox"><i class="flaticon-checked"></i></span>
-                            <span class="ul-checkbox-txt">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    <div class="form-group" style="margin-top:14px;">
+                        <label for="register-email" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Email Address</label>
+                        <input type="email" id="register-email" name="email" class="trop-input" placeholder="Enter your email" required>
+                        <p class="ul-auth-error" id="email-error">Please enter a valid email address</p>
+                    </div>
+
+                    <div class="form-group" style="margin-top:14px;">
+                        <label for="register-phone" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Phone Number</label>
+                        <input type="tel" id="register-phone" name="phone" class="trop-input" placeholder="Enter your phone number" required>
+                        <p class="ul-auth-error" id="phone-error">Please enter your phone number</p>
+                    </div>
+
+                    <div class="form-group" style="margin-top:14px;">
+                        <label for="register-password" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Password</label>
+                        <div style="position:relative;">
+                            <input type="password" id="register-password" name="password" class="trop-input" placeholder="Create a password" required style="padding-right:44px;">
+                            <button type="button" class="toggle-pw" data-target="register-password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--trop-tan);cursor:pointer;font-size:1.1rem;">
+                                <i class="flaticon-eye"></i>
+                            </button>
+                        </div>
+                        <p class="ul-auth-error" id="password-error">Please create a password (min 6 characters)</p>
+                    </div>
+
+                    <div class="form-group" style="margin-top:14px;">
+                        <label for="register-confirm-password" style="font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;color:var(--trop-green-dark);margin-bottom:6px;display:block;">Confirm Password</label>
+                        <div style="position:relative;">
+                            <input type="password" id="register-confirm-password" name="confirm-password" class="trop-input" placeholder="Confirm your password" required style="padding-right:44px;">
+                            <button type="button" class="toggle-pw" data-target="register-confirm-password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--trop-tan);cursor:pointer;font-size:1.1rem;">
+                                <i class="flaticon-eye"></i>
+                            </button>
+                        </div>
+                        <p class="ul-auth-error" id="confirm-error">Passwords do not match</p>
+                    </div>
+
+                    <div class="form-group" style="margin-top:14px;">
+                        <label class="ul-checkbox-wrapper ul-auth-checkbox" style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text);">
+                            <input type="checkbox" id="agree-terms" name="agree-terms" required style="accent-color:var(--trop-green);margin-top:3px;">
+                            <span class="ul-checkbox-txt">I agree to the <a href="#" style="color:var(--trop-green);text-decoration:none;">Terms of Service</a> and <a href="#" style="color:var(--trop-green);text-decoration:none;">Privacy Policy</a></span>
                         </label>
                         <p class="ul-auth-error" id="terms-error">You must agree to the terms</p>
                     </div>
 
-                    <div class="form-group">
-                        <button type="submit" class="ul-btn">
+                    <div class="form-group" style="margin-top:20px;">
+                        <button type="submit" class="trop-btn" style="width:100%;justify-content:center;">
                             Create Account <i class="flaticon-right"></i>
                         </button>
                     </div>
                 </form>
 
-                <div class="ul-auth-divider">
-                    <span>or sign up with</span>
+                <hr class="trop-hr" style="margin:20px 0;">
+
+                <div style="text-align:center;margin-bottom:12px;">
+                    <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text-light, #6b6b6b);">or sign up with</span>
                 </div>
 
-                <div class="ul-auth-socials">
-                    <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Facebook">
+                <div class="ul-auth-socials" style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">
+                    <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Facebook" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
                         <i class="flaticon-facebook"></i>
                     </a>
-                    <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Instagram">
+                    <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Instagram" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
                         <i class="flaticon-instagram"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener" title="Sign up with TikTok">
+                    <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener" title="Sign up with TikTok" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--trop-cream-light);color:var(--trop-green);font-size:1.1rem;text-decoration:none;border:1px solid rgba(26,107,60,0.08);transition:all 0.3s;">
                         <i class="flaticon-tiktok"></i>
                     </a>
                 </div>
 
-                <div class="ul-auth-footer">
-                    <p>Already have an account? <a href="login.html">Sign In</a></p>
+                <div style="text-align:center;">
+                    <p style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--trop-text-light, #6b6b6b);margin:0;">
+                        Already have an account? 
+                        <a href="login.html" style="color:var(--trop-green);font-weight:600;text-decoration:none;">Sign In</a>
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
         <!-- AUTH SECTION END -->
     </main>
 

@@ -17,25 +17,16 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-        /* Make logo smaller to fit header and footer */
-        .logo-container .logo {
-            max-height: 80px;
-            width: auto;
-        }
-        .ul-sidebar-header-logo .logo {
-            max-height: 100px;
-            width: auto;
-        }
-        .ul-footer-about img {
-            max-height: 120px;
-            width: auto;
-        }
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
-        .signature {
-            max-width: 80px;
-            height: auto;
-        }
+    <style>
+        .logo-container .logo { max-height: 80px; width: auto; }
+        .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
+        .ul-footer-about img { max-height: 120px; width: auto; }
+        .signature { max-width: 80px; height: auto; }
     </style>
 </head>
 
@@ -149,138 +140,143 @@
     </header>
 
     <main>
-        <!-- BREADCRUMB -->
-        <div class="ul-breadcrumb">
-            <div class="wow animate__fadeInUp">
-                <h2 class="ul-breadcrumb-title">Checkout</h2>
-                <div class="ul-breadcrumb-nav">
-                    <a href="index.html">Home</a>
-                    <span class="separator">/</span>
-                    <span class="current-page">Checkout</span>
-                </div>
+        <div class="trop-breadcrumb">
+            <h1 class="trop-breadcrumb-title">Checkout</h1>
+            <div class="trop-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span class="current">Checkout</span>
             </div>
         </div>
 
-        <!-- CHECKOUT SECTION -->
-        <div class="ul-container ul-section-spacing">
-            <h3 class="ul-checkout-title">Delivery Details</h3>
-            <form action="#" class="ul-checkout-form">
-                <div class="row ul-bs-row row-cols-2 row-cols-xxs-1">
-                    <!-- left side -->
-                    <div class="col">
-                        <div class="row row-cols-lg-2 row-cols-1 ul-bs-row">
-                            <div class="form-group">
-                                <label for="firstname">First Name*</label>
-                                <input type="text" name="firstname" id="firstname" placeholder="Enter Your First Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Last Name*</label>
-                                <input type="text" name="lastname" id="lastname" placeholder="Enter Your Last Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="companyname">Company / Organization (Optional)</label>
-                                <input type="text" name="companyname" id="companyname" placeholder="Enter Company or Organization Name">
-                            </div>
-                            <div class="form-group ul-checkout-country-wrapper">
-                                <label for="ul-checkout-country">Province / Region*</label>
-                                <select name="country" id="ul-checkout-country">
-                                    <option data-placeholder="true">Select Province / Region</option>
-                                    <option value="metro-manila">Metro Manila</option>
-                                    <option value="bulacan">Bulacan</option>
-                                    <option value="rizal">Rizal</option>
-                                    <option value="cavite">Cavite</option>
-                                    <option value="laguna">Laguna</option>
-                                    <option value="pampanga">Pampanga</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="address1">Street Address*</label>
-                                <input type="text" name="address1" id="address1" placeholder="House No., Street, Barangay">
-                            </div>
-                            <div class="form-group">
-                                <label for="address2">Address Line 2</label>
-                                <input type="text" name="address2" id="address2" placeholder="Building, Floor, Unit (Optional)">
-                            </div>
-                            <div class="form-group">
-                                <label for="city">City / Municipality*</label>
-                                <input type="text" name="city" id="city" placeholder="e.g. Valenzuela City">
-                            </div>
-                            <div class="form-group">
-                                <label for="state">Barangay*</label>
-                                <input type="text" name="state" id="state" placeholder="Enter Your Barangay">
-                            </div>
-                            <div class="form-group">
-                                <label for="zipcode">ZIP Code*</label>
-                                <input type="text" name="zipcode" id="zipcode" placeholder="e.g. 1440">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone*</label>
-                                <input type="text" name="phone" id="phone" placeholder="e.g. 09XX-XXX-XXXX">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="email">Email Address*</label>
-                                <input type="email" name="email" id="email" placeholder="Enter Your Email">
-                            </div>
-                        </div>
+        <section style="padding:80px 0;background:var(--trop-cream);">
+            <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+
+                <!-- CHECKOUT STEP INDICATORS -->
+                <div style="display:flex;justify-content:center;gap:16px;margin-bottom:48px;flex-wrap:wrap;">
+                    <div class="trop-step completed">
+                        <span class="step-num">1</span>
+                        <span>Shopping Cart</span>
                     </div>
-
-                    <!-- right side -->
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="ul-checkout-different-address-field">Delivery Notes / Special Instructions</label>
-                            <textarea name="different-address" id="ul-checkout-different-address-field" placeholder="Any landmark, gate code, or delivery instructions..."></textarea>
-                        </div>
-
-                        <div class="ul-checkout-payment-methods">
-                            <div class="form-group">
-                                <label for="payment-option-1">
-                                    <input type="radio" name="payment-methods" id="payment-option-1" hidden="" checked="">
-                                    <span class="ul-radio-wrapper"></span>
-                                    <span class="ul-checkout-payment-method">
-                                        <span class="title">Cash on Delivery (COD)</span>
-                                        <span class="descr">Pay with cash when your Okranchy order is delivered to your doorstep. Available within Metro Manila and nearby provinces.</span>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="payment-option-2">
-                                    <input type="radio" name="payment-methods" id="payment-option-2" hidden="">
-                                    <span class="ul-radio-wrapper"></span>
-                                    <span class="ul-checkout-payment-method">
-                                        <span class="title">GCash / Bank Transfer</span>
-                                        <span class="descr">Send payment via GCash or bank transfer. Order confirmation will be sent to your email after verification.</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <button type="submit" class="ul-checkout-form-btn">Place Your Order</button>
-                        </div>
+                    <div class="trop-step active">
+                        <span class="step-num">2</span>
+                        <span>Checkout</span>
+                    </div>
+                    <div class="trop-step">
+                        <span class="step-num">3</span>
+                        <span>Order Confirmed</span>
                     </div>
                 </div>
-            </form>
 
-            <!-- bill summary -->
-            <div class="row ul-bs-row row-cols-2 row-cols-xxs-1">
-                <div class="ul-checkout-bill-summary">
-                    <h4 class="ul-checkout-bill-summary-title">Your Order</h4>
-                    <div>
-                        <div class="ul-checkout-bill-summary-header">
-                            <span class="left">Product</span>
-                            <span class="right">Sub Total</span>
+                <div class="trop-heading" style="text-align:center;margin-bottom:40px;">
+                    <span class="trop-label">Secure Checkout</span>
+                    <h2 class="trop-section-title">Delivery Details</h2>
+                </div>
+
+                <form>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+
+                        <!-- LEFT - Billing / Shipping -->
+                        <div style="display:flex;flex-direction:column;gap:24px;">
+                            <!-- Billing Details -->
+                            <div class="trop-form-card">
+                                <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Billing Address</h4>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                                    <div>
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">First Name*</label>
+                                        <input type="text" placeholder="Enter First Name" class="trop-input">
+                                    </div>
+                                    <div>
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Last Name*</label>
+                                        <input type="text" placeholder="Enter Last Name" class="trop-input">
+                                    </div>
+                                    <div style="grid-column:1/-1;">
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Company / Organization</label>
+                                        <input type="text" placeholder="Company or Organization Name" class="trop-input">
+                                    </div>
+                                    <div style="grid-column:1/-1;">
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Province / Region*</label>
+                                        <select class="trop-select"><option>Select Province / Region</option><option>Metro Manila</option><option>Bulacan</option><option>Rizal</option><option>Cavite</option><option>Laguna</option><option>Pampanga</option></select>
+                                    </div>
+                                    <div style="grid-column:1/-1;">
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Street Address*</label>
+                                        <input type="text" placeholder="House No., Street, Barangay" class="trop-input">
+                                    </div>
+                                    <div style="grid-column:1/-1;">
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Address Line 2</label>
+                                        <input type="text" placeholder="Building, Floor, Unit (Optional)" class="trop-input">
+                                    </div>
+                                    <div>
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">City / Municipality*</label>
+                                        <input type="text" placeholder="e.g. Valenzuela City" class="trop-input">
+                                    </div>
+                                    <div>
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Barangay*</label>
+                                        <input type="text" placeholder="Enter Your Barangay" class="trop-input">
+                                    </div>
+                                    <div>
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">ZIP Code*</label>
+                                        <input type="text" placeholder="e.g. 1440" class="trop-input">
+                                    </div>
+                                    <div>
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Phone*</label>
+                                        <input type="text" placeholder="e.g. 09XX-XXX-XXXX" class="trop-input">
+                                    </div>
+                                    <div style="grid-column:1/-1;">
+                                        <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">Email Address*</label>
+                                        <input type="email" placeholder="Enter Your Email" class="trop-input">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Delivery Notes -->
+                            <div class="trop-form-card">
+                                <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Delivery Notes</h4>
+                                <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:8px;">Special Instructions</label>
+                                <textarea class="trop-textarea" placeholder="Any landmark, gate code, or delivery instructions..."></textarea>
+                            </div>
                         </div>
-                        <div class="ul-checkout-bill-summary-body">
-                            <div class="single-row"><span class="left">Original — Small (50g)</span><span class="right">₱35.00</span></div>
-                            <div class="single-row"><span class="left">Subtotal</span><span class="right">₱35.00</span></div>
-                            <div class="single-row"><span class="left">Shipping</span><span class="right">₱50.00</span></div>
-                        </div>
-                        <div class="ul-checkout-bill-summary-footer ul-checkout-bill-summary-header">
-                            <span class="left">Total</span>
-                            <span class="right">₱85.00</span>
+
+                        <!-- RIGHT - Payment + Order Summary -->
+                        <div style="display:flex;flex-direction:column;gap:24px;">
+
+                            <!-- Payment Method -->
+                            <div class="trop-form-card">
+                                <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Payment Method</h4>
+                                <label style="display:flex;align-items:start;gap:12px;cursor:pointer;padding:14px 0;border-bottom:1px solid rgba(26,107,60,0.06);">
+                                    <input type="radio" name="payment" checked hidden>
+                                    <span style="width:20px;height:20px;border-radius:50%;border:2px solid var(--trop-green);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--trop-green);display:block;"></span></span>
+                                    <div><span style="font-weight:600;font-size:0.9rem;color:var(--trop-text);display:block;">Cash on Delivery (COD)</span><span style="font-size:0.8rem;color:var(--trop-text-light);">Pay with cash when your Okranchy order arrives.</span></div>
+                                </label>
+                                <label style="display:flex;align-items:start;gap:12px;cursor:pointer;padding:14px 0;">
+                                    <input type="radio" name="payment" hidden>
+                                    <span style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(26,107,60,0.1);flex-shrink:0;margin-top:2px;"></span>
+                                    <div><span style="font-weight:600;font-size:0.9rem;color:var(--trop-text);display:block;">GCash / Bank Transfer</span><span style="font-size:0.8rem;color:var(--trop-text-light);">Send payment via GCash or bank transfer.</span></div>
+                                </label>
+                                <button type="submit" class="trop-btn" style="width:100%;justify-content:center;margin-top:20px;">Place Your Order</button>
+                            </div>
+
+                            <!-- Order Summary -->
+                            <div class="trop-card-base" style="padding:28px 32px;">
+                                <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Your Order</h4>
+                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding-bottom:10px;border-bottom:1px solid rgba(26,107,60,0.06);margin-bottom:10px;">
+                                    <span style="font-weight:600;color:var(--trop-text);">Product</span>
+                                    <span style="font-weight:600;color:var(--trop-text);">Subtotal</span>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span>Original — Small (50g)</span><span>₱35.00</span></div>
+                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span style="color:var(--trop-text-light);">Subtotal</span><span>₱35.00</span></div>
+                                <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding:8px 0;"><span style="color:var(--trop-text-light);">Shipping</span><span>₱50.00</span></div>
+                                <div style="display:flex;justify-content:space-between;font-size:1rem;font-weight:700;padding-top:12px;margin-top:8px;border-top:1px solid rgba(26,107,60,0.08);">
+                                    <span>Total</span>
+                                    <span style="color:var(--trop-green-dark);">₱85.00</span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- FOOTER SECTION START -->

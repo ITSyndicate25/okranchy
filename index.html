@@ -502,10 +502,12 @@
 
     <main>
         <!-- BANNER SECTION START -->
-        <section class="ul-banner">
+        <section class="ul-banner" style="background:var(--trop-cream-light);padding:80px 0;position:relative;overflow:hidden;">
+            <!-- leaf gradient overlay -->
+            <div style="position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 140% 80% at 0% 50%, rgba(45,138,78,0.06) 0%, transparent 70%),radial-gradient(ellipse 120% 70% at 100% 50%, rgba(212,160,80,0.05) 0%, transparent 70%);"></div>
             <!-- top -->
-            <div class="top">
-                <div class="row gy-4 row-cols-md-2 row-cols-1 align-items-center flex-column-reverse flex-md-row">
+            <div class="top" style="position:relative;z-index:1;">
+                <div class="row gy-4 row-cols-md-2 row-cols-1 align-items-center flex-column-reverse flex-md-row" style="max-width:1200px;margin:0 auto;padding:0 24px;">
                     <!-- banner text -->
                     <div class="col">
                         <div class="ul-banner-txt">
@@ -515,9 +517,9 @@
                                     <div class="swiper-slide">
                                         <div class="ul-banner-txt-slide">
                                             <div class="wow animate__fadeInUp">
-                                                <span class="ul-banner-sub-title">Crunch Into Goodness</span>
-                                                <h1 class="ul-banner-title">Okranchy Okra Chips</h1>
-                                                <p class="ul-banner-descr">Discover the perfect crunch with Okranchy — premium okra chips made from fresh, locally-sourced okra. A healthy, delicious, and guilt-free snack crafted with care by Ani Co. from Pamantasan ng Lungsod ng Valenzuela.</p>
+                                                <span style="display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--trop-green);margin-bottom:12px;">Crunch Into Goodness</span>
+                                                <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;color:var(--trop-text);line-height:1.1;margin:0 0 16px;">Okranchy Okra Chips</h1>
+                                                <p style="font-size:1.05rem;color:var(--trop-text-light);line-height:1.7;max-width:540px;margin:0 0 24px;">Discover the perfect crunch with Okranchy — premium okra chips made from fresh, locally-sourced okra. A healthy, delicious, and guilt-free snack crafted with care by Ani Co. from Pamantasan ng Lungsod ng Valenzuela.</p>
                                                 <div class="ul-banner-btns">
                                                     <a href="shop.html" class="ul-btn">Order Now <i class="flaticon-right"></i></a>
                                                 </div>
@@ -529,9 +531,9 @@
                                     <div class="swiper-slide">
                                         <div class="ul-banner-txt-slide">
                                             <div class="wow animate__fadeInUp">
-                                                <span class="ul-banner-sub-title">Healthy Snacking Made Fun</span>
-                                                <h1 class="ul-banner-title">Crispy Okra Goodness</h1>
-                                                <p class="ul-banner-descr">Packed with nutrients and bursting with flavor, Okranchy okra chips are the perfect alternative to ordinary snacks. Try our Original, Spicy, and Cheese flavors today!</p>
+                                                <span style="display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--trop-green);margin-bottom:12px;">Healthy Snacking Made Fun</span>
+                                                <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;color:var(--trop-text);line-height:1.1;margin:0 0 16px;">Crispy Okra Goodness</h1>
+                                                <p style="font-size:1.05rem;color:var(--trop-text-light);line-height:1.7;max-width:540px;margin:0 0 24px;">Packed with nutrients and bursting with flavor, Okranchy okra chips are the perfect alternative to ordinary snacks. Try our Original, Spicy, and Cheese flavors today!</p>
                                                 <div class="ul-banner-btns">
                                                     <a href="shop.html" class="ul-btn">Shop Now <i class="flaticon-right"></i></a>
                                                 </div>
@@ -543,9 +545,9 @@
                                     <div class="swiper-slide">
                                         <div class="ul-banner-txt-slide">
                                             <div class="wow animate__fadeInUp">
-                                                <span class="ul-banner-sub-title">From Farm to Snack</span>
-                                                <h1 class="ul-banner-title">100% Natural Okra Chips</h1>
-                                                <p class="ul-banner-descr">No artificial preservatives, no MSG — just pure, crunchy okra chips. Okranchy is a proudly Filipino product made with passion and dedication by PLV students.</p>
+                                                <span style="display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--trop-green);margin-bottom:12px;">From Farm to Snack</span>
+                                                <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;color:var(--trop-text);line-height:1.1;margin:0 0 16px;">100% Natural Okra Chips</h1>
+                                                <p style="font-size:1.05rem;color:var(--trop-text-light);line-height:1.7;max-width:540px;margin:0 0 24px;">No artificial preservatives, no MSG — just pure, crunchy okra chips. Okranchy is a proudly Filipino product made with passion and dedication by PLV students.</p>
                                                 <div class="ul-banner-btns">
                                                     <a href="shop.html" class="ul-btn">Try It Now <i class="flaticon-right"></i></a>
                                                 </div>
@@ -564,17 +566,17 @@
                                 <div class="swiper-wrapper">
                                     <!-- single slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/img/testimonial-okranchy2.png" alt="Okranchy Okra Chips">
+                                        <img src="assets/img/testimonial-okranchy2.png" alt="Okranchy Okra Chips" style="max-width:100%;height:auto;filter:drop-shadow(0 8px 24px rgba(26,107,60,0.12));">
                                     </div>
 
                                     <!-- single slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/img/testimonial-okranchy2.png" alt="Okranchy Okra Chips">
+                                        <img src="assets/img/testimonial-okranchy2.png" alt="Okranchy Okra Chips" style="max-width:100%;height:auto;filter:drop-shadow(0 8px 24px rgba(26,107,60,0.12));">
                                     </div>
 
                                     <!-- single slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/img/testimonial-okranchy2.png" alt="Okranchy Okra Chips">
+                                        <img src="assets/img/testimonial-okranchy2.png" alt="Okranchy Okra Chips" style="max-width:100%;height:auto;filter:drop-shadow(0 8px 24px rgba(26,107,60,0.12));">
                                     </div>
                                 </div>
                             </div>
@@ -586,11 +588,11 @@
             </div>
 
             <!-- bottom -->
-            <div class="bottom">
+            <div class="bottom" style="position:relative;z-index:1;max-width:1200px;margin:40px auto 0;padding:0 24px;display:flex;align-items:center;justify-content:space-between;">
                 <div class="ul-banner-txt-slider-pagination"></div>
-                <div class="ul-banner-txt-slider-nav">
-                    <button class="prev"><i class="flaticon-left-arrow"></i></button>
-                    <button class="next"><i class="flaticon-right-arrow-3"></i></button>
+                <div class="ul-banner-txt-slider-nav" style="display:flex;gap:8px;">
+                    <button class="prev" style="width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(26,107,60,0.15);background:var(--trop-white);color:var(--trop-green-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;"><i class="flaticon-left-arrow"></i></button>
+                    <button class="next" style="width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(26,107,60,0.15);background:var(--trop-white);color:var(--trop-green-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;"><i class="flaticon-right-arrow-3"></i></button>
                 </div>
             </div>
         </section>
@@ -598,51 +600,54 @@
 
 
         <!-- ABOUT SECTION START -->
-        <section class="ul-about ul-section-spacing wow animate__fadeInUp">
-            <div class="ul-container">
+        <section class="ul-about ul-section-spacing wow animate__fadeInUp" style="background:var(--trop-cream);position:relative;overflow:hidden;">
+            <!-- subtle leaf decoration -->
+            <div style="position:absolute;top:0;right:0;width:300px;height:300px;pointer-events:none;background:radial-gradient(circle at 100% 0%, rgba(45,138,78,0.05) 0%, transparent 70%);"></div>
+            <div style="position:absolute;bottom:0;left:0;width:250px;height:250px;pointer-events:none;background:radial-gradient(circle at 0% 100%, rgba(212,160,80,0.05) 0%, transparent 70%);"></div>
+            <div class="ul-container" style="position:relative;z-index:1;">
                 <div class="row row-cols-xxl-2 row-cols-1 align-items-center gy-4">
-                    <div class="col-xl-5 col-lg-4 col-md-5 col">
+                    <div class="col-xl-5 col-lg-4 col-md-5 col trop-img-shift-up">
                         <div class="ul-about-imgs">
-                            <div class="vector-img">
-                                <img src="assets/img/about-img-1.jpg" alt="Fresh Okra">
+                            <div class="vector-img" style="border-radius:var(--trop-radius);overflow:hidden;box-shadow:0 12px 40px rgba(26,107,60,0.10);">
+                                <img src="assets/img/about-img-1.jpg" alt="Fresh Okra" style="width:100%;height:auto;display:block;">
                             </div>
-                            <img src="assets/img/about-img-2.jpg" alt="Okranchy Production">
+                            <img src="assets/img/about-img-2.jpg" alt="Okranchy Production" style="border-radius:var(--trop-radius-sm);box-shadow:0 8px 28px rgba(26,107,60,0.08);max-width:220px;margin-top:-60px;margin-left:20px;border:4px solid var(--trop-white);">
                         </div>
                     </div>
 
                     <!-- txt -->
-                    <div class="col-xl-7 col-lg-8 col-md-7 col">
+                    <div class="col-xl-7 col-lg-8 col-md-7 col" style="align-self:flex-start;">
                         <div class="ul-about-txt">
-                            <span class="ul-section-sub-title ul-section-sub-title--2"><i class="flaticon-tray"></i> About Okranchy <i class="flaticon-tray"></i></span>
-                            <h2 class="ul-section-title">Turning Fresh Okra Into Your Favorite Crunchy Snack</h2>
-                            <p class="ul-section-descr">Okranchy is a student-driven food product developed by <strong>Ani Co.</strong>, a group of passionate entrepreneurs from <strong>Pamantasan ng Lungsod ng Valenzuela (PLV)</strong>. We believe that healthy snacking should never be boring — that's why we created okra chips that are crispy, flavorful, and packed with natural goodness.</p>
+                            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--trop-green);margin-bottom:12px;"><i class="flaticon-tray" style="font-size:0.7rem;"></i> About Okranchy <i class="flaticon-tray" style="font-size:0.7rem;"></i></span>
+                            <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--trop-text);line-height:1.15;margin:0 0 16px;">Turning Fresh Okra Into Your Favorite Crunchy Snack</h2>
+                            <p style="font-size:1rem;color:var(--trop-text-light);line-height:1.7;margin:0 0 28px;">Okranchy is a student-driven food product developed by <strong style="color:var(--trop-green-dark);">Ani Co.</strong>, a group of passionate entrepreneurs from <strong style="color:var(--trop-green-dark);">Pamantasan ng Lungsod ng Valenzuela (PLV)</strong>. We believe that healthy snacking should never be boring — that's why we created okra chips that are crispy, flavorful, and packed with natural goodness.</p>
 
-                            <div class="ul-about-list">
-                                <div class="ul-about-list-item">
-                                    <div class="icon"><i class="flaticon-quality"></i></div>
+                            <div class="ul-about-list" style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px;">
+                                <div class="ul-about-list-item" style="display:flex;align-items:flex-start;gap:16px;padding:16px 20px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 12px rgba(26,107,60,0.04);">
+                                    <div class="icon" style="width:48px;height:48px;border-radius:50%;background:var(--trop-green-pale);display:flex;align-items:center;justify-content:center;color:var(--trop-green);font-size:1.2rem;flex-shrink:0;"><i class="flaticon-quality"></i></div>
                                     <div class="txt">
-                                        <h3 class="ul-about-list-item-title">Premium Quality Ingredients</h3>
-                                        <p class="ul-about-list-item-descr">Made from fresh, locally-sourced okra with no artificial preservatives or MSG</p>
+                                        <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--trop-text);margin:0 0 4px;">Premium Quality Ingredients</h3>
+                                        <p style="font-size:0.88rem;color:var(--trop-text-light);margin:0;line-height:1.5;">Made from fresh, locally-sourced okra with no artificial preservatives or MSG</p>
                                     </div>
                                 </div>
 
-                                <div class="ul-about-list-item">
-                                    <div class="icon"><i class="flaticon-chef"></i></div>
+                                <div class="ul-about-list-item" style="display:flex;align-items:flex-start;gap:16px;padding:16px 20px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 12px rgba(26,107,60,0.04);">
+                                    <div class="icon" style="width:48px;height:48px;border-radius:50%;background:var(--trop-green-pale);display:flex;align-items:center;justify-content:center;color:var(--trop-green);font-size:1.2rem;flex-shrink:0;"><i class="flaticon-chef"></i></div>
                                     <div class="txt">
-                                        <h3 class="ul-about-list-item-title">Crafted with Care</h3>
-                                        <p class="ul-about-list-item-descr">Every batch is carefully prepared to ensure the perfect crunch and taste</p>
+                                        <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--trop-text);margin:0 0 4px;">Crafted with Care</h3>
+                                        <p style="font-size:0.88rem;color:var(--trop-text-light);margin:0;line-height:1.5;">Every batch is carefully prepared to ensure the perfect crunch and taste</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="ul-about-author">
-                                <div class="left">
-                                    <div class="ul-about-author-img">
-                                        <img src="assets/img/author.png" alt="Ani Co. Team">
+                            <div class="ul-about-author" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 12px rgba(26,107,60,0.04);border-left:3px solid var(--trop-green);">
+                                <div class="left" style="display:flex;align-items:center;gap:14px;">
+                                    <div class="ul-about-author-img" style="width:54px;height:54px;border-radius:50%;overflow:hidden;border:2px solid var(--trop-green-pale);">
+                                        <img src="assets/img/author.png" alt="Ani Co. Team" style="width:100%;height:100%;object-fit:cover;">
                                     </div>
                                     <div class="author-txt">
-                                        <span class="ul-about-author-title">Ani Co. PLV</span>
-                                        <h3 class="ul-about-author-name">Feasibility Study Project</h3>
+                                        <span style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;color:var(--trop-green);letter-spacing:1px;text-transform:uppercase;">Ani Co. PLV</span>
+                                        <h3 style="font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--trop-text);margin:2px 0 0;">Feasibility Study Project</h3>
                                     </div>
                                 </div>
 
@@ -657,49 +662,51 @@
         </section>
         <!-- ABOUT SECTION END -->
 
+        <!-- bamboo divider -->
+        <div class="trop-leaf-divider"><span class="leaf-icon"><i class="flaticon-tray"></i></span></div>
 
         <!-- DISCOUNT SECTION START -->
-        <section class="ul-discount ul-section-spacing">
-            <div class="ul-container wow animate__fadeInUp">
-                <div class="row g-4">
+        <section class="ul-discount ul-section-spacing trop-section-dark">
+            <div class="ul-container wow animate__fadeInUp" style="position:relative;z-index:1;">
+                <div class="row g-5 align-items-center">
                     <!-- txt -->
                     <div class="col-md-5">
-                        <div class="ul-discount-txt">
-                            <span class="ul-section-sub-title ul-section-sub-title--2"><i class="flaticon-tray"></i> Try Our Flavors <i class="flaticon-tray"></i></span>
-                            <h2 class="ul-section-title">Crunchy, Healthy, and Irresistibly Delicious.</h2>
-                            <span class="ul-discount-second-title">Why Choose Okranchy?</span>
-                            <p class="ul-section-descr">Okranchy okra chips are a nutritious alternative to traditional junk food. Rich in fiber, vitamins, and antioxidants — snack smart with every bite!</p>
-                            <div class="ul-discount-countdown">
-                                <h3 class="ul-discount-countdown-title">Limited Launch Promo — Get Yours Now!</h3>
-                                <div class="ul-countdown">
-                                    <div class="ul-countdown-item">
+                        <div class="ul-discount-txt" style="color:var(--trop-white);">
+                            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--trop-gold);margin-bottom:12px;"><i class="flaticon-tray" style="font-size:0.7rem;"></i> Try Our Flavors <i class="flaticon-tray" style="font-size:0.7rem;"></i></span>
+                            <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--trop-white);line-height:1.15;margin:0 0 8px;">Crunchy, Healthy, and Irresistibly Delicious.</h2>
+                            <span style="display:block;font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--trop-gold);margin-bottom:14px;">Why Choose Okranchy?</span>
+                            <p style="font-size:1rem;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 28px;">Okranchy okra chips are a nutritious alternative to traditional junk food. Rich in fiber, vitamins, and antioxidants — snack smart with every bite!</p>
+                            <div class="ul-discount-countdown" style="background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);border-radius:var(--trop-radius);padding:24px;border:1px solid rgba(255,255,255,0.08);margin-bottom:24px;">
+                                <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--trop-gold);margin:0 0 16px;">Limited Launch Promo — Get Yours Now!</h3>
+                                <div class="ul-countdown trop-countdown-grid">
+                                    <div class="trop-countdown-item">
                                         <span class="number days">20</span>
                                         <span class="label">Days</span>
                                     </div>
-                                    <div class="ul-countdown-item">
+                                    <div class="trop-countdown-item">
                                         <span class="number hours">48</span>
                                         <span class="label">hrs</span>
                                     </div>
-                                    <div class="ul-countdown-item">
+                                    <div class="trop-countdown-item">
                                         <span class="number minutes">16</span>
                                         <span class="label">mins</span>
                                     </div>
-                                    <div class="ul-countdown-item">
+                                    <div class="trop-countdown-item">
                                         <span class="number seconds">38</span>
                                         <span class="label">secs</span>
                                     </div>
                                 </div>
                             </div>
-                            <a href="shop.html" class="ul-btn ul-btn--2">Order Now <i class="flaticon-right"></i></a>
+                            <a href="shop.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:100px;background:var(--trop-gold);color:var(--trop-text);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;">Order Now <i class="flaticon-right" style="font-size:0.8rem;"></i></a>
                         </div>
                     </div>
 
                     <!-- image -->
                     <div class="col-md-7">
-                        <div class="ul-discount-img">
-                            <img src="assets/img/discount-img.jpg" alt="Okranchy Chips" class="main-img">
-                            <img src="assets/img/discount-product-img.png" alt="Okranchy Product" class="ul-discount-product-img">
-                            <img src="assets/img/discount-sticker.png" alt="Promo Sticker" class="discount-sticker">
+                        <div class="ul-discount-img" style="position:relative;text-align:center;">
+                            <img src="assets/img/discount-img.jpg" alt="Okranchy Chips" class="main-img" style="max-width:90%;height:auto;border-radius:var(--trop-radius);box-shadow:0 20px 60px rgba(0,0,0,0.25);">
+                            <img src="assets/img/discount-product-img.png" alt="Okranchy Product" class="ul-discount-product-img" style="position:absolute;bottom:-20px;right:10%;max-width:200px;filter:drop-shadow(0 12px 32px rgba(0,0,0,0.2));">
+                            <img src="assets/img/discount-sticker.png" alt="Promo Sticker" class="discount-sticker" style="position:absolute;top:-10px;left:5%;max-width:100px;transform:rotate(-8deg);">
                         </div>
                     </div>
                 </div>
@@ -707,6 +714,8 @@
         </section>
         <!-- DISCOUNT SECTION END -->
 
+        <!-- bamboo divider -->
+        <div class="trop-leaf-divider"><span class="leaf-icon"><i class="flaticon-tray"></i></span></div>
 
         <!-- MENU / PRODUCTS SECTION START -->
         <section class="okr-menu-section ul-section-spacing" id="okr-products">
@@ -1139,35 +1148,39 @@
         </section>
         <!-- MENU / PRODUCTS SECTION END -->
 
+        <!-- bamboo divider -->
+        <div class="trop-leaf-divider"><span class="leaf-icon"><i class="flaticon-tray"></i></span></div>
 
         <!-- SPECIALITY SECTION START -->
-        <section class="ul-specialities ul-section-spacing">
-            <div class="ul-container">
-                <div class="row ul-bs-row">
+        <section class="ul-specialities ul-section-spacing" style="background:var(--trop-cream);position:relative;overflow:hidden;">
+            <!-- leaf decorative elements -->
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 0% 50%, rgba(45,138,78,0.04) 0%, transparent 70%),radial-gradient(ellipse 60% 50% at 100% 30%, rgba(212,160,80,0.03) 0%, transparent 70%);"></div>
+            <div class="ul-container" style="position:relative;z-index:1;">
+                <div class="row ul-bs-row align-items-center gy-4">
                     <!-- img -->
                     <div class="col-xl-7 col-lg-6">
-                        <div class="ul-specialities-img">
-                            <img src="assets/img/speciality-img-bg.svg" alt="Background Shape" class="bg-shape">
-                            <img src="assets/img/specialities-img.png" alt="Okranchy Special" class="main-img">
-                            <img src="assets/img/banner-vector-2.png" alt="vector" class="vector">
+                        <div class="ul-specialities-img" style="position:relative;text-align:center;padding:20px;">
+                            <img src="assets/img/speciality-img-bg.svg" alt="Background Shape" class="bg-shape" style="max-width:100%;height:auto;">
+                            <img src="assets/img/specialities-img.png" alt="Okranchy Special" class="main-img" style="position:relative;max-width:85%;height:auto;margin-top:-20%;filter:drop-shadow(0 12px 32px rgba(26,107,60,0.10));">
+                            <img src="assets/img/banner-vector-2.png" alt="vector" class="vector" style="position:absolute;bottom:10%;right:5%;max-width:80px;opacity:0.6;">
                         </div>
                     </div>
 
                     <!-- txt -->
                     <div class="col-xl-5 col-lg-6">
-                        <div class="ul-specialities-txt">
-                            <span class="ul-section-sub-title"><i class="flaticon-tray"></i> WHY OKRANCHY?</span>
-                            <h2 class="ul-section-title">The Healthier Snack Choice for Every Filipino</h2>
-                            <p class="ul-section-descr">Okranchy is more than just a snack — it's a mission to promote healthy eating habits using locally-grown ingredients. Each chip is carefully crafted to deliver maximum crunch and nutrition.</p>
+                        <div class="ul-specialities-txt" style="padding:20px;">
+                            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--trop-green);margin-bottom:12px;"><i class="flaticon-tray" style="font-size:0.7rem;"></i> WHY OKRANCHY?</span>
+                            <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--trop-text);line-height:1.15;margin:0 0 14px;">The Healthier Snack Choice for Every Filipino</h2>
+                            <p style="font-size:1rem;color:var(--trop-text-light);line-height:1.7;margin:0 0 24px;">Okranchy is more than just a snack — it's a mission to promote healthy eating habits using locally-grown ingredients. Each chip is carefully crafted to deliver maximum crunch and nutrition.</p>
 
-                            <ul class="ul-specialities-list">
-                                <li class="ul-speciality"><i class="flaticon-checked"></i><span class="txt">Made from 100% real okra — no fillers or extenders</span></li>
-                                <li class="ul-speciality"><i class="flaticon-checked"></i><span class="txt">Rich in dietary fiber, Vitamin C, and antioxidants</span></li>
-                                <li class="ul-speciality"><i class="flaticon-checked"></i><span class="txt">No artificial preservatives, colors, or MSG</span></li>
-                                <li class="ul-speciality"><i class="flaticon-checked"></i><span class="txt">Locally sourced and proudly Filipino-made</span></li>
+                            <ul class="ul-specialities-list" style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;">
+                                <li class="ul-speciality" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 8px rgba(26,107,60,0.04);font-size:0.92rem;color:var(--trop-text);"><i class="flaticon-checked" style="color:var(--trop-green);font-size:1rem;margin-top:2px;flex-shrink:0;"></i><span class="txt">Made from 100% real okra — no fillers or extenders</span></li>
+                                <li class="ul-speciality" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 8px rgba(26,107,60,0.04);font-size:0.92rem;color:var(--trop-text);"><i class="flaticon-checked" style="color:var(--trop-green);font-size:1rem;margin-top:2px;flex-shrink:0;"></i><span class="txt">Rich in dietary fiber, Vitamin C, and antioxidants</span></li>
+                                <li class="ul-speciality" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 8px rgba(26,107,60,0.04);font-size:0.92rem;color:var(--trop-text);"><i class="flaticon-checked" style="color:var(--trop-green);font-size:1rem;margin-top:2px;flex-shrink:0;"></i><span class="txt">No artificial preservatives, colors, or MSG</span></li>
+                                <li class="ul-speciality" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--trop-white);border-radius:var(--trop-radius-sm);box-shadow:0 2px 8px rgba(26,107,60,0.04);font-size:0.92rem;color:var(--trop-text);"><i class="flaticon-checked" style="color:var(--trop-green);font-size:1rem;margin-top:2px;flex-shrink:0;"></i><span class="txt">Locally sourced and proudly Filipino-made</span></li>
                             </ul>
 
-                            <a href="about.html" class="ul-btn ul-btn--2">Learn More <i class="flaticon-right"></i></a>
+                            <a href="about.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:100px;background:linear-gradient(135deg, var(--trop-green) 0%, var(--trop-green-dark) 100%);color:var(--trop-white);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;">Learn More <i class="flaticon-right" style="font-size:0.8rem;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1177,38 +1190,41 @@
 
 
         <!-- BOOKING / ORDER SECTION START -->
-        <section class="ul-booking ul-section-spacing">
-            <div class="ul-container">
-                <div class="row">
-                    <div class="col-md-7 col-12">
-                        <div class="ul-booking-form-wrapper">
-                            <span class="ul-section-sub-title"><i class="flaticon-tray"></i> Bulk Orders <i class="flaticon-tray"></i></span>
-                            <h2 class="ul-section-title">Place a Bulk Order</h2>
+        <section class="ul-booking ul-section-spacing" style="background:linear-gradient(135deg, var(--trop-cream-light) 0%, var(--trop-cream) 100%);position:relative;overflow:hidden;">
+            <!-- leaf decoration -->
+            <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle, rgba(45,138,78,0.04) 0%, transparent 70%);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle, rgba(212,160,80,0.04) 0%, transparent 70%);pointer-events:none;"></div>
+            <div class="ul-container" style="position:relative;z-index:1;">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-12">
+                        <div class="ul-booking-form-wrapper" style="background:var(--trop-white);border-radius:var(--trop-radius);padding:48px;box-shadow:var(--trop-shadow);border:1px solid rgba(26,107,60,0.04);text-align:center;">
+                            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--trop-green);margin-bottom:8px;"><i class="flaticon-tray" style="font-size:0.7rem;"></i> Bulk Orders <i class="flaticon-tray" style="font-size:0.7rem;"></i></span>
+                            <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--trop-text);margin:0 0 32px;">Place a Bulk Order</h2>
 
-                            <form action="#" class="ul-booking-form">
-                                <div class="row row-cols-2 row-cols-xxs-1">
+                            <form action="#" class="ul-booking-form" style="text-align:left;">
+                                <div class="row row-cols-2 row-cols-xxs-1 g-3">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="booking-date">Preferred Delivery Date*</label>
-                                            <div class="ul-time-input-wrapper">
-                                                <input type="date" name="booking-date" id="booking-date" class="date-input" value="2026-03-01">
-                                                <i class="flaticon-calendar"></i>
+                                            <label for="booking-date" style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;display:block;">Preferred Delivery Date*</label>
+                                            <div class="ul-time-input-wrapper" style="position:relative;">
+                                                <input type="date" name="booking-date" id="booking-date" class="date-input" value="2026-03-01" style="width:100%;padding:12px 16px;border:1.5px solid rgba(26,107,60,0.12);border-radius:var(--trop-radius-sm);font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--trop-text);background:var(--trop-cream-light);transition:border-color 0.3s;outline:none;">
+                                                <i class="flaticon-calendar" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--trop-green);pointer-events:none;"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="booking-time">Preferred Time*</label>
-                                            <div class="ul-time-input-wrapper">
-                                                <input type="time" name="booking-time" id="booking-time" class="time-input" value="00:00">
-                                                <i class="flaticon-time"></i>
+                                            <label for="booking-time" style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;display:block;">Preferred Time*</label>
+                                            <div class="ul-time-input-wrapper" style="position:relative;">
+                                                <input type="time" name="booking-time" id="booking-time" class="time-input" value="00:00" style="width:100%;padding:12px 16px;border:1.5px solid rgba(26,107,60,0.12);border-radius:var(--trop-radius-sm);font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--trop-text);background:var(--trop-cream-light);transition:border-color 0.3s;outline:none;">
+                                                <i class="flaticon-time" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--trop-green);pointer-events:none;"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group service-type-wrapper">
-                                            <label for="service-type">Select Flavor*</label>
-                                            <select name="service-type" id="service-type">
+                                            <label for="service-type" style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;display:block;">Select Flavor*</label>
+                                            <select name="service-type" id="service-type" style="width:100%;padding:12px 16px;border:1.5px solid rgba(26,107,60,0.12);border-radius:var(--trop-radius-sm);font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--trop-text);background:var(--trop-cream-light);transition:border-color 0.3s;outline:none;cursor:pointer;">
                                                 <option value="original">Original</option>
                                                 <option value="spicy">Spicy</option>
                                                 <option value="cheese">Cheese</option>
@@ -1218,13 +1234,13 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="booking-message">Order Details / Message*</label>
-                                            <textarea name="booking-message" id="booking-message" placeholder="Tell us the quantity, sizes, and any special requests..."></textarea>
+                                            <label for="booking-message" style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;display:block;">Order Details / Message*</label>
+                                            <textarea name="booking-message" id="booking-message" placeholder="Tell us the quantity, sizes, and any special requests..." style="width:100%;padding:12px 16px;border:1.5px solid rgba(26,107,60,0.12);border-radius:var(--trop-radius-sm);font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--trop-text);background:var(--trop-cream-light);min-height:120px;resize:vertical;transition:border-color 0.3s;outline:none;"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-group">
-                                            <button type="submit" class="ul-btn">Submit Order <i class="flaticon-right"></i></button>
+                                        <div class="form-group" style="text-align:center;">
+                                            <button type="submit" style="display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:100px;background:linear-gradient(135deg, var(--trop-green) 0%, var(--trop-green-dark) 100%);color:var(--trop-white);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;border:none;cursor:pointer;transition:all 0.3s;">Submit Order <i class="flaticon-right" style="font-size:0.8rem;"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -1238,14 +1254,17 @@
 
 
         <!-- TESTIMONIAL SECTION START -->
-        <section class="ul-testimonial">
-            <div class="overflow-hidden ul-section-spacing">
+        <section class="ul-testimonial" style="background:var(--trop-cream-light);position:relative;overflow:hidden;">
+            <!-- leaf decorative elements -->
+            <div style="position:absolute;top:0;right:0;width:280px;height:280px;pointer-events:none;background:radial-gradient(circle at 100% 0%, rgba(45,138,78,0.04) 0%, transparent 70%);"></div>
+            <div style="position:absolute;bottom:0;left:0;width:200px;height:200px;pointer-events:none;background:radial-gradient(circle at 0% 100%, rgba(212,160,80,0.04) 0%, transparent 70%);"></div>
+            <div class="overflow-hidden ul-section-spacing" style="position:relative;z-index:1;">
                 <div class="ul-container">
                     <div class="row align-items-center gy-4">
                         <!-- img -->
                         <div class="col-md-5">
-                            <div class="ul-testimonial-img wow animate__fadeInUp">
-                                <img src="assets/img/testimonial-img.png" alt="Happy Customers" class="main-img">
+                            <div class="ul-testimonial-img wow animate__fadeInUp" style="text-align:center;padding:20px;">
+                                <img src="assets/img/testimonial-img.png" alt="Happy Customers" class="main-img" style="max-width:90%;height:auto;border-radius:var(--trop-radius);box-shadow:0 16px 48px rgba(26,107,60,0.08);">
                             </div>
                         </div>
 
@@ -1254,74 +1273,74 @@
                             <div class="ul-testimonial-txt wow animate__fadeInUp">
                                 <div class="ul-section-heading">
                                     <div>
-                                        <span class="ul-section-sub-title ul-section-sub-title--2"><i class="flaticon-tray"></i> Testimonials <i class="flaticon-tray"></i></span>
-                                        <h2 class="ul-section-title">What Our Customers Say About Okranchy</h2>
+                                        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--trop-green);margin-bottom:8px;"><i class="flaticon-tray" style="font-size:0.7rem;"></i> Testimonials <i class="flaticon-tray" style="font-size:0.7rem;"></i></span>
+                                        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--trop-text);margin:0 0 24px;">What Our Customers Say About Okranchy</h2>
                                     </div>
                                 </div>
-                                <div class="ul-testimonial-slider swiper">
+                                <div class="ul-testimonial-slider swiper" style="background:var(--trop-white);border-radius:var(--trop-radius);padding:40px 36px;box-shadow:var(--trop-shadow);border:1px solid rgba(26,107,60,0.04);">
                                     <div class="swiper-wrapper">
                                         <!-- single slide -->
                                         <div class="swiper-slide">
                                             <div class="ul-testimony">
-                                                <span class="icon"><i class="flaticon-straight-quotes"></i></span>
-                                                <p class="ul-testimony-txt">I was skeptical at first — okra chips? But after one bite of Okranchy, I was hooked! The crunch is amazing and the Original flavor is perfectly seasoned. My whole family loves it!</p>
+                                                <span class="icon" style="display:block;margin-bottom:16px;"><i class="flaticon-straight-quotes" style="font-size:1.8rem;color:var(--trop-green);opacity:0.3;"></i></span>
+                                                <p class="ul-testimony-txt" style="font-size:1rem;color:var(--trop-text-light);line-height:1.8;font-style:italic;margin:0;">I was skeptical at first — okra chips? But after one bite of Okranchy, I was hooked! The crunch is amazing and the Original flavor is perfectly seasoned. My whole family loves it!</p>
                                             </div>
                                         </div>
 
                                         <!-- single slide -->
                                         <div class="swiper-slide">
                                             <div class="ul-testimony">
-                                                <span class="icon"><i class="flaticon-straight-quotes"></i></span>
-                                                <p class="ul-testimony-txt">As a PLV student, I'm so proud of what Ani Co. has created. Okranchy is not only delicious but it's also a healthier alternative to chips. The Spicy variant is my favorite!</p>
+                                                <span class="icon" style="display:block;margin-bottom:16px;"><i class="flaticon-straight-quotes" style="font-size:1.8rem;color:var(--trop-green);opacity:0.3;"></i></span>
+                                                <p class="ul-testimony-txt" style="font-size:1rem;color:var(--trop-text-light);line-height:1.8;font-style:italic;margin:0;">As a PLV student, I'm so proud of what Ani Co. has created. Okranchy is not only delicious but it's also a healthier alternative to chips. The Spicy variant is my favorite!</p>
                                             </div>
                                         </div>
 
                                         <!-- single slide -->
                                         <div class="swiper-slide">
                                             <div class="ul-testimony">
-                                                <span class="icon"><i class="flaticon-straight-quotes"></i></span>
-                                                <p class="ul-testimony-txt">I ordered Okranchy for our office snack supply and everyone loved it. The Cheese flavor is addictive! Great quality and great price. Will definitely order again.</p>
+                                                <span class="icon" style="display:block;margin-bottom:16px;"><i class="flaticon-straight-quotes" style="font-size:1.8rem;color:var(--trop-green);opacity:0.3;"></i></span>
+                                                <p class="ul-testimony-txt" style="font-size:1rem;color:var(--trop-text-light);line-height:1.8;font-style:italic;margin:0;">I ordered Okranchy for our office snack supply and everyone loved it. The Cheese flavor is addictive! Great quality and great price. Will definitely order again.</p>
                                             </div>
                                         </div>
 
                                         <!-- single slide -->
                                         <div class="swiper-slide">
                                             <div class="ul-testimony">
-                                                <span class="icon"><i class="flaticon-straight-quotes"></i></span>
-                                                <p class="ul-testimony-txt">Finally, a snack I can feel good about eating! Okranchy uses real okra and you can really taste the difference. It's crunchy, flavorful, and guilt-free. Highly recommended!</p>
+                                                <span class="icon" style="display:block;margin-bottom:16px;"><i class="flaticon-straight-quotes" style="font-size:1.8rem;color:var(--trop-green);opacity:0.3;"></i></span>
+                                                <p class="ul-testimony-txt" style="font-size:1rem;color:var(--trop-text-light);line-height:1.8;font-style:italic;margin:0;">Finally, a snack I can feel good about eating! Okranchy uses real okra and you can really taste the difference. It's crunchy, flavorful, and guilt-free. Highly recommended!</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bottom">
-                                    <div class="ul-testimonial-reviewer-slider swiper">
+                                <div class="bottom" style="display:flex;align-items:center;gap:16px;margin-top:24px;">
+                                    <div class="ul-testimonial-reviewer-slider swiper" style="flex:1;max-width:240px;">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <div class="ul-testimonial-reviewer">
-                                                    <img src="assets/img/reviewer-1.png" alt="Reviewer" class="reviewer-img">
+                                                <div class="ul-testimonial-reviewer" style="text-align:center;">
+                                                    <img src="assets/img/reviewer-1.png" alt="Reviewer" class="reviewer-img" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--trop-green-pale);">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="ul-testimonial-reviewer">
-                                                    <img src="assets/img/reviewer-2.png" alt="Reviewer" class="reviewer-img">
+                                                <div class="ul-testimonial-reviewer" style="text-align:center;">
+                                                    <img src="assets/img/reviewer-2.png" alt="Reviewer" class="reviewer-img" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--trop-green-pale);">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="ul-testimonial-reviewer">
-                                                    <img src="assets/img/reviewer-3.png" alt="Reviewer" class="reviewer-img">
+                                                <div class="ul-testimonial-reviewer" style="text-align:center;">
+                                                    <img src="assets/img/reviewer-3.png" alt="Reviewer" class="reviewer-img" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--trop-green-pale);">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="ul-testimonial-reviewer">
-                                                    <img src="assets/img/reviewer-1.png" alt="Reviewer" class="reviewer-img">
+                                                <div class="ul-testimonial-reviewer" style="text-align:center;">
+                                                    <img src="assets/img/reviewer-1.png" alt="Reviewer" class="reviewer-img" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--trop-green-pale);">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <span class="stroke"></span>
-                                    <div class="ul-testimonial-slider-nav">
-                                        <button class="prev"><i class="flaticon-left-arrow"></i></button>
-                                        <button class="next"><i class="flaticon-right-arrow-3"></i></button>
+                                    <span class="stroke" style="flex:1;height:1px;background:rgba(26,107,60,0.08);display:block;"></span>
+                                    <div class="ul-testimonial-slider-nav" style="display:flex;gap:8px;">
+                                        <button class="prev" style="width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(26,107,60,0.12);background:var(--trop-white);color:var(--trop-green-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;"><i class="flaticon-left-arrow"></i></button>
+                                        <button class="next" style="width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(26,107,60,0.12);background:var(--trop-white);color:var(--trop-green-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;"><i class="flaticon-right-arrow-3"></i></button>
                                     </div>
                                 </div>
                             </div>

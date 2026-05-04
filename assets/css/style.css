@@ -207,6 +207,218 @@ button {
   max-width: clamp(130px, 11.56vw, 220px);
 }
 
+/* Circular logo styling for all pages — applied to logo-3.png across logo-container, sidebar, and footer */
+.logo-container .logo,
+.ul-sidebar-header-logo .logo,
+.ul-footer-about a > img[src*="logo-3"] {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+/* ============================================
+   TROPICAL/ORGANIC DESIGN SYSTEM — Shared
+   ============================================ */
+:root {
+  --trop-green-dark: #1a6b3c;
+  --trop-green: #2d8a4e;
+  --trop-green-light: #4a9c5a;
+  --trop-green-pale: #e8f5e9;
+  --trop-cream: #f7f3ee;
+  --trop-cream-light: #fcfaf7;
+  --trop-gold: #d4a050;
+  --trop-brown: #8b6f47;
+  --trop-tan: #c4a882;
+  --trop-text: #1e1e1e;
+  --trop-text-light: #6b6b6b;
+  --trop-white: #ffffff;
+  --trop-shadow: 0 8px 32px rgba(26, 107, 60, 0.08);
+  --trop-shadow-hover: 0 16px 48px rgba(26, 107, 60, 0.16);
+  --trop-radius: 24px;
+  --trop-radius-sm: 14px;
+}
+
+/* --- Tropical Breadcrumb (shared across pages) --- */
+.trop-breadcrumb {
+  background: linear-gradient(135deg, var(--trop-green-dark) 0%, #0f4a2a 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 60px;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .trop-breadcrumb { padding: 120px 0 50px; }
+}
+@media (max-width: 767px) {
+  .trop-breadcrumb { padding: 130px 0 40px; }
+}
+@media (max-width: 479px) {
+  .trop-breadcrumb { padding: 140px 0 30px; }
+}
+.trop-breadcrumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 150% 80px at 20% 100%, rgba(74,156,90,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 120% 60px at 80% 100%, rgba(212,160,80,0.10) 0%, transparent 60%);
+  pointer-events: none;
+}
+.trop-breadcrumb-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--trop-white);
+  margin: 0 0 8px;
+  position: relative;
+  z-index: 1;
+}
+.trop-breadcrumb-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  position: relative;
+  z-index: 1;
+}
+.trop-breadcrumb-nav a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.trop-breadcrumb-nav a:hover { color: var(--trop-gold); }
+.trop-breadcrumb-nav .sep { opacity: 0.4; }
+.trop-breadcrumb-nav .current { color: var(--trop-gold); }
+
+/* --- Tropical Section Heading --- */
+.trop-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.trop-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--trop-green);
+  margin-bottom: 10px;
+}
+.trop-label::before,
+.trop-label::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--trop-green);
+  opacity: 0.4;
+}
+.trop-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--trop-text);
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+.trop-desc {
+  font-size: 1rem;
+  color: var(--trop-text-light);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Tropical Card (reusable) --- */
+.trop-card-base {
+  background: var(--trop-white);
+  border-radius: var(--trop-radius);
+  overflow: hidden;
+  box-shadow: var(--trop-shadow);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+}
+.trop-card-base:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--trop-shadow-hover);
+}
+
+/* --- Tropical gradient button --- */
+.trop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--trop-green) 0%, var(--trop-green-dark) 100%);
+  color: var(--trop-white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 4px 16px rgba(26,107,60,0.25);
+  text-decoration: none;
+}
+.trop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(26,107,60,0.35);
+  color: var(--trop-white);
+}
+
+/* --- Tropical input style --- */
+.trop-input {
+  padding: 12px 16px;
+  border: 1.5px solid rgba(26,107,60,0.1);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--trop-text);
+  background: var(--trop-cream-light);
+  transition: border-color 0.25s;
+  outline: none;
+  width: 100%;
+}
+.trop-input:focus {
+  border-color: var(--trop-green);
+}
+.trop-select {
+  padding: 12px 16px;
+  border: 1.5px solid rgba(26,107,60,0.1);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--trop-text);
+  background: var(--trop-cream-light);
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+.trop-textarea {
+  padding: 12px 16px;
+  border: 1.5px solid rgba(26,107,60,0.1);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--trop-text);
+  background: var(--trop-cream-light);
+  transition: border-color 0.25s;
+  outline: none;
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+}
+.trop-textarea:focus {
+  border-color: var(--trop-green);
+}
+
 .ul-bs-row {
   --bs-gutter-x: clamp(15px, 1.58vw, 30px);
   --bs-gutter-y: clamp(15px, 1.58vw, 30px);
@@ -1068,6 +1280,7 @@ button {
 .ul-header .header-bottom-bg-wrapper.sticky {
   position: fixed;
   top: 0;
+  z-index: 100;
 }
 .ul-header-bottom {
   padding: clamp(10px, 0.84vw, 16px) 0 clamp(20px, 1.84vw, 35px);
@@ -5460,6 +5673,9 @@ button {
 .ul-auth-logo img {
   max-height: 70px;
   width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 .ul-auth-title {
   font-size: clamp(22px, 1.8vw, 30px);
@@ -5652,4 +5868,513 @@ button {
 }
 .ul-checkbox-wrapper.ul-auth-checkbox a:hover {
   text-decoration: underline;
+}
+
+/* ============================================
+   TROPICAL/ORGANIC — EXTENDED UTILITIES
+   Added for full-site tropical redesign
+   ============================================ */
+
+/* Bamboo/leaf section divider */
+.trop-leaf-divider {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+}
+.trop-leaf-divider::before,
+.trop-leaf-divider::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--trop-tan), transparent);
+  max-width: 120px;
+}
+.trop-leaf-divider .leaf-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--trop-green-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--trop-green);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Image shift up utility */
+.trop-img-shift-up {
+  margin-top: -60px;
+}
+@media (max-width: 768px) {
+  .trop-img-shift-up {
+    margin-top: -20px;
+  }
+}
+.trop-img-shift-up-sm {
+  margin-top: -30px;
+}
+@media (max-width: 768px) {
+  .trop-img-shift-up-sm {
+    margin-top: 0;
+  }
+}
+
+/* Responsive countdown grid (used in discount section) */
+.trop-countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 480px) {
+  .trop-countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.trop-countdown-item {
+  text-align: center;
+  min-width: 0;
+  padding: 12px 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--trop-radius-sm, 14px);
+}
+.trop-countdown-item .number {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  font-weight: 700;
+  color: var(--trop-white, #fff);
+  line-height: 1;
+}
+.trop-countdown-item .label {
+  display: block;
+  font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Dark tropical section (dark green background) */
+.trop-section-dark {
+  background: linear-gradient(135deg, var(--trop-green-dark) 0%, #0f4a2a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.trop-section-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 150% 80px at 20% 100%, rgba(74,156,90,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 120% 60px at 80% 100%, rgba(212,160,80,0.08) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 41px);
+  pointer-events: none;
+}
+
+/* Tropical card list (check items) */
+.trop-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.trop-card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius-sm, 14px);
+  box-shadow: 0 2px 8px rgba(26,107,60,0.04);
+  font-size: 0.92rem;
+  color: var(--trop-text, #1e1e1e);
+}
+.trop-card-list li .check-icon {
+  color: var(--trop-green, #2d8a4e);
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Tropical gallery card frame */
+.trop-gallery-card {
+  position: relative;
+  border-radius: var(--trop-radius, 24px);
+  overflow: hidden;
+  box-shadow: var(--trop-shadow, 0 8px 32px rgba(26,107,60,0.08));
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease;
+  background: var(--trop-white, #fff);
+}
+.trop-gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--trop-shadow-hover, 0 16px 48px rgba(26,107,60,0.16));
+}
+.trop-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.trop-gallery-card:hover img {
+  transform: scale(1.05);
+}
+.trop-gallery-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, transparent 50%, rgba(26,107,60,0.08) 50%);
+  pointer-events: none;
+}
+
+/* Tropical testimonial card */
+.trop-testimonial-card {
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius, 24px);
+  padding: 32px 28px;
+  box-shadow: var(--trop-shadow, 0 8px 32px rgba(26,107,60,0.08));
+  border: 1px solid rgba(26,107,60,0.04);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.trop-testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--trop-shadow-hover, 0 16px 48px rgba(26,107,60,0.16));
+}
+.trop-testimonial-card .quote-icon {
+  font-size: 2rem;
+  color: var(--trop-green, #2d8a4e);
+  opacity: 0.2;
+  margin-bottom: 12px;
+  display: block;
+}
+.trop-testimonial-card p {
+  font-size: 1rem;
+  color: var(--trop-text-light, #6b6b6b);
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0 0 16px;
+}
+.trop-testimonial-card .reviewer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(26,107,60,0.06);
+}
+.trop-testimonial-card .reviewer img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--trop-green-pale, #e8f5e9);
+}
+.trop-testimonial-card .reviewer .name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--trop-text, #1e1e1e);
+  margin: 0;
+}
+.trop-testimonial-card .reviewer .role {
+  font-size: 0.78rem;
+  color: var(--trop-text-light, #6b6b6b);
+}
+
+/* Tropical product card (reused across pages) */
+.trop-product-card {
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius, 24px);
+  overflow: hidden;
+  box-shadow: var(--trop-shadow, 0 8px 32px rgba(26,107,60,0.08));
+  transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+.trop-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--trop-shadow-hover, 0 20px 48px rgba(26,107,60,0.18));
+}
+
+/* Tropical cart row (horizontal cart item) */
+.trop-cart-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius-sm, 14px);
+  box-shadow: 0 2px 12px rgba(26,107,60,0.04);
+  margin-bottom: 12px;
+  transition: box-shadow 0.3s;
+}
+.trop-cart-row:hover {
+  box-shadow: 0 4px 20px rgba(26,107,60,0.08);
+}
+@media (max-width: 640px) {
+  .trop-cart-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+/* Tropical progress steps (checkout) */
+.trop-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 100px;
+  background: var(--trop-cream-light, #fcfaf7);
+  border: 1.5px solid rgba(26,107,60,0.08);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--trop-text-light, #6b6b6b);
+  transition: all 0.3s;
+}
+.trop-step.active {
+  background: var(--trop-green, #2d8a4e);
+  border-color: var(--trop-green, #2d8a4e);
+  color: var(--trop-white, #fff);
+  box-shadow: 0 4px 16px rgba(26,107,60,0.2);
+}
+.trop-step.completed {
+  background: var(--trop-green-pale, #e8f5e9);
+  border-color: var(--trop-green, #2d8a4e);
+  color: var(--trop-green-dark, #1a6b3c);
+}
+.trop-step .step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+.trop-step.active .step-num,
+.trop-step.completed .step-num {
+  background: rgba(255,255,255,0.2);
+  color: inherit;
+}
+
+/* Tropical form card (auth, contact) */
+.trop-form-card {
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius, 24px);
+  padding: clamp(28px, 4vw, 48px);
+  box-shadow: var(--trop-shadow, 0 8px 32px rgba(26,107,60,0.08));
+  border: 1px solid rgba(26,107,60,0.04);
+}
+
+/* Tropical contact info card */
+.trop-contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius-sm, 14px);
+  box-shadow: 0 4px 16px rgba(26,107,60,0.04);
+  border: 1px solid rgba(26,107,60,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.trop-contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(26,107,60,0.08);
+}
+.trop-contact-card .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--trop-green-pale, #e8f5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--trop-green, #2d8a4e);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Tropical accordion item (FAQ) */
+.trop-accordion-item {
+  border-bottom: 1px solid rgba(139,111,71,0.15);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.trop-accordion-item:last-child {
+  border-bottom: none;
+}
+.trop-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 0;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 600;
+  color: var(--trop-text, #1e1e1e);
+  transition: color 0.3s;
+  user-select: none;
+}
+.trop-accordion-header:hover {
+  color: var(--trop-green-dark, #1a6b3c);
+}
+.trop-accordion-header.open {
+  color: var(--trop-green, #2d8a4e);
+}
+.trop-accordion-header .icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--trop-green-pale, #e8f5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--trop-green, #2d8a4e);
+  font-size: 0.7rem;
+  transition: transform 0.35s, background 0.3s;
+}
+.trop-accordion-header.open .icon {
+  transform: rotate(45deg);
+  background: var(--trop-green, #2d8a4e);
+  color: var(--trop-white, #fff);
+}
+.trop-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.trop-accordion-body.open {
+  max-height: 400px;
+  padding-bottom: 18px;
+}
+.trop-accordion-body p {
+  font-size: 0.92rem;
+  color: var(--trop-text-light, #6b6b6b);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Tropical auth/auth background */
+.trop-auth-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px;
+  background: var(--trop-cream, #f7f3ee);
+  position: relative;
+  overflow: hidden;
+}
+.trop-auth-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80px at 20% 0%, rgba(45,138,78,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 100% 60px at 80% 100%, rgba(212,160,80,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Tropical info banner (cart empty state, etc.) */
+.trop-info-banner {
+  text-align: center;
+  padding: 60px 24px;
+  background: var(--trop-white, #fff);
+  border-radius: var(--trop-radius, 24px);
+  box-shadow: var(--trop-shadow, 0 8px 32px rgba(26,107,60,0.08));
+}
+.trop-info-banner .icon {
+  font-size: 2.5rem;
+  color: var(--trop-tan, #c4a882);
+  margin-bottom: 16px;
+  display: block;
+}
+.trop-info-banner h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--trop-text, #1e1e1e);
+  margin: 0 0 8px;
+}
+.trop-info-banner p {
+  font-size: 0.92rem;
+  color: var(--trop-text-light, #6b6b6b);
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+/* Bamboo-style horizontal rule */
+.trop-hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--trop-tan, #c4a882), transparent);
+  opacity: 0.3;
+  margin: 20px 0;
+}
+
+/* Responsive grid utilities for tropical pages */
+.trop-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.trop-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 820px) {
+  .trop-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .trop-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .trop-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Leaf corner decoration for cards */
+.trop-leaf-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  background: linear-gradient(135deg, transparent 50%, rgba(45,138,78,0.06) 50%);
+  border-radius: 0 var(--trop-radius, 24px) 0 0;
+}
+.trop-leaf-corner-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  background: linear-gradient(225deg, transparent 50%, rgba(212,160,80,0.06) 50%);
+  border-radius: 0 0 0 var(--trop-radius, 24px);
 }/*# sourceMappingURL=style.css.map */

@@ -17,25 +17,16 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-        /* Make logo smaller to fit header and footer */
-        .logo-container .logo {
-            max-height: 80px;
-            width: auto;
-        }
-        .ul-sidebar-header-logo .logo {
-            max-height: 100px;
-            width: auto;
-        }
-        .ul-footer-about img {
-            max-height: 120px;
-            width: auto;
-        }
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
-        .signature {
-            max-width: 80px;
-            height: auto;
-        }
+    <style>
+        .logo-container .logo { max-height: 80px; width: auto; }
+        .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
+        .ul-footer-about img { max-height: 120px; width: auto; }
+        .signature { max-width: 80px; height: auto; }
     </style>
 </head>
 
@@ -167,104 +158,73 @@
 
     <main>
         <!-- BREADCRUMB SECTION START -->
-        <div class="ul-breadcrumb">
-            <div class="wow animate__fadeInUp">
-                <h2 class="ul-breadcrumb-title">FAQ</h2>
-                <div class="ul-breadcrumb-nav">
-                    <a href="index.html">Home</a>
-                    <span class="separator">/</span>
-                    <span class="current-page">FAQ</span>
-                </div>
+        <div class="trop-breadcrumb">
+            <h1 class="trop-breadcrumb-title">FAQ</h1>
+            <div class="trop-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span class="current">FAQ</span>
             </div>
         </div>
         <!-- BREADCRUMB SECTION END -->
 
 
         <!-- FAQ SECTION START -->
-        <section class="ul-section-spacing ul-inner-faq">
-            <div class="ul-container">
-                <div class="row gx-0 gy-4 justify-content-between flex-column-reverse flex-md-row">
-                    <!-- img -->
-                    <div class="col-lg-5 col-md-5">
-                        <div class="ul-inner-faq-imgs">
-                            <img src="assets/img/faq-img-1.jpg" alt="Okranchy Fresh Okra">
-                            <img src="assets/img/faq-img-2.jpg" alt="Okranchy Crispy Chips">
-                        </div>
+        <section style="padding:80px 0;background:var(--trop-cream);">
+            <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+                <div class="trop-heading" style="text-align:center;margin-bottom:48px;">
+                    <span class="trop-label">Got Questions?</span>
+                    <h2 class="trop-section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+                    <div style="display:grid;gap:16px;">
+                        <div style="border-radius:24px;overflow:hidden;box-shadow:var(--trop-shadow);"><img src="assets/img/faq-img-1.jpg" alt="Fresh Okra" style="width:100%;display:block;"></div>
                     </div>
-
-                    <!-- txt -->
-                    <div class="col-lg-6 col-md-7">
-                        <div class="ul-inner-faq-txt">
-                            <span class="ul-section-sub-title">FAQ</span>
-                            <h2 class="ul-section-title">Frequently Asked Questions</h2>
-
-                            <div class="ul-inner-faq-list">
-                                <div class="ul-accordion">
-                                    <div class="ul-single-accordion-item">
-                                        <div class="ul-single-accordion-item__header">
-                                            <div class="left">
-                                                <h3 class="ul-single-accordion-item__title">What makes Okranchy different from other vegetable chips?</h3>
-                                            </div>
-                                            <span class="icon"><i class="flaticon-next"></i></span>
-                                        </div>
-
-                                        <div class="ul-single-accordion-item__body">
-                                            <p>Okranchy is made from 100% fresh, locally-sourced okra — not powdered or processed vegetables. Our unique preparation method preserves the natural crunch and nutrients of okra while creating a satisfying, guilt-free snack. Unlike typical chips, Okranchy contains zero artificial preservatives, zero MSG, and zero trans fat. Plus, it's crafted by Ani Co., a dedicated student group from PLV, ensuring quality and innovation in every bag.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="ul-single-accordion-item open">
-                                        <div class="ul-single-accordion-item__header">
-                                            <div class="left">
-                                                <h3 class="ul-single-accordion-item__title">Where can I buy Okranchy products?</h3>
-                                            </div>
-                                            <span class="icon"><i class="flaticon-next"></i></span>
-                                        </div>
-
-                                        <div class="ul-single-accordion-item__body">
-                                            <p>You can purchase Okranchy directly from our website for delivery, or visit us at Pamantasan ng Lungsod ng Valenzuela (PLV) campus during our selling hours. We also participate in local bazaars, weekend markets, and community events around Valenzuela City. Follow our social media pages to stay updated on where we'll be next!</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="ul-single-accordion-item">
-                                        <div class="ul-single-accordion-item__header">
-                                            <div class="left">
-                                                <h3 class="ul-single-accordion-item__title">How long do Okranchy chips stay fresh?</h3>
-                                            </div>
-                                            <span class="icon"><i class="flaticon-next"></i></span>
-                                        </div>
-
-                                        <div class="ul-single-accordion-item__body">
-                                            <p>Our okra chips have a shelf life of 3 months when stored in a cool, dry place away from direct sunlight. Once opened, we recommend consuming within 1 week for the best crunch and flavor. The resealable packaging helps maintain freshness — just make sure to seal it tightly after each snack session!</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="ul-single-accordion-item">
-                                        <div class="ul-single-accordion-item__header">
-                                            <div class="left">
-                                                <h3 class="ul-single-accordion-item__title">Do you offer bulk orders or wholesale pricing?</h3>
-                                            </div>
-                                            <span class="icon"><i class="flaticon-next"></i></span>
-                                        </div>
-
-                                        <div class="ul-single-accordion-item__body">
-                                            <p>Yes! We offer special bulk pricing for events, corporate giveaways, resellers, and partnership opportunities. Whether you need 50 bags for a birthday party or 500+ for a business, we're happy to accommodate. Contact us through the form on our Contact page or email nextgsight.okranchy@plv.edu.ph for a custom quote.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="ul-single-accordion-item">
-                                        <div class="ul-single-accordion-item__header">
-                                            <div class="left">
-                                                <h3 class="ul-single-accordion-item__title">Are Okranchy chips suitable for people with dietary restrictions?</h3>
-                                            </div>
-                                            <span class="icon"><i class="flaticon-next"></i></span>
-                                        </div>
-
-                                        <div class="ul-single-accordion-item__body">
-                                            <p>Okranchy Original is naturally vegan and gluten-free. However, some flavored variants (like Cheese) may contain dairy. We're working on expanding our range to include more dietary-friendly options. If you have specific allergies or concerns, please check the ingredients listed on each product page or contact us directly — we're transparent about what goes into every bag.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="trop-form-card" style="padding:0;">
+                        <div class="trop-accordion-item open">
+                            <div class="trop-accordion-header open" onclick="toggleAccordion(this)">
+                                <span>What makes Okranchy different from other vegetable chips?</span>
+                                <span class="icon"><i class="flaticon-plus"></i></span>
+                            </div>
+                            <div class="trop-accordion-body open">
+                                <p>Okranchy is made from 100% fresh, locally-sourced okra — not powdered or processed vegetables. Our unique preparation method preserves the natural crunch and nutrients of okra while creating a satisfying, guilt-free snack. Unlike typical chips, Okranchy contains zero artificial preservatives, zero MSG, and zero trans fat.</p>
+                            </div>
+                        </div>
+                        <div class="trop-accordion-item">
+                            <div class="trop-accordion-header" onclick="toggleAccordion(this)">
+                                <span>Where can I buy Okranchy products?</span>
+                                <span class="icon"><i class="flaticon-plus"></i></span>
+                            </div>
+                            <div class="trop-accordion-body">
+                                <p>You can purchase Okranchy directly from our website for delivery, or visit us at Pamantasan ng Lungsod ng Valenzuela (PLV) campus during our selling hours. We also participate in local bazaars, weekend markets, and community events around Valenzuela City. Follow our social media pages to stay updated!</p>
+                            </div>
+                        </div>
+                        <div class="trop-accordion-item">
+                            <div class="trop-accordion-header" onclick="toggleAccordion(this)">
+                                <span>How long do Okranchy chips stay fresh?</span>
+                                <span class="icon"><i class="flaticon-plus"></i></span>
+                            </div>
+                            <div class="trop-accordion-body">
+                                <p>Our okra chips have a shelf life of 3 months when stored in a cool, dry place away from direct sunlight. Once opened, we recommend consuming within 1 week for the best crunch and flavor. The resealable packaging helps maintain freshness.</p>
+                            </div>
+                        </div>
+                        <div class="trop-accordion-item">
+                            <div class="trop-accordion-header" onclick="toggleAccordion(this)">
+                                <span>Do you offer bulk orders or wholesale pricing?</span>
+                                <span class="icon"><i class="flaticon-plus"></i></span>
+                            </div>
+                            <div class="trop-accordion-body">
+                                <p>Yes! We offer special bulk pricing for events, corporate giveaways, resellers, and partnership opportunities. Whether you need 50 bags for a birthday party or 500+ for a business, we're happy to accommodate. Contact us through our Contact page for a custom quote.</p>
+                            </div>
+                        </div>
+                        <div class="trop-accordion-item">
+                            <div class="trop-accordion-header" onclick="toggleAccordion(this)">
+                                <span>Are Okranchy chips suitable for dietary restrictions?</span>
+                                <span class="icon"><i class="flaticon-plus"></i></span>
+                            </div>
+                            <div class="trop-accordion-body">
+                                <p>Okranchy Original is naturally vegan and gluten-free. However, some flavored variants (like Cheese) may contain dairy. If you have specific allergies or concerns, please check the ingredients listed on each product page or contact us directly.</p>
                             </div>
                         </div>
                     </div>
@@ -350,6 +310,15 @@
     </footer>
     <!-- FOOTER SECTION END -->
 
+
+    <!-- FAQ Accordion toggle -->
+    <script>
+        function toggleAccordion(header) {
+            header.classList.toggle('open');
+            const body = header.nextElementSibling;
+            if (body) body.classList.toggle('open');
+        }
+    </script>
 
     <!-- libraries JS -->
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>

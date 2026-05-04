@@ -17,6 +17,11 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
@@ -35,6 +40,313 @@
         .signature {
             max-width: 80px;
             height: auto;
+        }
+
+        /* ============================================
+           TROPICAL SHOP — Organic Product Grid
+           ============================================ */
+        .trop-shop {
+            --trop-green-dark: #1a6b3c;
+            --trop-green: #2d8a4e;
+            --trop-green-light: #4a9c5a;
+            --trop-green-pale: #e8f5e9;
+            --trop-cream: #f7f3ee;
+            --trop-cream-light: #fcfaf7;
+            --trop-gold: #d4a050;
+            --trop-brown: #8b6f47;
+            --trop-tan: #c4a882;
+            --trop-text: #1e1e1e;
+            --trop-text-light: #6b6b6b;
+            --trop-white: #ffffff;
+            --trop-shadow: 0 8px 32px rgba(26, 107, 60, 0.08);
+            --trop-shadow-hover: 0 20px 48px rgba(26, 107, 60, 0.18);
+            --trop-radius: 24px;
+            --trop-radius-sm: 14px;
+
+            background: var(--trop-cream);
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        /* Leaf overlay top */
+        .trop-shop::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 100px;
+            background:
+                radial-gradient(ellipse 140% 80px at 15% 0%, rgba(45,138,78,0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 120% 70px at 75% 0%, rgba(212,160,80,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .trop-shop::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 80px;
+            background:
+                radial-gradient(ellipse 130% 60px at 25% 100%, rgba(45,138,78,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 110% 50px at 70% 100%, rgba(212,160,80,0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Subtle noise texture */
+        .trop-shop .trop-bg-texture {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 40%, rgba(45,138,78,0.025) 0%, transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(212,160,80,0.025) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(196,168,130,0.012) 40px, rgba(196,168,130,0.012) 41px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .trop-shop-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Filter Bar --- */
+        .trop-filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 44px;
+        }
+        .trop-filter-btn {
+            padding: 10px 24px;
+            border: 1.5px solid rgba(26,107,60,0.12);
+            border-radius: 100px;
+            background: var(--trop-white);
+            color: var(--trop-text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            line-height: 1;
+        }
+        .trop-filter-btn:hover {
+            border-color: var(--trop-green);
+            background: rgba(45,138,78,0.04);
+            transform: translateY(-2px);
+        }
+        .trop-filter-btn.active {
+            background: var(--trop-green-dark);
+            border-color: var(--trop-green-dark);
+            color: var(--trop-white);
+            box-shadow: 0 4px 16px rgba(26,107,60,0.25);
+            transform: translateY(-1px);
+        }
+
+        /* --- Product Grid --- */
+        .trop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 991px) { .trop-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .trop-grid { grid-template-columns: 1fr; } }
+
+        /* --- Product Card --- */
+        .trop-product-card {
+            background: var(--trop-white);
+            border-radius: var(--trop-radius);
+            overflow: hidden;
+            box-shadow: var(--trop-shadow);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .trop-product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--trop-shadow-hover);
+        }
+
+        /* --- Image area with leaf-inspired frame --- */
+        .trop-card-img {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: linear-gradient(145deg, #f0ebe4 0%, #e3dacf 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .trop-card-img::before {
+            content: '';
+            position: absolute;
+            top: -30%; left: -30%;
+            width: 160%; height: 160%;
+            background: radial-gradient(circle at 40% 50%, rgba(45,138,78,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .trop-card-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.10));
+            position: relative;
+            z-index: 1;
+        }
+        .trop-product-card:hover .trop-card-img img {
+            transform: scale(1.10) rotate(-3deg);
+        }
+
+        /* flavor dot indicator */
+        .trop-flavor-dot {
+            position: absolute;
+            top: 14px; left: 14px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.7);
+            z-index: 2;
+        }
+
+        /* size badge — leaf-shaped */
+        .trop-size-badge {
+            position: absolute;
+            bottom: 14px; right: 14px;
+            background: var(--trop-white);
+            padding: 4px 14px 4px 16px;
+            border-radius: 4px 14px 14px 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--trop-green-dark);
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            z-index: 2;
+        }
+
+        /* --- Card content --- */
+        .trop-card-body {
+            padding: 16px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .trop-card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--trop-text);
+            margin: 0;
+            line-height: 1.3;
+        }
+        .trop-card-flavor {
+            font-size: 0.75rem;
+            color: var(--trop-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 2px;
+        }
+        .trop-card-desc {
+            font-size: 0.8rem;
+            color: var(--trop-text-light);
+            margin: 0;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        /* --- Rating --- */
+        .trop-card-rating {
+            display: flex;
+            gap: 3px;
+            color: var(--trop-gold);
+            font-size: 0.7rem;
+            margin: 4px 0 6px;
+        }
+
+        /* --- Footer --- */
+        .trop-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(26,107,60,0.08);
+        }
+        .trop-card-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--trop-green-dark);
+        }
+        .trop-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, var(--trop-green) 0%, var(--trop-green-dark) 100%);
+            color: var(--trop-white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(26,107,60,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        .trop-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(26,107,60,0.3);
+            color: var(--trop-white);
+        }
+
+        /* --- Pagination --- */
+        .trop-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 44px;
+            gap: 8px;
+        }
+        .trop-pagination a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(26,107,60,0.1);
+            background: var(--trop-white);
+            color: var(--trop-text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .trop-pagination a:hover {
+            border-color: var(--trop-green);
+            background: rgba(45,138,78,0.04);
+        }
+        .trop-pagination a.active {
+            background: var(--trop-green-dark);
+            border-color: var(--trop-green-dark);
+            color: var(--trop-white);
+            box-shadow: 0 4px 12px rgba(26,107,60,0.2);
+        }
+        .trop-pagination a i { font-size: 0.75rem; }
+
+        /* Responsive spacing */
+        @media (max-width: 576px) {
+            .trop-shop { padding: 50px 0; }
+            .trop-filter-btn { padding: 8px 16px; font-size: 0.78rem; }
         }
     </style>
 </head>
@@ -152,327 +464,322 @@
     <!-- HEADER SECTION END -->
 
     <main>
-        <!-- BREADCRUMB -->
-        <div class="ul-breadcrumb">
-            <div class="wow animate__fadeInUp">
-                <h2 class="ul-breadcrumb-title">Shop</h2>
-                <div class="ul-breadcrumb-nav">
-                    <a href="index.html">Home</a>
-                    <span class="separator">/</span>
-                    <span class="current-page">Shop</span>
-                </div>
+        <!-- TROPICAL BREADCRUMB -->
+        <div class="trop-breadcrumb">
+            <h1 class="trop-breadcrumb-title">Our Products</h1>
+            <div class="trop-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span class="current">Shop</span>
             </div>
         </div>
 
-        <!-- PRODUCTS SECTION START -->
-        <section class="ul-foods-shop ul-section-spacing">
-            <div class="ul-shop-container">
-                <div class="row ul-bs-row row-cols-lg-4 row-cols-md-3 row-cols-2 row-cols-xxs-1">
+        <!-- TROPICAL SHOP SECTION -->
+        <section class="trop-shop">
+            <div class="trop-bg-texture"></div>
+            <div class="trop-shop-inner">
 
-                    <!-- Original Salt and Vinegar Small -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/food-1.png" alt="Original Salt and Vinegar Small">
+                <!-- heading -->
+                <div class="trop-heading">
+                    <span class="trop-label">From Our Farm</span>
+                    <h2 class="trop-section-title">Crunch You Can Trust</h2>
+                    <p class="trop-desc">Every chip starts with real okra — sliced, seasoned, and crisped to perfection.</p>
+                </div>
+
+                <!-- bamboo/leaf divider -->
+                <div class="trop-leaf-divider"><span class="leaf-icon"><i class="flaticon-tray"></i></span></div>
+
+                <!-- filter bar -->
+                <div class="trop-filter-bar">
+                    <button class="trop-filter-btn active" data-filter="all">All Flavors</button>
+                    <button class="trop-filter-btn" data-filter="original">Original</button>
+                    <button class="trop-filter-btn" data-filter="sour-cream">Sour Cream</button>
+                    <button class="trop-filter-btn" data-filter="bbq">Barbeque</button>
+                    <button class="trop-filter-btn" data-filter="cheese">Cheese</button>
+                    <button class="trop-filter-btn" data-filter="salted">Salted Egg</button>
+                </div>
+
+                <!-- sort / search tools -->
+                <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:32px;">
+                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                        <label style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--trop-text-light);">Sort by:</label>
+                        <select class="trop-select" style="border-radius:100px;padding:8px 20px;font-size:0.85rem;min-width:160px;">
+                            <option>Default</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Name: A-Z</option>
+                        </select>
+                    </div>
+                    <input type="text" class="trop-input" placeholder="Search products..." style="border-radius:100px;max-width:260px;padding:8px 18px;font-size:0.85rem;">
+                </div>
+
+                <!-- grid -->
+                <div class="trop-grid">
+
+                    <!-- Original 50g -->
+                    <div class="trop-product-card" data-flavor="original">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#2d8a4e;"></span>
+                            <img src="assets/img/food-1.png" alt="Original Salt and Vinegar 50g">
+                            <span class="trop-size-badge">50g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Original</span>
+                            <h3 class="trop-card-name">Salt &amp; Vinegar</h3>
+                            <p class="trop-card-desc">Classic tangy crunch — perfectly balanced salt and vinegar.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Original — Salt and Vinegar (50g)</a>
-                                <p class="ul-food-sub-title">Classic salted vinegar okra crunch. Perfectly balanced tang and salt.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱35.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱35</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Original Salt and Vinegar Medium -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/food-2.png" alt="Original Salt and Vinegar Medium">
+                    <!-- Original 100g -->
+                    <div class="trop-product-card" data-flavor="original">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#2d8a4e;"></span>
+                            <img src="assets/img/food-2.png" alt="Original Salt and Vinegar 100g">
+                            <span class="trop-size-badge">100g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Original</span>
+                            <h3 class="trop-card-name">Salt &amp; Vinegar</h3>
+                            <p class="trop-card-desc">More of the tangy crunch you love — great for sharing.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Original — Salt and Vinegar (100g)</a>
-                                <p class="ul-food-sub-title">More of the classic tangy crunch you love. Great for sharing.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱60.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱60</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Original Salt and Vinegar Large -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/food-3.png" alt="Original Salt and Vinegar Large">
+                    <!-- Original 150g -->
+                    <div class="trop-product-card" data-flavor="original">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#2d8a4e;"></span>
+                            <img src="assets/img/food-3.png" alt="Original Salt and Vinegar 150g">
+                            <span class="trop-size-badge">150g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Original</span>
+                            <h3 class="trop-card-name">Salt &amp; Vinegar</h3>
+                            <p class="trop-card-desc">Family-size bag of our signature tangy crunch.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Original — Salt and Vinegar (150g)</a>
-                                <p class="ul-food-sub-title">Family-size bag of our signature Salt and Vinegar flavor.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱110.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱110</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Sour and Cream Onion Small -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-1.png" alt="Sour and Cream Onion Small">
+                    <!-- Sour Cream 50g -->
+                    <div class="trop-product-card" data-flavor="sour-cream">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#e8c76a;"></span>
+                            <img src="assets/img/menu-1.png" alt="Sour Cream Onion 50g">
+                            <span class="trop-size-badge">50g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Sour Cream</span>
+                            <h3 class="trop-card-name">Sour &amp; Cream Onion</h3>
+                            <p class="trop-card-desc">Tangy, creamy onion flavor with every crispy bite.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Sour and Cream Onion (50g)</a>
-                                <p class="ul-food-sub-title">Tangy sour cream and onion okra crunch. Bold and creamy flavor.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱35.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱35</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Sour and Cream Onion Medium -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-2.png" alt="Sour and Cream Onion Medium">
+                    <!-- Sour Cream 100g -->
+                    <div class="trop-product-card" data-flavor="sour-cream">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#e8c76a;"></span>
+                            <img src="assets/img/menu-2.png" alt="Sour Cream Onion 100g">
+                            <span class="trop-size-badge">100g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Sour Cream</span>
+                            <h3 class="trop-card-name">Sour &amp; Cream Onion</h3>
+                            <p class="trop-card-desc">Double the creaminess — perfect for movie nights.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Sour and Cream Onion (100g)</a>
-                                <p class="ul-food-sub-title">Double the tangy creaminess. Perfect for movie nights.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱60.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱60</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Sour and Cream Onion Large -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-3.png" alt="Sour and Cream Onion Large">
+                    <!-- Sour Cream 150g -->
+                    <div class="trop-product-card" data-flavor="sour-cream">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#e8c76a;"></span>
+                            <img src="assets/img/menu-3.png" alt="Sour Cream Onion 150g">
+                            <span class="trop-size-badge">150g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Sour Cream</span>
+                            <h3 class="trop-card-name">Sour &amp; Cream Onion</h3>
+                            <p class="trop-card-desc">Share the tangy goodness with friends and family.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Sour and Cream Onion (150g)</a>
-                                <p class="ul-food-sub-title">Share the tangy goodness with friends and family.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱110.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱110</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Spicy Barbeque Small -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-5.png" alt="Spicy Barbeque Small">
+                    <!-- Spicy BBQ 50g -->
+                    <div class="trop-product-card" data-flavor="bbq">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#d4653a;"></span>
+                            <img src="assets/img/menu-5.png" alt="Spicy Barbeque 50g">
+                            <span class="trop-size-badge">50g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Barbeque</span>
+                            <h3 class="trop-card-name">Spicy Barbeque</h3>
+                            <p class="trop-card-desc">Fiery chili BBQ seasoned okra — bold and spicy!</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Spicy Barbeque (50g)</a>
-                                <p class="ul-food-sub-title">Fiery chili BBQ seasoned okra crunch. Bold and spicy kick!</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱40.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱40</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Spicy Barbeque Medium -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-6.png" alt="Spicy Barbeque Medium">
+                    <!-- Spicy BBQ 100g -->
+                    <div class="trop-product-card" data-flavor="bbq">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#d4653a;"></span>
+                            <img src="assets/img/menu-6.png" alt="Spicy Barbeque 100g">
+                            <span class="trop-size-badge">100g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Barbeque</span>
+                            <h3 class="trop-card-name">Spicy Barbeque</h3>
+                            <p class="trop-card-desc">More heat, more flavor — great for adventures.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Spicy Barbeque (100g)</a>
-                                <p class="ul-food-sub-title">More heat, more flavor. Great for outdoor adventures.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱65.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱65</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Premium Cheese Small -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/food-1.png" alt="Premium Cheese Small">
+                    <!-- Premium Cheese 50g -->
+                    <div class="trop-product-card" data-flavor="cheese">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#f0b84d;"></span>
+                            <img src="assets/img/food-1.png" alt="Premium Cheese 50g">
+                            <span class="trop-size-badge">50g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Cheese</span>
+                            <h3 class="trop-card-name">Premium Cheese</h3>
+                            <p class="trop-card-desc">Rich, savory cheese coating on crispy okra.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Premium Cheese (50g)</a>
-                                <p class="ul-food-sub-title">Rich, savory cheese coating on crispy okra. Irresistible!</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱40.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱40</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Premium Cheese Medium -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/food-2.png" alt="Premium Cheese Medium">
+                    <!-- Premium Cheese 100g -->
+                    <div class="trop-product-card" data-flavor="cheese">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#f0b84d;"></span>
+                            <img src="assets/img/food-2.png" alt="Premium Cheese 100g">
+                            <span class="trop-size-badge">100g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Cheese</span>
+                            <h3 class="trop-card-name">Premium Cheese</h3>
+                            <p class="trop-card-desc">More cheesy goodness — a crowd favorite.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Premium Cheese (100g)</a>
-                                <p class="ul-food-sub-title">More cheesy goodness in every bag. A crowd favorite!</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱65.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱65</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Salted Egg Small -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-3.png" alt="Salted Egg Small">
+                    <!-- Salted Egg 50g -->
+                    <div class="trop-product-card" data-flavor="salted">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#c9915e;"></span>
+                            <img src="assets/img/menu-3.png" alt="Salted Egg 50g">
+                            <span class="trop-size-badge">50g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Salted Egg</span>
+                            <h3 class="trop-card-name">Classic Salted Egg</h3>
+                            <p class="trop-card-desc">Crispy salted egg okra — Filipino flavor in every bite.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Salted Egg (50g)</a>
-                                <p class="ul-food-sub-title">Crispy salted egg okra delight. Filipino flavor in every bite.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱40.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱40</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Salted Egg Medium -->
-                    <div class="col">
-                        <div class="ul-food">
-                            <div class="ul-food-img">
-                                <img src="assets/img/menu-4.png" alt="Salted Egg Medium">
+                    <!-- Salted Egg 100g -->
+                    <div class="trop-product-card" data-flavor="salted">
+                        <div class="trop-card-img">
+                            <span class="trop-flavor-dot" style="background:#c9915e;"></span>
+                            <img src="assets/img/menu-4.png" alt="Salted Egg 100g">
+                            <span class="trop-size-badge">100g</span>
+                        </div>
+                        <div class="trop-card-body">
+                            <span class="trop-card-flavor">Salted Egg</span>
+                            <h3 class="trop-card-name">Classic Salted Egg</h3>
+                            <p class="trop-card-desc">Double the salted egg flavor — perfect for baon.</p>
+                            <div class="trop-card-rating">
+                                <i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i><i class="flaticon-star"></i>
                             </div>
-                            <div class="ul-food-txt">
-                                <a href="shop-details.html" class="ul-food-title">Salted Egg (100g)</a>
-                                <p class="ul-food-sub-title">Double the salted egg flavor. Perfect for baon and merienda.</p>
-                                <div class="ul-food-bottom">
-                                    <span class="ul-food-price"><span class="number">₱65.00</span></span>
-                                    <div class="ul-food-rating">
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                        <i class="flaticon-star"></i>
-                                    </div>
-                                </div>
-                                <button class="ul-food-add-to-cart-btn"><i class="flaticon-cart"></i></button>
+                            <div class="trop-card-footer">
+                                <span class="trop-card-price">₱65</span>
+                                <a href="shop-details.html" class="trop-btn">Order</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- PAGINATION -->
-                <div class="ul-pagination pt-0 border-0">
-                    <ul>
-                        <li class="active"><a href="#"><i class="flaticon-left-arrow"></i></a></li>
-                        <li class="pages">
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                        </li>
-                        <li><a href="#"><i class="flaticon-right-arrow-3"></i></a></li>
-                    </ul>
+                <!-- Pagination -->
+                <div class="trop-pagination">
+                    <a href="#"><i class="flaticon-left-arrow"></i></a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#"><i class="flaticon-right-arrow-3"></i></a>
                 </div>
+
             </div>
         </section>
-        <!-- PRODUCTS SECTION END -->
     </main>
 
     <!-- FOOTER SECTION START -->

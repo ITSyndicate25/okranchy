@@ -18,24 +18,48 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
     <style>
-        /* Make logo smaller to fit header and footer */
-        .logo-container .logo {
-            max-height: 80px;
-            width: auto;
+        .logo-container .logo { max-height: 80px; width: auto; }
+        .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
+        .ul-footer-about img { max-height: 120px; width: auto; }
+        .signature { max-width: 80px; height: auto; }
+
+        /* Tropical filter buttons */
+        .trop-filter-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 2px solid var(--trop-green, #2d8a4e);
+            color: var(--trop-green, #2d8a4e);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
         }
-        .ul-sidebar-header-logo .logo {
-            max-height: 100px;
-            width: auto;
+        .trop-filter-btn:hover {
+            background: var(--trop-green-pale, #e8f5e9);
         }
-        .ul-footer-about img {
-            max-height: 120px;
-            width: auto;
+        .trop-filter-btn.active {
+            background: var(--trop-green, #2d8a4e);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(45,138,78,0.3);
         }
 
-        .signature {
-            max-width: 80px;
-            height: auto;
+        /* Masonry responsive */
+        @media (max-width: 992px) {
+            .trop-gallery-masonry { columns: 2 !important; }
+        }
+        @media (max-width: 576px) {
+            .trop-gallery-masonry { columns: 1 !important; }
         }
     </style>
 </head>
@@ -168,49 +192,79 @@
 
     <main>
         <!-- BREADCRUMB SECTION START -->
-        <div class="ul-breadcrumb">
-            <div class="wow animate__fadeInUp">
-                <h2 class="ul-breadcrumb-title">Gallery</h2>
-                <div class="ul-breadcrumb-nav">
-                    <a href="index.html">Home</a>
-                    <span class="separator">/</span>
-                    <span class="current-page">Gallery</span>
-                </div>
+        <div class="trop-breadcrumb">
+            <h1 class="trop-breadcrumb-title">Gallery</h1>
+            <div class="trop-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span class="current">Gallery</span>
             </div>
         </div>
         <!-- BREADCRUMB SECTION END -->
 
 
         <!-- GALLERY SECTION START -->
-        <section class="ul-inner-gallery ul-section-spacing">
-            <div class="ul-container wow animate__fadeInUp">
-                <div class="row row-cols-md-3 row-cols-2 row-cols-xxs-1 ul-bs-row">
-                    <div class="col">
-                        <div class="ul-inner-gallery-item">
-                            <a href="assets/img/gallery-item-1.jpg" data-fslightbox="gallery"><i class="flaticon-plus"></i></a>
-                            <img src="assets/img/gallery-item-1.jpg" alt="Fresh Okra Harvest">
-                        </div>
-                        <div class="ul-inner-gallery-item">
-                            <a href="assets/img/gallery-item-2.jpg" data-fslightbox="gallery"><i class="flaticon-plus"></i></a>
-                            <img src="assets/img/gallery-item-2.jpg" alt="Okranchy Preparation">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="ul-inner-gallery-item">
-                            <a href="assets/img/gallery-item-3.jpg" data-fslightbox="gallery"><i class="flaticon-plus"></i></a>
-                            <img src="assets/img/gallery-item-3.jpg" alt="Ani Co. Team">
-                        </div>
-                        <div class="ul-inner-gallery-item">
-                            <a href="assets/img/gallery-item-4.jpg" data-fslightbox="gallery"><i class="flaticon-plus"></i></a>
-                            <img src="assets/img/gallery-item-4.jpg" alt="Okranchy Products Display">
-                        </div>
+        <section style="padding:80px 0;background:var(--trop-cream);">
+            <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+                <div class="trop-heading">
+                    <span class="trop-label">Our Moments</span>
+                    <h2 class="trop-section-title">Okranchy in Photos</h2>
+                    <p class="trop-desc">From farm-fresh okra to your favorite crunchy snack — see our journey.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="trop-filter-bar" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px;">
+                    <button class="trop-filter-btn active" data-filter="all">All</button>
+                    <button class="trop-filter-btn" data-filter="products">Products</button>
+                    <button class="trop-filter-btn" data-filter="team">Team</button>
+                    <button class="trop-filter-btn" data-filter="events">Events</button>
+                </div>
+
+                <!-- Masonry Gallery Grid -->
+                <div class="trop-gallery-masonry" style="columns:3;column-gap:20px;">
+                    <!-- Item 1 - Products -->
+                    <div class="trop-gallery-card" style="break-inside:avoid;margin-bottom:20px;" data-category="products">
+                        <div class="trop-leaf-corner"></div>
+                        <a href="assets/img/gallery-item-1.jpg" data-fslightbox="gallery">
+                            <div style="position:absolute;inset:0;background:rgba(26,107,60,0.3);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;z-index:2;font-size:1.5rem;color:white;"><i class="flaticon-plus"></i></div>
+                            <img src="assets/img/gallery-item-1.jpg" alt="Fresh Okra Harvest" style="width:100%;height:auto;object-fit:contain;display:block;">
+                        </a>
                     </div>
 
-                    <div class="col">
-                        <div class="ul-inner-gallery-item">
-                            <a href="assets/img/gallery-item-5.jpg" data-fslightbox="gallery"><i class="flaticon-plus"></i></a>
-                            <img src="assets/img/gallery-item-5.jpg" alt="Campus Selling Event">
-                        </div>
+                    <!-- Item 2 - Process -->
+                    <div class="trop-gallery-card" style="break-inside:avoid;margin-bottom:20px;" data-category="products">
+                        <div class="trop-leaf-corner"></div>
+                        <a href="assets/img/gallery-item-2.jpg" data-fslightbox="gallery">
+                            <div style="position:absolute;inset:0;background:rgba(26,107,60,0.3);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;z-index:2;font-size:1.5rem;color:white;"><i class="flaticon-plus"></i></div>
+                            <img src="assets/img/gallery-item-2.jpg" alt="Okranchy Preparation" style="width:100%;height:auto;object-fit:contain;display:block;">
+                        </a>
+                    </div>
+
+                    <!-- Item 3 - Team -->
+                    <div class="trop-gallery-card" style="break-inside:avoid;margin-bottom:20px;" data-category="team">
+                        <div class="trop-leaf-corner"></div>
+                        <a href="assets/img/gallery-item-3.jpg" data-fslightbox="gallery">
+                            <div style="position:absolute;inset:0;background:rgba(26,107,60,0.3);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;z-index:2;font-size:1.5rem;color:white;"><i class="flaticon-plus"></i></div>
+                            <img src="assets/img/gallery-item-3.jpg" alt="Ani Co. Team" style="width:100%;height:auto;object-fit:contain;display:block;">
+                        </a>
+                    </div>
+
+                    <!-- Item 4 - Products -->
+                    <div class="trop-gallery-card" style="break-inside:avoid;margin-bottom:20px;" data-category="products">
+                        <div class="trop-leaf-corner"></div>
+                        <a href="assets/img/gallery-item-4.jpg" data-fslightbox="gallery">
+                            <div style="position:absolute;inset:0;background:rgba(26,107,60,0.3);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;z-index:2;font-size:1.5rem;color:white;"><i class="flaticon-plus"></i></div>
+                            <img src="assets/img/gallery-item-4.jpg" alt="Products Display" style="width:100%;height:auto;object-fit:contain;display:block;">
+                        </a>
+                    </div>
+
+                    <!-- Item 5 - Events -->
+                    <div class="trop-gallery-card" style="break-inside:avoid;margin-bottom:20px;" data-category="events">
+                        <div class="trop-leaf-corner"></div>
+                        <a href="assets/img/gallery-item-5.jpg" data-fslightbox="gallery">
+                            <div style="position:absolute;inset:0;background:rgba(26,107,60,0.3);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;z-index:2;font-size:1.5rem;color:white;"><i class="flaticon-plus"></i></div>
+                            <img src="assets/img/gallery-item-5.jpg" alt="Campus Selling Event" style="width:100%;height:auto;object-fit:contain;display:block;">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -309,6 +363,31 @@
 
     <!-- custom JS -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Gallery filter JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.trop-filter-btn');
+            const galleryItems = document.querySelectorAll('.trop-gallery-card');
+
+            filterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                    this.classList.add('active');
+
+                    var filter = this.getAttribute('data-filter');
+                    galleryItems.forEach(function(item) {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
