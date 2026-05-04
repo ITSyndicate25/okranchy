@@ -308,4 +308,7 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 .flaticon-left:before {
     content: "\f15d";
 }
+.flaticon-tiktok:before {
+    content: "\f160";
+}
 

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Okranchy Okra Chips</title>
+
+    <!-- libraries CSS -->
+    <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/animate-wow/animate.min.css">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Make logo smaller to fit header and footer */
+        .logo-container .logo {
+            max-height: 80px;
+            width: auto;
+        }
+        .ul-sidebar-header-logo .logo {
+            max-height: 100px;
+            width: auto;
+        }
+        .ul-footer-about img {
+            max-height: 120px;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- SIDEBAR SECTION START -->
+    <div class="ul-sidebar">
+        <div class="ul-sidebar-header">
+            <div class="ul-sidebar-header-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo">
+                </a>
+            </div>
+            <button class="ul-sidebar-closer"><i class="flaticon-close"></i></button>
+        </div>
+
+        <div class="ul-sidebar-header-nav-wrapper d-block d-lg-none"></div>
+
+        <div class="ul-sidebar-footer">
+            <span class="ul-sidebar-footer-title">Follow us</span>
+            <div class="ul-sidebar-footer-social">
+                <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-facebook"></i></a>
+                <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-instagram"></i></a>
+                <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener"><i class="flaticon-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- SIDEBAR SECTION END -->
+
+    <!-- SEARCH MODAL SECTION START -->
+    <div class="ul-search-form-wrapper flex-grow-1 flex-shrink-0">
+        <button class="ul-search-closer"><i class="flaticon-close"></i></button>
+        <form action="#" class="ul-search-form">
+            <div class="ul-search-form-right">
+                <input type="search" name="search" id="ul-search" placeholder="Search Okranchy Products...">
+                <button type="submit"><span class="icon"><i class="flaticon-search"></i></span></button>
+            </div>
+        </form>
+    </div>
+    <!-- SEARCH MODAL SECTION END -->
+
+    <!-- HEADER SECTION START -->
+    <header class="ul-header">
+        <div class="header-top-bg-wrapper">
+            <div class="ul-header-top">
+                <div class="ul-header-container">
+                    <div class="ul-header-top-left">
+                        <div class="ul-header-contact-infos">
+                            <span class="ul-header-contact-info"><i class="flaticon-location-pin colored"></i> 51-71 Mc Arthur Highway Marulas, Valenzuela City</span>
+                        </div>
+                    </div>
+
+                    <div class="ul-header-top-right">
+                        <div class="ul-header-auth-options">
+                            <i class="flaticon-user"></i>
+                            <a href="login.html">Login</a>
+                            <span>/</span>
+                            <a href="register.html">Register</a>
+                        </div>
+
+                        <div class="ul-header-socials">
+                            <span class="socials-title">Follow us: </span>
+                            <div class="links">
+                                <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-facebook"></i></a>
+                                <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-instagram"></i></a>
+                                <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener"><i class="flaticon-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom-bg-wrapper to-be-sticky">
+            <div class="ul-header-bottom">
+                <div class="ul-header-bottom-wrapper ul-header-container">
+                    <div class="logo-container">
+                        <a href="index.html" class="d-inline-block"><img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo"></a>
+                    </div>
+
+                    <!-- header nav -->
+                    <div class="ul-header-nav-wrapper">
+                        <div class="to-go-to-sidebar-in-mobile">
+                            <nav class="ul-header-nav">
+                                <a href="index.html">Home</a>
+                                <a href="about.html">About</a>
+                                <div class="has-sub-menu">
+                                    <a role="button">Shop</a>
+                                    <div class="ul-header-submenu">
+                                        <ul>
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="shop-details.html">Product Details</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="has-sub-menu">
+                                    <a role="button">Pages</a>
+                                    <div class="ul-header-submenu">
+                                        <ul>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="testimonials.html">Testimonials</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="contact.html">Contact</a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- actions -->
+                    <div class="ul-header-actions">
+                        <button class="ul-header-search-opener"><i class="flaticon-search"></i></button>
+                        <button><i class="flaticon-grocery-store"></i></button>
+                        <a href="shop.html" class="ul-btn d-sm-inline-flex d-none">Order Now <i class="flaticon-right"></i></a>
+                        <button class="ul-header-sidebar-opener d-lg-none d-inline-flex"><i class="flaticon-menu"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER SECTION END -->
+
+    <main>
+        <!-- AUTH SECTION START -->
+        <section class="ul-auth-wrapper">
+            <div class="ul-auth-card wow animate__fadeInUp">
+                <div class="ul-auth-logo">
+                    <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
+                </div>
+
+                <h2 class="ul-auth-title">Create Account</h2>
+                <p class="ul-auth-subtitle">Join the Okranchy family today!</p>
+
+                <form id="register-form" class="ul-auth-form" novalidate>
+                    <div class="row g-lg-3">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="register-fullname">Full Name</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="register-fullname" name="fullname" placeholder="Enter your full name" required>
+                                </div>
+                                <p class="ul-auth-error" id="fullname-error">Please enter your name</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="register-email">Email Address</label>
+                                <div class="input-wrapper">
+                                    <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <p class="ul-auth-error" id="email-error">Please enter a valid email address</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="register-phone">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <input type="tel" id="register-phone" name="phone" placeholder="Enter your phone number" required>
+                                </div>
+                                <p class="ul-auth-error" id="phone-error">Please enter your phone number</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="register-password">Password</label>
+                                <div class="input-wrapper">
+                                    <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+                                    <button type="button" class="toggle-pw" data-target="register-password">
+                                        <i class="flaticon-eye"></i>
+                                    </button>
+                                </div>
+                                <p class="ul-auth-error" id="password-error">Please create a password (min 6 characters)</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="register-confirm-password">Confirm Password</label>
+                                <div class="input-wrapper">
+                                    <input type="password" id="register-confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                                    <button type="button" class="toggle-pw" data-target="register-confirm-password">
+                                        <i class="flaticon-eye"></i>
+                                    </button>
+                                </div>
+                                <p class="ul-auth-error" id="confirm-error">Passwords do not match</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="ul-checkbox-wrapper ul-auth-checkbox">
+                            <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                            <span class="ul-checkbox"><i class="flaticon-checked"></i></span>
+                            <span class="ul-checkbox-txt">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                        <p class="ul-auth-error" id="terms-error">You must agree to the terms</p>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="ul-btn">
+                            Create Account <i class="flaticon-right"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="ul-auth-divider">
+                    <span>or sign up with</span>
+                </div>
+
+                <div class="ul-auth-socials">
+                    <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Facebook">
+                        <i class="flaticon-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener" title="Sign up with Instagram">
+                        <i class="flaticon-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener" title="Sign up with TikTok">
+                        <i class="flaticon-tiktok"></i>
+                    </a>
+                </div>
+
+                <div class="ul-auth-footer">
+                    <p>Already have an account? <a href="login.html">Sign In</a></p>
+                </div>
+            </div>
+        </section>
+        <!-- AUTH SECTION END -->
+    </main>
+
+    <!-- FOOTER SECTION START -->
+    <footer class="ul-footer">
+        <div class="ul-footer-top">
+            <div class="ul-container">
+                <div class="ul-footer-top-wrapper wow animate__fadeInUp">
+                    <div class="ul-footer-about">
+                        <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
+                        <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Ani Co. a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
+                        <div class="ul-footer-socials">
+                            <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-facebook"></i></a>
+                            <a href="https://www.instagram.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@Okranchy" target="_blank" rel="noopener"><i class="flaticon-tiktok"></i></a>
+                            <a href="https://www.linkedin.com/company/okranchy" target="_blank" rel="noopener"><i class="flaticon-linkedin-big-logo"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget">
+                        <h3 class="ul-footer-widget-title">Quick Links</h3>
+                        <div class="ul-footer-widget-links">
+                            <a href="about.html">About Us</a>
+                            <a href="shop.html">Our Products</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="faq.html">FAQ's</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget">
+                        <h3 class="ul-footer-widget-title">Our Flavors</h3>
+                        <div class="ul-footer-widget-links">
+                            <a href="shop.html">Original</a>
+                            <a href="shop.html">Sour and Cream</a>
+                            <a href="shop.html">Barbeque</a>
+                            <a href="shop.html">Cheese</a>
+                            <a href="shop.html">Salted Egg</a>
+                        </div>
+                    </div>
+
+                    <div class="ul-footer-widget ul-nwsltr-widget">
+                        <h3 class="ul-footer-widget-title">Stay Connected</h3>
+                        <div class="ul-footer-widget-links">
+                            <span>Order Inquiries: <span class="colored">Mon – Sat</span></span>
+                            <span>Pickup Available at: <span class="colored">51-71 Mc Arthur Highway Marulas, Valenzuela City</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ul-footer-bottom">
+            <div class="ul-container">
+                <div class="ul-footer-bottom-wrapper">
+                    <p class="copyright-txt">&copy;
+                        <script>document.write(new Date().getFullYear())</script> Okranchy by Ani Co. | Pamantasan ng Lungsod ng Valenzuela. All rights reserved.
+                    </p>
+                    <div class="ul-footer-bottom-nav"><a href="#">Made by love for Ema By Kim</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+    <!-- libraries JS -->
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/animate-wow/wow.min.js"></script>
+
+    <!-- custom JS -->
+    <script>
+        // Preloader
+        document.addEventListener("DOMContentLoaded", (event) => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+            document.body.style.position = 'static';
+
+            // Header mobile menu
+            const ulSidebar = document.querySelector(".ul-sidebar");
+            const ulSidebarOpener = document.querySelector(".ul-header-sidebar-opener");
+            const ulSidebarCloser = document.querySelector(".ul-sidebar-closer");
+
+            if (ulSidebarOpener) {
+                ulSidebarOpener.addEventListener("click", () => {
+                    ulSidebar.classList.add("active");
+                });
+            }
+
+            if (ulSidebarCloser) {
+                ulSidebarCloser.addEventListener("click", () => {
+                    ulSidebar.classList.remove("active");
+                });
+            }
+
+            // Header search
+            const ulHeaderSearchOpener = document.querySelector(".ul-header-search-opener");
+            const ulHeaderSearchCloser = document.querySelector(".ul-search-closer");
+            if (ulHeaderSearchOpener) {
+                ulHeaderSearchOpener.addEventListener("click", () => {
+                    document.querySelector(".ul-search-form-wrapper").classList.add("active");
+                });
+            }
+
+            if (ulHeaderSearchCloser) {
+                ulHeaderSearchCloser.addEventListener("click", () => {
+                    document.querySelector(".ul-search-form-wrapper").classList.remove("active");
+                });
+            }
+
+            // Sticky header
+            const ulHeader = document.querySelector(".to-be-sticky");
+            if (ulHeader) {
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 80) {
+                        ulHeader.classList.add("sticky");
+                    } else {
+                        ulHeader.classList.remove("sticky");
+                    }
+                });
+            }
+
+            // Password toggle
+            document.querySelectorAll('.toggle-pw').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const input = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.remove('flaticon-eye');
+                        icon.classList.add('flaticon-eye-off');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.remove('flaticon-eye-off');
+                        icon.classList.add('flaticon-eye');
+                    }
+                });
+            });
+
+            // Register form handling
+            const registerForm = document.getElementById('register-form');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const fullname = document.getElementById('register-fullname');
+                    const email = document.getElementById('register-email');
+                    const phone = document.getElementById('register-phone');
+                    const password = document.getElementById('register-password');
+                    const confirmPassword = document.getElementById('register-confirm-password');
+                    const agreeTerms = document.getElementById('agree-terms');
+
+                    const fullnameError = document.getElementById('fullname-error');
+                    const emailError = document.getElementById('email-error');
+                    const phoneError = document.getElementById('phone-error');
+                    const passwordError = document.getElementById('password-error');
+                    const confirmError = document.getElementById('confirm-error');
+                    const termsError = document.getElementById('terms-error');
+
+                    let isValid = true;
+
+                    // Validate fullname
+                    if (!fullname.value || fullname.value.trim().length < 2) {
+                        fullnameError.classList.add('visible');
+                        fullname.style.borderColor = '#dc3545';
+                        isValid = false;
+                    } else {
+                        fullnameError.classList.remove('visible');
+                        fullname.style.borderColor = '';
+                    }
+
+                    // Validate email
+                    if (!email.value || !email.value.includes('@')) {
+                        emailError.classList.add('visible');
+                        email.style.borderColor = '#dc3545';
+                        isValid = false;
+                    } else {
+                        emailError.classList.remove('visible');
+                        email.style.borderColor = '';
+                    }
+
+                    // Validate phone
+                    if (!phone.value || phone.value.length < 10) {
+                        phoneError.classList.add('visible');
+                        phone.style.borderColor = '#dc3545';
+                        isValid = false;
+                    } else {
+                        phoneError.classList.remove('visible');
+                        phone.style.borderColor = '';
+                    }
+
+                    // Validate password
+                    if (!password.value || password.value.length < 6) {
+                        passwordError.classList.add('visible');
+                        password.style.borderColor = '#dc3545';
+                        isValid = false;
+                    } else {
+                        passwordError.classList.remove('visible');
+                        password.style.borderColor = '';
+                    }
+
+                    // Validate password match
+                    if (password.value !== confirmPassword.value) {
+                        confirmError.classList.add('visible');
+                        confirmPassword.style.borderColor = '#dc3545';
+                        isValid = false;
+                    } else {
+                        confirmError.classList.remove('visible');
+                        confirmPassword.style.borderColor = '';
+                    }
+
+                    // Validate terms agreement
+                    if (!agreeTerms.checked) {
+                        termsError.classList.add('visible');
+                        isValid = false;
+                    } else {
+                        termsError.classList.remove('visible');
+                    }
+
+                    if (isValid) {
+                        // Simulate successful registration - redirect to index
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
