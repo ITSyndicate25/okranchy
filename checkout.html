@@ -132,6 +132,22 @@
             display: none;
         }
         .okr-form-error.visible { display: block; }
+
+        /* === Mobile Responsive === */
+        @media (max-width: 768px) {
+            .checkout-grid { grid-template-columns: 1fr !important; }
+            .checkout-billing-grid { grid-template-columns: 1fr !important; }
+            .trop-form-card { padding: 20px 16px !important; }
+            .trop-card-base { padding: 20px 16px !important; }
+            .trop-step { font-size: 0.78rem; padding: 6px 12px; }
+            .step-num { width: 24px; height: 24px; font-size: 0.75rem; line-height: 24px; }
+            .okr-modal-box { padding: 28px 20px; max-width: 92%; }
+            .okr-modal-actions a { width: 100%; justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .checkout-billing-grid > div { grid-column: 1 / -1 !important; }
+            .trop-step { flex: 1 1 auto; min-width: 80px; justify-content: center; }
+        }
     </style>
 </head>
 
@@ -279,14 +295,14 @@
                 </div>
 
                 <form id="checkoutForm">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+                    <div class="checkout-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
 
                         <!-- LEFT - Billing / Shipping -->
                         <div style="display:flex;flex-direction:column;gap:24px;">
                             <!-- Billing Details -->
                             <div class="trop-form-card">
                                 <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--trop-green-dark);margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid rgba(26,107,60,0.08);">Billing Address</h4>
-                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                                <div class="checkout-billing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                                     <div>
                                         <label class="trop-label" style="display:block;text-transform:none;letter-spacing:0;font-size:0.82rem;font-weight:600;color:var(--trop-text);margin-bottom:6px;">First Name*</label>
                                         <input type="text" id="chkFirstName" placeholder="Enter First Name" class="trop-input" required>
