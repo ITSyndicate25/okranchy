@@ -25,16 +25,33 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
     <style>
-        .logo-container .logo { max-height: 100px; width: auto; }
-        .ul-sidebar-header-logo .logo { max-height: 100px; width: auto; }
-        .ul-footer-about img { max-height: 120px; width: auto; }
+        .logo-container .logo { max-height: 130px; width: auto; }
+        .ul-sidebar-header-logo .logo { max-height: 130px; width: auto; }
+        .ul-footer-about img { max-height: 160px; width: auto; }
         .signature { max-width: 80px; height: auto; }
     </style>
 </head>
 
 <body>
     <div class="preloader" id="preloader">
-        <div class="loader"></div>
+        <div class="preloader-inner">
+            <div class="preloader-logo-wrap">
+                <img src="assets/img/logo-3.png" alt="Okranchy" class="preloader-logo">
+                <div class="preloader-ring"></div>
+            </div>
+            <div class="preloader-chips">
+                <span class="preloader-chip c1"></span>
+                <span class="preloader-chip c2"></span>
+                <span class="preloader-chip c3"></span>
+                <span class="preloader-chip c4"></span>
+                <span class="preloader-chip c5"></span>
+                <span class="preloader-chip c6"></span>
+            </div>
+            <div class="preloader-bar-track">
+                <div class="preloader-bar-fill" id="preloader-bar"></div>
+            </div>
+            <span class="preloader-text">CRUNCHING...</span>
+        </div>
     </div>
 
     <!-- SIDEBAR SECTION START -->
@@ -321,6 +338,7 @@
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
 
     <!-- custom JS -->
+    <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

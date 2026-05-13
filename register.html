@@ -18,15 +18,15 @@
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
-            max-height: 100px;
+            max-height: 130px;
             width: auto;
         }
         .ul-sidebar-header-logo .logo {
-            max-height: 100px;
+            max-height: 130px;
             width: auto;
         }
         .ul-footer-about img {
-            max-height: 120px;
+            max-height: 160px;
             width: auto;
         }
     </style>
@@ -34,7 +34,24 @@
 
 <body>
     <div class="preloader" id="preloader">
-        <div class="loader"></div>
+        <div class="preloader-inner">
+            <div class="preloader-logo-wrap">
+                <img src="assets/img/logo-3.png" alt="Okranchy" class="preloader-logo">
+                <div class="preloader-ring"></div>
+            </div>
+            <div class="preloader-chips">
+                <span class="preloader-chip c1"></span>
+                <span class="preloader-chip c2"></span>
+                <span class="preloader-chip c3"></span>
+                <span class="preloader-chip c4"></span>
+                <span class="preloader-chip c5"></span>
+                <span class="preloader-chip c6"></span>
+            </div>
+            <div class="preloader-bar-track">
+                <div class="preloader-bar-fill" id="preloader-bar"></div>
+            </div>
+            <span class="preloader-text">CRUNCHING...</span>
+        </div>
     </div>
 
     <!-- SIDEBAR SECTION START -->
@@ -328,164 +345,107 @@
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
 
     <!-- custom JS -->
+    <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Preloader
-        document.addEventListener("DOMContentLoaded", (event) => {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
-            document.body.style.position = 'static';
+        // Password toggle
+        document.querySelectorAll('.toggle-pw').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const input = document.getElementById(targetId);
+                const icon = this.querySelector('i');
 
-            // Header mobile menu
-            const ulSidebar = document.querySelector(".ul-sidebar");
-            const ulSidebarOpener = document.querySelector(".ul-header-sidebar-opener");
-            const ulSidebarCloser = document.querySelector(".ul-sidebar-closer");
-
-            if (ulSidebarOpener) {
-                ulSidebarOpener.addEventListener("click", () => {
-                    ulSidebar.classList.add("active");
-                });
-            }
-
-            if (ulSidebarCloser) {
-                ulSidebarCloser.addEventListener("click", () => {
-                    ulSidebar.classList.remove("active");
-                });
-            }
-
-            // Header search
-            const ulHeaderSearchOpener = document.querySelector(".ul-header-search-opener");
-            const ulHeaderSearchCloser = document.querySelector(".ul-search-closer");
-            if (ulHeaderSearchOpener) {
-                ulHeaderSearchOpener.addEventListener("click", () => {
-                    document.querySelector(".ul-search-form-wrapper").classList.add("active");
-                });
-            }
-
-            if (ulHeaderSearchCloser) {
-                ulHeaderSearchCloser.addEventListener("click", () => {
-                    document.querySelector(".ul-search-form-wrapper").classList.remove("active");
-                });
-            }
-
-            // Sticky header
-            const ulHeader = document.querySelector(".to-be-sticky");
-            if (ulHeader) {
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > 80) {
-                        ulHeader.classList.add("sticky");
-                    } else {
-                        ulHeader.classList.remove("sticky");
-                    }
-                });
-            }
-
-            // Password toggle
-            document.querySelectorAll('.toggle-pw').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    const input = document.getElementById(targetId);
-                    const icon = this.querySelector('i');
-
-                    if (input.type === 'password') {
-                        input.type = 'text';
-                        icon.classList.remove('flaticon-eye');
-                        icon.classList.add('flaticon-eye-off');
-                    } else {
-                        input.type = 'password';
-                        icon.classList.remove('flaticon-eye-off');
-                        icon.classList.add('flaticon-eye');
-                    }
-                });
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('flaticon-eye');
+                    icon.classList.add('flaticon-eye-off');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('flaticon-eye-off');
+                    icon.classList.add('flaticon-eye');
+                }
             });
-
-            // Register form handling
-            const registerForm = document.getElementById('register-form');
-            if (registerForm) {
-                registerForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    const fullname = document.getElementById('register-fullname');
-                    const email = document.getElementById('register-email');
-                    const phone = document.getElementById('register-phone');
-                    const password = document.getElementById('register-password');
-                    const confirmPassword = document.getElementById('register-confirm-password');
-                    const agreeTerms = document.getElementById('agree-terms');
-
-                    const fullnameError = document.getElementById('fullname-error');
-                    const emailError = document.getElementById('email-error');
-                    const phoneError = document.getElementById('phone-error');
-                    const passwordError = document.getElementById('password-error');
-                    const confirmError = document.getElementById('confirm-error');
-                    const termsError = document.getElementById('terms-error');
-
-                    let isValid = true;
-
-                    // Validate fullname
-                    if (!fullname.value || fullname.value.trim().length < 2) {
-                        fullnameError.classList.add('visible');
-                        fullname.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        fullnameError.classList.remove('visible');
-                        fullname.style.borderColor = '';
-                    }
-
-                    // Validate email
-                    if (!email.value || !email.value.includes('@')) {
-                        emailError.classList.add('visible');
-                        email.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        emailError.classList.remove('visible');
-                        email.style.borderColor = '';
-                    }
-
-                    // Validate phone
-                    if (!phone.value || phone.value.length < 10) {
-                        phoneError.classList.add('visible');
-                        phone.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        phoneError.classList.remove('visible');
-                        phone.style.borderColor = '';
-                    }
-
-                    // Validate password
-                    if (!password.value || password.value.length < 6) {
-                        passwordError.classList.add('visible');
-                        password.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        passwordError.classList.remove('visible');
-                        password.style.borderColor = '';
-                    }
-
-                    // Validate password match
-                    if (password.value !== confirmPassword.value) {
-                        confirmError.classList.add('visible');
-                        confirmPassword.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        confirmError.classList.remove('visible');
-                        confirmPassword.style.borderColor = '';
-                    }
-
-                    // Validate terms agreement
-                    if (!agreeTerms.checked) {
-                        termsError.classList.add('visible');
-                        isValid = false;
-                    } else {
-                        termsError.classList.remove('visible');
-                    }
-
-                    if (isValid) {
-                        // Simulate successful registration - redirect to index
-                        window.location.href = 'index.html';
-                    }
-                });
-            }
         });
+
+        // Register form handling
+        const registerForm = document.getElementById('register-form');
+        if (registerForm) {
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const fullname = document.getElementById('register-fullname');
+                const email = document.getElementById('register-email');
+                const phone = document.getElementById('register-phone');
+                const password = document.getElementById('register-password');
+                const confirmPassword = document.getElementById('register-confirm-password');
+                const agreeTerms = document.getElementById('agree-terms');
+
+                const fullnameError = document.getElementById('fullname-error');
+                const emailError = document.getElementById('email-error');
+                const phoneError = document.getElementById('phone-error');
+                const passwordError = document.getElementById('password-error');
+                const confirmError = document.getElementById('confirm-error');
+                const termsError = document.getElementById('terms-error');
+
+                let isValid = true;
+
+                if (!fullname.value || fullname.value.trim().length < 2) {
+                    fullnameError.classList.add('visible');
+                    fullname.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    fullnameError.classList.remove('visible');
+                    fullname.style.borderColor = '';
+                }
+
+                if (!email.value || !email.value.includes('@')) {
+                    emailError.classList.add('visible');
+                    email.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    emailError.classList.remove('visible');
+                    email.style.borderColor = '';
+                }
+
+                if (!phone.value || phone.value.length < 10) {
+                    phoneError.classList.add('visible');
+                    phone.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    phoneError.classList.remove('visible');
+                    phone.style.borderColor = '';
+                }
+
+                if (!password.value || password.value.length < 6) {
+                    passwordError.classList.add('visible');
+                    password.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    passwordError.classList.remove('visible');
+                    password.style.borderColor = '';
+                }
+
+                if (password.value !== confirmPassword.value) {
+                    confirmError.classList.add('visible');
+                    confirmPassword.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    confirmError.classList.remove('visible');
+                    confirmPassword.style.borderColor = '';
+                }
+
+                if (!agreeTerms.checked) {
+                    termsError.classList.add('visible');
+                    isValid = false;
+                } else {
+                    termsError.classList.remove('visible');
+                }
+
+                if (isValid) {
+                    window.location.href = 'index.html';
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -18,15 +18,15 @@
     <style>
         /* Make logo smaller to fit header and footer */
         .logo-container .logo {
-            max-height: 100px;
+            max-height: 130px;
             width: auto;
         }
         .ul-sidebar-header-logo .logo {
-            max-height: 100px;
+            max-height: 130px;
             width: auto;
         }
         .ul-footer-about img {
-            max-height: 120px;
+            max-height: 160px;
             width: auto;
         }
     </style>
@@ -34,7 +34,24 @@
 
 <body>
     <div class="preloader" id="preloader">
-        <div class="loader"></div>
+        <div class="preloader-inner">
+            <div class="preloader-logo-wrap">
+                <img src="assets/img/logo-3.png" alt="Okranchy" class="preloader-logo">
+                <div class="preloader-ring"></div>
+            </div>
+            <div class="preloader-chips">
+                <span class="preloader-chip c1"></span>
+                <span class="preloader-chip c2"></span>
+                <span class="preloader-chip c3"></span>
+                <span class="preloader-chip c4"></span>
+                <span class="preloader-chip c5"></span>
+                <span class="preloader-chip c6"></span>
+            </div>
+            <div class="preloader-bar-track">
+                <div class="preloader-bar-fill" id="preloader-bar"></div>
+            </div>
+            <span class="preloader-text">CRUNCHING...</span>
+        </div>
     </div>
 
     <!-- SIDEBAR SECTION START -->
@@ -303,117 +320,64 @@
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
 
     <!-- custom JS -->
+    <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Preloader
-        document.addEventListener("DOMContentLoaded", (event) => {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
-            document.body.style.position = 'static';
+        // Password toggle
+        document.querySelectorAll('.toggle-pw').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const input = document.getElementById(targetId);
+                const icon = this.querySelector('i');
 
-            // Header mobile menu
-            const ulSidebar = document.querySelector(".ul-sidebar");
-            const ulSidebarOpener = document.querySelector(".ul-header-sidebar-opener");
-            const ulSidebarCloser = document.querySelector(".ul-sidebar-closer");
-
-            if (ulSidebarOpener) {
-                ulSidebarOpener.addEventListener("click", () => {
-                    ulSidebar.classList.add("active");
-                });
-            }
-
-            if (ulSidebarCloser) {
-                ulSidebarCloser.addEventListener("click", () => {
-                    ulSidebar.classList.remove("active");
-                });
-            }
-
-            // Header search
-            const ulHeaderSearchOpener = document.querySelector(".ul-header-search-opener");
-            const ulHeaderSearchCloser = document.querySelector(".ul-search-closer");
-            if (ulHeaderSearchOpener) {
-                ulHeaderSearchOpener.addEventListener("click", () => {
-                    document.querySelector(".ul-search-form-wrapper").classList.add("active");
-                });
-            }
-
-            if (ulHeaderSearchCloser) {
-                ulHeaderSearchCloser.addEventListener("click", () => {
-                    document.querySelector(".ul-search-form-wrapper").classList.remove("active");
-                });
-            }
-
-            // Sticky header
-            const ulHeader = document.querySelector(".to-be-sticky");
-            if (ulHeader) {
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > 80) {
-                        ulHeader.classList.add("sticky");
-                    } else {
-                        ulHeader.classList.remove("sticky");
-                    }
-                });
-            }
-
-            // Password toggle
-            document.querySelectorAll('.toggle-pw').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    const input = document.getElementById(targetId);
-                    const icon = this.querySelector('i');
-
-                    if (input.type === 'password') {
-                        input.type = 'text';
-                        icon.classList.remove('flaticon-eye');
-                        icon.classList.add('flaticon-eye-off');
-                    } else {
-                        input.type = 'password';
-                        icon.classList.remove('flaticon-eye-off');
-                        icon.classList.add('flaticon-eye');
-                    }
-                });
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('flaticon-eye');
+                    icon.classList.add('flaticon-eye-off');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('flaticon-eye-off');
+                    icon.classList.add('flaticon-eye');
+                }
             });
-
-            // Login form handling
-            const loginForm = document.getElementById('login-form');
-            if (loginForm) {
-                loginForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    const email = document.getElementById('login-email');
-                    const password = document.getElementById('login-password');
-                    const emailError = document.getElementById('email-error');
-                    const passwordError = document.getElementById('password-error');
-
-                    let isValid = true;
-
-                    // Validate email
-                    if (!email.value || !email.value.includes('@')) {
-                        emailError.classList.add('visible');
-                        email.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        emailError.classList.remove('visible');
-                        email.style.borderColor = '';
-                    }
-
-                    // Validate password
-                    if (!password.value) {
-                        passwordError.classList.add('visible');
-                        password.style.borderColor = '#dc3545';
-                        isValid = false;
-                    } else {
-                        passwordError.classList.remove('visible');
-                        password.style.borderColor = '';
-                    }
-
-                    if (isValid) {
-                        // Simulate successful login - redirect to index
-                        window.location.href = 'index.html';
-                    }
-                });
-            }
         });
+
+        // Login form handling
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const email = document.getElementById('login-email');
+                const password = document.getElementById('login-password');
+                const emailError = document.getElementById('email-error');
+                const passwordError = document.getElementById('password-error');
+
+                let isValid = true;
+
+                if (!email.value || !email.value.includes('@')) {
+                    emailError.classList.add('visible');
+                    email.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    emailError.classList.remove('visible');
+                    email.style.borderColor = '';
+                }
+
+                if (!password.value) {
+                    passwordError.classList.add('visible');
+                    password.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    passwordError.classList.remove('visible');
+                    password.style.borderColor = '';
+                }
+
+                if (isValid) {
+                    window.location.href = 'index.html';
+                }
+            });
+        }
     </script>
 </body>
 </html>
