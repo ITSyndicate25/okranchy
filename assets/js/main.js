@@ -897,4 +897,133 @@ document.addEventListener("DOMContentLoaded", (event) => {
             dateFormat: "H:i",
         });
     }
+
+    // ============================================================
+    // OKRANCHY — Global ambient chip particle effect (canvas)
+    // ============================================================
+    (function initOkrParticles() {
+        if (document.querySelector('.okr-particle-canvas')) return;
+
+        const canvas = document.createElement('canvas');
+        canvas.className = 'okr-particle-canvas';
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let W, H, dpr;
+        let particles = [];
+        let frameId = null;
+        let lastSpawn = 0;
+
+        function resize() {
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = window.innerWidth;
+            H = window.innerHeight;
+            canvas.width = W * dpr;
+            canvas.height = H * dpr;
+            canvas.style.width = W + 'px';
+            canvas.style.height = H + 'px';
+            ctx.scale(dpr, dpr);
+        }
+
+        function random(min, max) { return Math.random() * (max - min) + min; }
+
+        function buildVerts(sides) {
+            const verts = [];
+            for (let i = 0; i < sides; i++) {
+                const angle = (i / sides) * Math.PI * 2;
+                const r = 0.5 + Math.random() * 0.5;
+                verts.push([Math.cos(angle) * r, Math.sin(angle) * r]);
+            }
+            return verts;
+        }
+
+        function spawn() {
+            const count = Math.floor(random(1, 3));
+            for (let i = 0; i < count; i++) {
+                if (particles.length >= 40) particles.shift();
+                const isGreen = Math.random() > 0.5;
+                const size = random(isGreen ? 4 : 3, isGreen ? 8 : 6);
+                particles.push({
+                    x: random(0, W),
+                    y: H + size + random(0, H * 0.3),
+                    vx: random(-0.15, 0.15),
+                    vy: random(-0.3, -0.8),
+                    size: size,
+                    rotation: random(0, Math.PI * 2),
+                    rotSpeed: random(-0.04, 0.04),
+                    opacity: random(0.4, 0.7),
+                    life: 0,
+                    maxLife: Math.floor(random(480, 900)),
+                    color: isGreen ? '#33aa29' : '#FAA019',
+                    verts: buildVerts(isGreen ? 5 : 6),
+                });
+            }
+        }
+
+        function update() {
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.life++;
+                if (p.life >= p.maxLife) { particles.splice(i, 1); continue; }
+                p.x += p.vx + Math.sin(p.life * 0.01) * 0.3;
+                p.y += p.vy;
+                p.rotation += p.rotSpeed;
+                const lifeRatio = p.life / p.maxLife;
+                if (lifeRatio > 0.6) p.opacity = Math.max(0, 0.7 * (1 - (lifeRatio - 0.6) / 0.4));
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            for (const p of particles) {
+                if (p.opacity <= 0) continue;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rotation);
+                ctx.globalAlpha = p.opacity;
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                const s = p.size;
+                for (let j = 0; j < p.verts.length; j++) {
+                    const v = p.verts[j];
+                    const px = v[0] * s;
+                    const py = v[1] * s;
+                    j === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function loop() {
+            update();
+            draw();
+            frameId = requestAnimationFrame(loop);
+        }
+
+        function start() {
+            resize();
+            lastSpawn = performance.now();
+            (function spawnLoop() {
+                const now = performance.now();
+                if (now - lastSpawn > random(300, 800)) {
+                    spawn();
+                    lastSpawn = now;
+                }
+                spawnTimer = requestAnimationFrame(spawnLoop);
+            })();
+            loop();
+        }
+
+        let spawnTimer;
+        function stop() { cancelAnimationFrame(frameId); cancelAnimationFrame(spawnTimer); }
+
+        document.addEventListener('visibilitychange', () => {
+            document.hidden ? stop() : start();
+        });
+
+        window.addEventListener('resize', resize);
+        start();
+    })();
 });

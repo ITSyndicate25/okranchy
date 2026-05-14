@@ -7724,4 +7724,12 @@ button {
   .okr-testi-editorial { padding: 48px 0 40px; }
   .okr-testi-header { margin-bottom: 28px; }
 }
+.okr-particle-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+}
 /*# sourceMappingURL=style.css.map */
