@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okranchy - FAQ</title>
     <link rel="icon" type="image/png" href="assets/img/okranchy.png">
+    <base href=".">
 
     <!-- libraries CSS -->
     <link rel="stylesheet" href="assets/icon/flaticon_restics.css">
@@ -24,18 +25,38 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 
     <style>
-        .logo-container .logo { max-height: 130px; width: auto; }
-        .ul-sidebar-header-logo .logo { max-height: 130px; width: auto; }
-        .ul-footer-about img { max-height: 160px; width: auto; }
+        .logo-container .logo { width: auto; }
+        .ul-sidebar-header-logo .logo { width: auto; }
+        .ul-footer-about img { width: auto; }
         .signature { max-width: 80px; height: auto; }
     </style>
+<style>
+    /* Delivery Modal */
+    .okr-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+    .okr-modal-overlay.active { display: flex; }
+    .okr-modal-card { background: #fff; border-radius: 24px; padding: 40px 32px 32px; max-width: 420px; width: 90%; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.2); animation: okrModalUp 0.4s cubic-bezier(0.22,1,0.36,1); }
+    @keyframes okrModalUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .okr-modal-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: none; background: rgba(0,0,0,0.04); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #666; transition: all 0.2s; }
+    .okr-modal-close:hover { background: rgba(0,0,0,0.08); }
+    .okr-modal-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--trop-green-dark, #1a6b3c); margin: 0 0 6px; text-align: center; }
+    .okr-modal-desc { font-size: 0.9rem; color: var(--trop-text-light, #6b6b6b); text-align: center; margin: 0 0 28px; }
+    .okr-modal-options { display: flex; flex-direction: column; gap: 14px; }
+    .okr-modal-option { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 16px; border: 2px solid rgba(26,107,60,0.1); text-decoration: none; transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); background: var(--trop-cream-light, #fcfaf7); }
+    .okr-modal-option:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,107,60,0.12); border-color: var(--trop-green, #2d8a4e); }
+    .okr-modal-logo { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 12px; padding: 8px; }
+    .okr-option-grab .okr-modal-logo { background: #00b14f; }
+    .okr-option-panda .okr-modal-logo { background: #d32f2f; }
+    .okr-modal-logo svg { width: 100%; height: 100%; }
+    .okr-modal-option-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--trop-text, #1e1e1e); }
+    .okr-modal-option-desc { font-size: 0.82rem; color: var(--trop-text-light, #6b6b6b); }
+</style>
 </head>
 
 <body>
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-logo-wrap">
-                <img src="assets/img/logo-3.png" alt="Okranchy" class="preloader-logo">
+                <img src="assets/img/logo-4.png" alt="Okranchy" class="preloader-logo">
                 <div class="preloader-ring"></div>
             </div>
             <div class="preloader-chips">
@@ -58,7 +79,7 @@
         <div class="ul-sidebar-header">
             <div class="ul-sidebar-header-logo">
                 <a href="index.html">
-                    <img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo">
+                    <img src="assets/img/logo-4.png" alt="Okranchy Logo" class="logo">
                 </a>
             </div>
             <button class="ul-sidebar-closer"><i class="flaticon-close"></i></button>
@@ -125,7 +146,7 @@
             <div class="ul-header-bottom">
                 <div class="ul-header-bottom-wrapper ul-header-container">
                     <div class="logo-container">
-                        <a href="index.html" class="d-inline-block"><img src="assets/img/logo-3.png" alt="Okranchy Logo" class="logo"></a>
+                        <a href="index.html" class="d-inline-block"><img src="assets/img/logo-4.png" alt="Okranchy Logo" class="logo"></a>
                     </div>
 
                     <!-- header nav -->
@@ -139,9 +160,7 @@
                                     <div class="ul-header-submenu">
                                         <ul>
                                             <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="shop-details.html">Product Details</a></li>
                                             <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -165,7 +184,7 @@
                     <div class="ul-header-actions">
                         <button class="ul-header-search-opener"><i class="flaticon-search"></i></button>
                         <button><i class="flaticon-grocery-store"></i></button>
-                        <a href="shop.html" class="ul-btn d-sm-inline-flex d-none">Order Now <i class="flaticon-right"></i></a>
+                        <button class="okr-order-btn ul-btn d-sm-inline-flex d-none">Order Now <i class="flaticon-right"></i></button>
                         <button class="ul-header-sidebar-opener d-lg-none d-inline-flex"><i class="flaticon-menu"></i></button>
                     </div>
                 </div>
@@ -258,7 +277,7 @@
             <div class="ul-container">
                 <div class="ul-footer-top-wrapper wow animate__fadeInUp">
                     <div class="ul-footer-about">
-                        <a href="index.html"><img src="assets/img/logo-3.png" alt="Okranchy Logo"></a>
+                        <a href="index.html"><img src="assets/img/logo-4.png" alt="Okranchy Logo"></a>
                         <p class="ul-footer-about-txt">Okranchy — Premium okra chips crafted by Ani Co., a student group from Pamantasan ng Lungsod ng Valenzuela. Healthy, crunchy, and proudly Filipino.</p>
                         <div class="ul-footer-socials">
                             <a href="https://www.facebook.com/Okranchy" target="_blank" rel="noopener"><i class="flaticon-facebook"></i></a>
@@ -353,6 +372,37 @@
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/accordion.js"></script>
+    <!-- DELIVERY MODAL -->
+    <div class="okr-modal-overlay" id="okrDeliveryModal">
+        <div class="okr-modal-card">
+            <button class="okr-modal-close" id="okrModalClose"><i class="flaticon-close"></i></button>
+            <h3 class="okr-modal-title">Order via Delivery</h3>
+            <p class="okr-modal-desc">Choose your preferred delivery platform</p>
+            <div class="okr-modal-options">
+                <a href="https://food.grab.com/ph/en/" target="_blank" rel="noopener" class="okr-modal-option okr-option-grab">
+                    <div class="okr-modal-logo">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10"/><path d="M12 24c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12-12-5.373-12-12z" fill="#fff" opacity="0.2"/><path d="M16 20h16v8H16z" fill="#fff"/><circle cx="24" cy="24" r="4" fill="#fff"/><path d="M20 24c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z" fill="#00b14f"/></svg>
+                    </div>
+                    <div>
+                        <div class="okr-modal-option-name">GrabFood</div>
+                        <div class="okr-modal-option-desc">Order via Grab</div>
+                    </div>
+                </a>
+                <a href="https://www.foodpanda.ph/" target="_blank" rel="noopener" class="okr-modal-option okr-option-panda">
+                    <div class="okr-modal-logo">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#d32f2f"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="20" font-weight="900">fp</text></svg>
+                    </div>
+                    <div>
+                        <div class="okr-modal-option-name">foodpanda</div>
+                        <div class="okr-modal-option-desc">Order via foodpanda</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){var o=document.getElementById('okrDeliveryModal'),c=document.getElementById('okrModalClose'),b=document.querySelectorAll('.okr-order-btn');function n(){o.classList.add('active');document.body.style.overflow='hidden'}function e(){o.classList.remove('active');document.body.style.overflow=''}b.forEach(function(t){t.addEventListener('click',function(t){t.preventDefault();n()})});c.addEventListener('click',e);o.addEventListener('click',function(t){t.target===o&&e()});document.addEventListener('keydown',function(t){t.key==='Escape'&&o.classList.contains('active')&&e()})});
+    </script>
 </body>
 
 </html>
